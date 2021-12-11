@@ -1,0 +1,53 @@
+there have been homelessness prevention programs for a while
+    increased dramatically since 2009
+    those programs may not be very effective
+
+need effective
+    prevent homelessness
+and efficient
+    only target those who need help
+
+filled in missing data using Stata's imputation by chained equations multiple imputation program
+
+Cox regression
+
+important attributes
+    young age
+    being pregnant or having a child aged younger than 2 years 
+    facing an eviction threat
+    frequent moves in the past year
+    not holding a lease
+    childhood adversity or disruptions
+    current protective services involvement
+    shelter history
+        strong predictor
+
+unimportant attributes
+    self-reported poor building conditions
+    adolescent motherhood
+    indicators for mental illness
+    substance abuse
+    health problems
+    history of criminal justice involvement
+
+even very high-risk individuals still avoid becoming homeless
+
+risk cutoff based on many factors
+
+better data?
+    income
+        had none
+    better info on crowding
+        had only binary - want levels
+    better info on rent subsidies
+        only included if recorded as income - want all
+    
+    many characteristics self reported - may not be accurate
+        substance abuse, domestic violence, etc.
+
+models better than worker judgement
+
+NYC using model, with workers allowed to override it
+    allows for changing circumstances
+
+    models likely will depend specific population

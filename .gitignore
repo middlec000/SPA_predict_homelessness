@@ -10,12 +10,4 @@ Data2/
 Paper/.vscode
 Paper/Corrections/
 Paper/tex/
-Paper/main/CM_Thesis_Pub.aux
-Paper/main/CM_Thesis_Pub.bbl
-Paper/main/CM_Thesis_Pub.blg
-Paper/main/CM_Thesis_Pub.fdb_latexmk
-Paper/main/CM_Thesis_Pub.fls
-Paper/main/CM_Thesis_Pub.log
-Paper/main/CM_Thesis_Pub.synctex.gz
-
-Paper/Sources/
+Paper/main/

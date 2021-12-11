@@ -1,0 +1,59 @@
+6521 individuals
+forecast chronic homelessness 6 months into the client’s future
+London, Canada
+
+Introduction
+    Problem
+        chronic homelessness in Canada is increasing while overall homelessness is decreasing
+    Goals
+        minimize false negatives
+        create open-source, interpretable ML model
+    Precedent Research
+        Service Prioritization Decision Assistance Tool [4]
+            study found shortcomings [5]
+        Cox Regression in NYC [6]
+        NYC study predict chances of readmission to shelters and length of stay [7]
+            K-Means to cluster into: chronic, episodic, and transitional
+        Cox regression [8]
+        The Economic Roundtable log regression to identify top 10%
+        Silicon Valley Triage Tool
+        others...
+    Our Contribution
+        using ML
+        both static and time-varying features
+        post-hoc interpretability method
+Methods
+    Data
+        4 years of 6521 clients’ records
+        anonymous
+        chronically homeless if at least 180 stays over the most recent 365.25 days
+        typical data transformations: z-score, one-hot encoding
+        used shelter data: income, medical, etc.
+    Model
+        RNN for dynamic (time-varying) data, Multilayer Perceptron (MLP) for static features
+            end-to-end trainable
+        output node had sigmoid activation
+            threshold at 0.5
+        equations for Performance metrics
+        https://github.com/aildnont/HIFIS-model
+        Local Interpretable Model-Agnostic Explanations (LIME) used to increase interpretability
+            approximate nonlinear model with linear model
+Results
+    fp's perferred over fn's [26]
+
+    Model Performance
+        validation set most recent time steps
+        Table 2
+    Interpretability
+        "These findings corroborate Shinn et al.’s result that previous shelter stays were the strongest predictive feature for familial homelessness"
+        "administration of a SPDAT screening questionnaire 1 time step ago is highly predictive of chronic homelessness (i.e. "(-1)30-Day_SPDAT"), perhaps commending London case workers’ ability to identify high-risk clients weeks prior to transitioning to chronic homelessness as defined here."
+        aggregate days of receipt of housing subsidies
+            lack of receipt of housing subsidies steers the the model towards predicting chronic homelessness
+        advanced age
+Discussion
+    only compared findings to similar studies
+    reported as deicamls, not percents
+    "Sleeping rough, couch surfing, and stays in healthcare institutions were not accounted for in the calculation of the ground truth."
+Conclusion
+Acknowledgements
+References

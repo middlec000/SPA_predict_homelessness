@@ -47,11 +47,8 @@
 
 ---
 ## General
-### Which metrics and at what threshold to report?
-* Default is 0.5, but might not be most favorable
-* Report all metrics listed in all other relevant studies to make comparable?
-### How to compare to other studies? 
-Study 1 below uses cutoff threshold of 0.5 (the default threshold) to record metrics, but our model may compare more favorably if we use a different threshold.
+### Organization
+* Move tables and figures to another section as in example
 
 ---
 ## Changes By Section
@@ -59,9 +56,37 @@ Study 1 below uses cutoff threshold of 0.5 (the default threshold) to record met
 ### Introduction
 ### Methods
 * Clarify data preprocessing regarding time - only looking at predictors before homelessness is experienced
+* Update variables used
 ### Results
 * Report area under ROC, balanced accuracy
+* Report at threshold of 0.5
+* Report at 90% TPR
+* Report mean model coefficients
 ### Discussion
+VanBerlo (2020) ML model:  
+tpr: 92.1  = tp / p = tp / (tp + fn)  
+ppv: 65.1  = tp / (tp + fp)  
+F1-score: 76.3  
+AUC: 97.6  
+Accuracy: 97.1  = (tp + tn) / total  
+calculated:  
+fpr: fp / n = fp / (fn + fp)  
+  
+Byrne (2020) log model:  
+AUC: 94.0  
+balanced accuracy: 86.4  
+tpr: 77.8  
+tnr: 95.1  
+ppv: 11.7  
+npv: 99.8  
+calculated:
+fpr = 1 - tnr = 1 - 0.951 = 0.049  
+
+Shinn (2013) screening model (points based):  
+screening model:  
+tpr: 91.9, 74.7  
+fpr: 65.7, 36.6  
+
 ### Conclusion
 * Add conclusion
 
@@ -77,12 +102,23 @@ Study 1 below uses cutoff threshold of 0.5 (the default threshold) to record met
 [Getting Started](https://journals.plos.org/plosone/s/getting-started)  
 ### Fee
 [\$2,100](https://plos.org/publish/fees/)
+### Manuscript Specifications
+* All text in one .tex file
+* No graphics in manuscript submission
+* Figures: uploaded separately
+* Figures: Use Fig instead of Figure
+* Tables: NO spacing/line breaks within cells to alter layout or alignment
+* Tables: do not nest tabular environments (no tabular environments within tabular environments)
+* Tables: no graphics or colored text (cell background color/shading OK)
+* Tables: For tables that exceed the width of the text column, use the adjustwidth environment
+* Math: Do not include text that is not math in the math environment. For example, CO2 should be written as CO\textsubscript{2} instead of CO\$_2\$.
+* Math: When adding superscript or subscripts outside of brackets/braces, please group using {}.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2". 
 
 ---
 ## Frontiers in Applied Mathematics and Statistics
 ### Fee
 \$1,150  
-### Restrictions  
+### Manuscript Specifications
 Article Type: Original Research (A-type article)
 * Abstract length: 350 words
 * Maximum word count of 12,000
@@ -93,3 +129,20 @@ Article Type: Original Research (A-type article)
 3) Materials and Methods
 4) Results
 5) Discussion
+
+# Editing Tracking
+## Figure Labels
+fig:Homeless_US_Spokane  
+fig:corrRankByYear  
+fig:corr_years  
+fig:PN_mo_away_on_TOTAL_60_DAYS_AMT  
+fig:cat_theil  
+fig:ROC  
+## Table Labels
+tbl:assocWithOutcome15  
+tbl:varsUsed  
+tbl:evalTerminology  
+tbl:performance  
+## Other Labels
+fig1
+table1

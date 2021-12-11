@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: PLOS_ONE_Middleton_Oster_Draft.aux
+The style file: plain.bst
+Database file #1: PLOS_ONE_MO_Bibliography.bib
+Warning--to sort, need author or key in PITcount
+Warning--to sort, need author or key in hud_hmls_def
+Warning--to sort, need author or key in SpokanePop
+Warning--empty journal in 2019AHAR
+Warning--empty journal in PredictPreventHmlsnsLA
+Warning--empty year in white2020utilities
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            619 strings with 7735 characters,
+and the built_in function-call counts, 5907 in all, are:
+= -- 571
+> -- 307
+< -- 1
++ -- 128
+- -- 104
+* -- 435
+:= -- 1003
+add.period$ -- 56
+call.type$ -- 19
+change.case$ -- 109
+chr.to.int$ -- 0
+cite$ -- 25
+duplicate$ -- 197
+empty$ -- 441
+format.name$ -- 104
+if$ -- 1190
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 16
+newline$ -- 97
+num.names$ -- 32
+pop$ -- 115
+preamble$ -- 1
+purify$ -- 90
+quote$ -- 0
+skip$ -- 136
+stack$ -- 0
+substring$ -- 335
+swap$ -- 22
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 76
+warning$ -- 6
+while$ -- 54
+width$ -- 21
+write$ -- 196
+(There were 6 warnings)

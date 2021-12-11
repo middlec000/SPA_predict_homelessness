@@ -1,0 +1,63 @@
+Data
+5,050,639 individuals aged 11 years and older
+Massachusetts state databases
+2011–2015
+homelessness 0.82%
+
+Model
+logistic regression
+94 predictors
+
+Performance
+AUC: 94.0
+balanced accuracy: 86.4
+tpr: 77.8 (sensitivity)
+tnr: 95.1 (specificity)
+ppv: 11.7
+npv: 99.8
+
+Additional
+Strong association between predicted homelessness and fatal opioid overdose: "...predicted homeless status was associated with a nearly
+23-fold increase in the risk of fatal opioid overdose."
+
+integrating data from multiple state databases is new
+
+Nice organization
+Abstract
+Introduction
+Methods
+    Data and sample
+
+    Measures
+        measures of homelessness
+        independent variables
+            did not worry about multicollinearity
+            Table 1. summary of datasets and variables used
+        fatal opioid overdoses
+    
+    Analysis
+        stratified random sampling based on outcome (75%, 25%)
+        undersampling
+        for model analysis used threshold of 0.5
+
+        when analyzing relationship between homelessness and fatal opioid overdose, labeled people either predicted homeless or known to be homeless as homeless (seems weird)
+
+Results
+    Observed homelessness
+        how many P, which data sources they came from
+    Homelessness classification
+        model performance
+        both table and paragraph reporting of metrics
+        used 0.5 as threshold (but this is arbitrary we should compare based on one of their metrics)
+        compare PPV to chance
+        1 True positive: # False positives
+    Fatal opioid overdoses
+
+Discussion
+    limitations at the end
+        compare homelessness rate in data to estimated homelessness rate based on PIT counts
+        cross-sectional study - some predictors may have come after homelessness was experienced
+
+Conclusions
+    identifying homeless persons can help services better coordinate their care
+    opportunities for future work
