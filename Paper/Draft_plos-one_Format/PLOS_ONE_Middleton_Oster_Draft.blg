@@ -9,45 +9,45 @@ Warning--to sort, need author or key in SpokanePop
 Warning--empty journal in 2019AHAR
 Warning--empty journal in PredictPreventHmlsnsLA
 Warning--empty year in white2020utilities
-You've used 19 entries,
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            619 strings with 7735 characters,
-and the built_in function-call counts, 5907 in all, are:
-= -- 571
-> -- 307
+            633 strings with 8462 characters,
+and the built_in function-call counts, 6854 in all, are:
+= -- 653
+> -- 383
 < -- 1
-+ -- 128
-- -- 104
-* -- 435
-:= -- 1003
-add.period$ -- 56
-call.type$ -- 19
-change.case$ -- 109
++ -- 159
+- -- 132
+* -- 524
+:= -- 1171
+add.period$ -- 62
+call.type$ -- 21
+change.case$ -- 129
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 197
-empty$ -- 441
-format.name$ -- 104
-if$ -- 1190
+cite$ -- 27
+duplicate$ -- 219
+empty$ -- 494
+format.name$ -- 132
+if$ -- 1371
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 16
-newline$ -- 97
-num.names$ -- 32
-pop$ -- 115
+int.to.str$ -- 21
+missing$ -- 18
+newline$ -- 107
+num.names$ -- 36
+pop$ -- 131
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 108
 quote$ -- 0
-skip$ -- 136
+skip$ -- 150
 stack$ -- 0
-substring$ -- 335
-swap$ -- 22
+substring$ -- 388
+swap$ -- 24
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 84
 warning$ -- 6
-while$ -- 54
-width$ -- 21
-write$ -- 196
+while$ -- 60
+width$ -- 23
+write$ -- 218
 (There were 6 warnings)

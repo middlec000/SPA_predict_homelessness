@@ -20,6 +20,15 @@ Viv Bewick, Liz Cheek, and Jonathan Ball.
 \newblock Statistics review 14: Logistic regression.
 \newblock {\em Critical care}, 9(1):1--7, 2005.
 
+\bibitem{byrne2020classification}
+Thomas Byrne, Travis Baggett, Thomas Land, Dana Bernson, Maria-Elena Hood,
+  Cheryl Kennedy-Perez, Rodrigo Monterrey, David Smelson, Marc Dones, and
+  Monica Bharel.
+\newblock A classification model of homelessness using integrated
+  administrative data: Implications for targeting interventions to improve the
+  housing status, health and well-being of a highly vulnerable population.
+\newblock {\em PloS one}, 15(8):e0237905, 2020.
+
 \bibitem{byrne2012angeles}
 Thomas Byrne, Stephen Metraux, Manuel Moreno, Dennis~P Culhane, Halil Toros,
   and Max Stevens.
@@ -94,6 +103,13 @@ Marianne~BM Van~den Bree, Katherine Shelton, Adrian Bonner, Sebastian Moss,
 \newblock A longitudinal population-based study of factors in adolescence
   predicting homelessness in young adulthood.
 \newblock {\em Journal of Adolescent Health}, 45(6):571--578, 2009.
+
+\bibitem{vanberlo2021interpretable}
+Blake VanBerlo, Matthew~AS Ross, Jonathan Rivard, and Ryan Booker.
+\newblock Interpretable machine learning approaches to prediction of chronic
+  homelessness.
+\newblock {\em Engineering Applications of Artificial Intelligence},
+  102:104243, 2021.
 
 \bibitem{PredictPreventHmlsnsLA}
 Till Von~Wachter, MARIANNE BERTRAND, HAROLD POLLACK, JANEY ROUNTREE, and BRIAN

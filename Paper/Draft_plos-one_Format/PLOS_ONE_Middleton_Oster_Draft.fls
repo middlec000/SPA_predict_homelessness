@@ -1035,10 +1035,6 @@ INPUT c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
-INPUT c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
-INPUT c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
-INPUT c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
-INPUT c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
 INPUT ../img/corrRankByYear.png
 INPUT ../img/corrRankByYear.png
 INPUT ../img/corrRankByYear.png
@@ -1069,6 +1065,10 @@ INPUT PLOS_ONE_Middleton_Oster_Draft.bbl
 INPUT ./PLOS_ONE_Middleton_Oster_Draft.bbl
 INPUT PLOS_ONE_Middleton_Oster_Draft.bbl
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
+INPUT c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
+INPUT c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
+INPUT c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
 INPUT PLOS_ONE_Middleton_Oster_Draft.aux
 INPUT ./PLOS_ONE_Middleton_Oster_Draft.out
 INPUT ./PLOS_ONE_Middleton_Oster_Draft.out

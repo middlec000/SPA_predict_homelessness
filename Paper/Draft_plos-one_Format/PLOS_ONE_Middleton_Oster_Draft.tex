@@ -312,7 +312,7 @@ The topic of identifying individuals at risk of homelessness is minimally studie
 
 Another reason research on this topic is limited is the difficulty in collecting relevant data. A study by the California Policy Lab in 2019 found that the top predictors for homelessness were from most important to least: having previously experienced homelessness, prior receipt of social safety net benefits, interactions with any of: the Department of Human Services, the Department of Mental Health, the Sheriff's Department, or Probation, with a greater number of interactions with shorter time intervals also indicating greater risk. Other indicators were found to be visiting multiple service locations and residing in certain geographical areas ~\cite{PredictPreventHmlsnsLA}. The challenge is that these data are fragmented across government and sometimes private agencies with little history of coordination or standard data keeping practices between them.
 
-Nearly all the relevant data to homelessness is highly personal in nature so access is restricted. The system our project used for data acquisition is to have a central agency that is given all data from the relevant agencies through secure channels. This central agency matches and combines the data from the different sources, then de-identifies it. This process entails creating a map of agency-generated identifiers for each sensitive aspect of the data, then replace all the original values with these new identifiers. For example, each address is replaced by a unique address identification number so that the agencies working with the data cannot identify to who or where the data corresponds. This data handling structure is practiced and recommended by Los Angeles County’s Enterprise Linkages Project, which handles similarly sensitive data ~\cite{byrne2012angeles}.
+Nearly all the relevant data to homelessness is highly personal in nature so access is restricted. The system our project used for data acquisition is to have a central agency that is given all data from the relevant agencies through secure channels. This central agency matches and combines the data from the different sources, then de-identifies it. This process entails creating a map of agency-generated identifiers for each sensitive aspect of the data, then replace all the original values with these new identifiers. For example, each address is replaced by a unique address identification number so that the agencies working with the data cannot identify to who or where the data corresponds. This data handling structure is practiced and recommended by Los Angeles County's Enterprise Linkages Project, which handles similarly sensitive data ~\cite{byrne2012angeles}.
 
 \section{The Potential of Utility Customer Data}
 Our project uses utility customer payment data to predict risk of experiencing homelessness. This data source is attractive for two key reasons. First, it contains information related to individuals' financial health such as utility bill amounts, amount owed to the utility company, and number of times a bill payment was missed. Risk of homelessness is closely linked with an individual's financial health.
@@ -405,7 +405,7 @@ The cumulative number of places an individual has stayed was also calculated, bu
 % Choosing a response variable
 Though the eventual choice of outcome measure is the binary variable of if a person was ever recorded as experiencing homelessness, several others were investigated. One was a numerical variable describing the number of months until an episode of homelessness was analyzed. This posed the challenge of assinging some value(s) to people who were never recorded as experiencing homelessness. The other notable outcome investigated was the binary variable recording if an individual was within six months of experiencing an episode of homelessness. The outcome was chosen to be the variable that had the highest association with the predictor variables based on appropriate association metrics. The following association metrics were used for each type of variable pairing: Theil's Uncertainty for categorical-categorical, Spearman Correlation for numerical-numerical, Correlation Ratio for numerical-categorical with categorical having three or more levels, and Point-Biserial Correlation for binary-numerical.
 
-The choice of outcome measure was based on which was most associated with the available data. Each outcome measure provides different information about the process of experiencing homelessness and each could be used in the modelling stage to answer different questions, but only one was used for this study. Figure \ref{fig:cat_theil} shows the Theil's U values for all categorical variables, including the binary outcome measures.
+The choice of outcome measure was based on which was most associated with the available data. Each outcome measure provides different information about the process of experiencing homelessness and each could be used in the modelling stage to answer different questions, but only one was used for this study. Fig~\ref{fig:cat_theil} shows the Theil's U values for all categorical variables, including the binary outcome measures.
 
 \begin{figure}[htb]
     \centering
@@ -452,6 +452,7 @@ To avoid multicollinearity amounts owed in different utilities were discarded in
 
 The result of this process is the short list of explanatory variables and their definitions shown in Table \ref{tbl:varsUsed}. These are the variables used in the model. The variable BREAK\_ARRANGEMENT can be interpreted as the number of times a person has established a service break arrangement with the utility company.
 
+\red{update}
 \begin{table}[htb]
     \centering
     \begin{tabular}{l p{10cm} l p{16cm}}
@@ -475,13 +476,14 @@ The result of this process is the short list of explanatory variables and their 
 \end{table}
 
 \subsection*{The Model}
-Logistic Regression has been used for predicting risk of homelessness in at least one other study \cite{van2009longitudinal} and fits the situation of predicting the likelihood of a binary event based on a set of predictors. For each new set of data fed into the model, the model will produce an output of the predicted probability an event will occur given the variable values contained in the data. This matches the intended usage patterns for the model. 
+We used multivariable binary logistic regression to predict risk of experiencing homelessness. This type of model has been used for predicting risk of homelessness in at least one other study \cite{van2009longitudinal} and fits the situation of predicting the likelihood of a binary event based on a set of predictors. For each new set of data fed into the model, the model will produce an output of the predicted probability an event will occur given the variable values contained in the data. This matches the intended usage patterns for the model. 
 
 In the context of this project, the Logistic Regression Model, or log model, treats each person-place-month combination as a separate entity with a separate outcome. To find a prediction for each person, the maximum is taken of all the predictions for each person over time and at all locations. This maximum risk prediction becomes the prediction for that person.
 
 \subsection*{Model Evaluation}
 The model was evaluated on how well it could predict the outcome for each person. Before the details regarding the measurement of how well the model predicts the outcome, some terminology must be formalized. The terms and variables presented in Table \ref{tbl:evalTerminology} are common to binary classification problems and will be used throughout the rest of the paper.
 
+\red{simplify/shorten table}
 \begin{longtable}{c|p{4cm}|p{7cm}}
     \toprule
     Variable Symbol & Variable & Variable Description \\
@@ -541,6 +543,7 @@ For K-Folds, $k=10$ is the default number of folds used in the literature, but u
         \toprule
         Threshold &   TPR &   FPR & PPV & Accuracy &  Balanced Accuracy & F-1 Score \\
         \midrule
+        0.500 & 0.000 & 0.000 & 0.000 &     0.996 &     0.500 &   - \\
         0.003 & 0.715 & 0.192 & 0.715 &     0.807 &     0.761 & 0.715 \\
         0.002 & 0.778 & 0.255 & 0.778 &     0.745 &     0.762 & 0.778 \\
         0.002 & 0.901 & 0.532 & 0.901 &     0.470 &     0.684 & 0.901 \\
@@ -551,7 +554,7 @@ For K-Folds, $k=10$ is the default number of folds used in the literature, but u
     \label{tbl:performance}
 \end{table}
 
-In order to make the results of this study comparable to other homelessness prediction studies, the results of our model evaluated at the threshold where the TPR is near the levels listed in the other studies are shown in Table \ref{tbl:performance}. Each row in Table \ref{tbl:performance} represents a single (FPR, TPR) point on the ROC curve in Figure \ref{fig:ROC}. 
+In order to make the results of this study comparable to other homelessness prediction studies, the results of our model evaluated at the threshold where the TPR is near the levels listed in the other studies are shown in Table \ref{tbl:performance}. Each row in Table \ref{tbl:performance} represents a single (FPR, TPR) point on the ROC curve in Fig~\ref{fig:ROC}. 
 
 \begin{table}[!h]
     \begin{tabular}{lcccc}
@@ -565,28 +568,24 @@ In order to make the results of this study comparable to other homelessness pred
      NUM\_PER\_FOR\_PREM &      -0.145 &    0.865 &        0.819 &        0.913 \\
     \bottomrule
     \end{tabular}
-    \label{tbl:meanParams}
     \caption{Mean logistic model coefficient (Coeff), mean odds ratio (OR), and mean 95\% confidence interval for the odds ratio for each model feature over all folds. Odds ratio describes how much the predicted odds of an event will increase if a single variable is increased by one.}
+    \label{tbl:meanParams}
 \end{table}
 
 The odds ratio for each feature shown in Table \ref{tbl:meanParams} give some idea of the importance of each feature to the logistic model. 
 
 %------------------- DISCUSSION ---------------------------------
 \section*{Discussion}
-\subsection*{Model Performance Comparison}
-Comparing binary classification models is difficult because their scores in performance metrics differ based on the chosen binning threshold. For the Logistic Regression model, the default threshold of 0.5 is likely not the most appropriate for the use-case of predicting homelessness since homelessness is a rare event. Notice the poor performance of our model at the threshold of 0.5 in Table \red{ADD TABLE REFERENCE} in the Results section. 
+\subsection*{Performance Comparison}
+Comparing binary classification models is difficult because their scores in performance metrics differ based on the chosen binning threshold. For the Logistic Regression model, the default threshold of 0.5 is likely not the most appropriate for the use-case of predicting homelessness since homelessness is a rare event. Notice the poor performance of our model at the threshold of 0.5 in Table \ref{tbl:performance}. 
 
 % Call for standardized reporting
-So far the related research has published model performances in a variety of metrics at a variety of thresholds. Because in this use-case it is much worse to incur a Type II Error (false negative) than a Type I Error (false positive), model performance should focus on a threshold where the True Positive Rate is high, meaning most of the positive cases are correctly predicted. This focus on correctly predicting positive cases has been repeatedly pointed out in the literature \red{TODO: cite this}. We propose the reporting standard of choosing the binning threshold that produces a TPR as near to 0.90 (90.0\%) as possible, then report False Positive Rate at this same threshold. A TPR of 0.90 is appropriately high for this use-case, but low enough to produce a useful model (not too many false positives) when comparing current research. Reporting the Area Under the Curve for the Receiver Operator Characteristic is a helpful metric to report that provides a measure of model performance at all thresholds. Displaying the ROC plot is also very helpful for comparing models. 
+So far the related research has published model performances based on the default prediction binning threshold of 0.5 with a variety of performance metrics reported \red{Add citation}. Because in this use-case it is much worse to incur a Type II Error (false negative) than a Type I Error (false positive), model performance and evaluation should focus on a threshold where the True Positive Rate (TPR) is high, meaning most of the positive cases are correctly predicted. This focus on correctly predicting positive cases has been repeatedly pointed out in the literature \cite{vanberlo2021interpretable} \red{ADD SOURCES HERE}. We propose the reporting standard of choosing the binning threshold that produces a TPR as near to 0.90 (90.0\%) as possible, then report False Positive Rate (FPR) and other metrics at the same threshold. A TPR of 0.90 is appropriately high for this use-case. Reporting the FPR allows homelessness prediction programs to asses the cost and savings of the prediction model based on their service population. Reporting the Area Under the Curve for the Receiver Operator Characteristic is another helpful metric to report that provides a measure of model performance at all thresholds \red{Do we care about performance at other thresholds?}. Displaying the ROC plot is also very helpful for comparing models. 
 
 % Compare to previous research
-Comparison of our model to previous studies is done by choosing the binning threshold that produces most closely the same TPR as reported by each of the previous studies. Shinn's Screening Model achieved a TPR of 71.6\% with a FPR of 65.7\% \cite{shinn2013efficient}. At the same TPR our model achieved a FPR of 19.2\%. Byrne's Logistic Regression Model achieved a TPR of 77.8\% with a FPR of 0.49\% (calculated from reported True Negative Rate: FPR = 1 - TNR) \red{ADD CITATION}. At the same TPR our model achieved a FPR of 25.5\%. VanBerlo's HIFIS-RNN-MLP Model achieved a TPR of 92.1\% and a FPR of \red{ADD HERE, ADD CITATION}. At the same TPR our model achieved a FPR of 56.6\%.
+We compare our model to those developed in previous studies by choosing the binning threshold that produces most closely the same TPR as reported by each of the previous studies, then comparing the FPR and Positive Predictive Value (PPV), when given. For the same TPR a lower FPR and higher PPV are preferred. Shinn's Screening Model achieved a TPR of 0.716 with a FPR of 0.657 and no PPV reported \cite{shinn2013efficient}. At the same TPR our model achieved a FPR of 0.192. Byrne's Logistic Regression Model achieved a TPR of 0.778 with a FPR of 0.049 (calculated from reported True Negative Rate: FPR = 1 - TNR) and PPV of 0.117 \cite{byrne2020classification}. At the same TPR our model achieved a FPR of 0.255 and PPV of 0.778. VanBerlo's HIFIS-RNN-MLP Model achieved a TPR of 0.921 and PPV of 0.651 with no FPR reported \cite{vanberlo2021interpretable}. At the same TPR our model achieved a PPV of 0.921.
 
-The performance of the model is relatively low, but should be interpreted with two considerations. The first consideration is the incompleteness of the data. Before any models are run, of all the people in the data labeled as positive, our confidence that they are actually positive is high - they matched someone who was recorded as experiencing homelessness in the Spokane area. Our confidence in the correct labeling of the negative cases, on the other hand, is lower. Some of the cases labeled as negative in the data may, in reality, be positive cases if they did experience homelessness but this was not recorded in the City of Spokane CMIS database. Because some of the negative cases may be positive cases in reality, the model may have predicted them as positive because they have similar characteristics to other positive cases, but that prediction was labelled as incorrect. This is an unknown factor in this data, but it may cause the model performance to appear worse than it actually is.
-
-Another point of interest is that the people predicted as positive by the models may be members of a more general at-risk population. The only outcomes we measured were related to homelessness, but the model predictions and the data investigation reveal that many people labeled as negatives have similar characteristics to the positive cases. These $F_P$'s may be financially stressed or at-risk in other ways, but we did not have data on other types of outcomes to investigate this.
-
-The other aspect to consider when interpreting model evaluation is the performance of current methods of homelessness prediction. The performances of our models seems low, but perhaps they may be higher than existing methods. In many areas there is no system for predicting homelessness, and, in others where prediction systems do exist, their performance may have never been evaluated.
+When comparing our model with the selected previous studies at the same TPR, our model achieved a lower FPR than Shinn's Screening Model, a lower FPR and higher PPV than Byrne's Logistic Model, and a higher PPV than VanBerlo's HIFIS-RNN-MLP Model. The result that our model achieved a higher PPV but a lower FPR than Byrne's Logistic Model indicates that more of our model's predicted positives are true positives but a larger proportion of negatives were falsely predicted as positives by our model. This seems contradictory, especially considering how much higher our PPV is. Byrne's FPR is suspiciously low. \red{Rephrase previous}
 
 \subsection*{Model Usage}
 For model use, a specific binning threshold must be chosen with different thresholds yielding different model performance. For HPPs that plan to target a small segment of the population, a high threshold is appropriate so that only a few predictions are binned as positives. High thresholds correspond to the lower left region of the ROC plot where the $TPR$ and the $FPR$ are both low. For HPPs that plan to target large portions of the population, a low threshold, corresponding to the upper right portion of the ROC plot, is appropriate. 
@@ -598,6 +597,15 @@ As mentioned in the Methods Section, model evaluation was highly sensitive to wh
 
 The choice of $k$ also had an effect on model evaluation. Over several runs it was found that the best model performance was achieved from $k=2$ to $k=5$. For balanced datasets, performance is generally increased with increasing $k$ until about $k=10$ where performance does not increase significantly if $k$ is increased further. Training on large datasets, at least 5000 entities, can achieve good results with $k$ values as low as 5. Typically $k=10$ is used by convention \cite{marcot2020optimal}. With imbalanced data, however, if the value of $k$ is large then there are very few positive cases in the test set, so the models have difficulty distinguishing this small set from all the negative cases. This is likely the reason why lower $k$ values were found to produce better performance for this study.
 
+\subsection*{Outcome Variable Selection}
+Interesting that CMIS\_MATCH was most associated with predictors, not other outcomes.
+
+\subsection*{Predictor Variable Selection}
+\begin{itemize}
+    \item selected those that are likely to be widely available across US
+    \item no performance change between grouped, ungrouped billing features (interesting bc landlord likely pays some)
+\end{itemize}
+
 \subsection*{Dependence on Time}
 It was hypothesized that time is an important factor in predicting homelessness. As people get closer in time to experiencing homelessness they are likely to be more distinguishable from the general population. The history in time of a person's characteristics may be an important factor in predicting homelessness. Two approaches were considered to incorporate individual's previous characteristics in predicting the likelihood of homelessness.
 
@@ -607,24 +615,36 @@ Another method investigated for including a person's previous values as predicto
 
 The highest performing method found was to treat each person-place-month combination as a separate entity, make a prediction for each entity, then take the maximum risk prediction for each person over all places and months that person appears in the dataset. This seems to indicate the important aspect of each person is their peak risk. Furthermore, because the outcomes of WITHIN\_6\_MO, and LAST\_MO were less correlated with the predictors than CMIS\_MATCH, an individual's peak risk must not occur immediately before losing their utility account or being evicted. 
 
-\subsection*{Limitations of the Data}
-The data used for this project had some limitations that required assumptions to be made. The utility billing data was structured to track accounts and ensure the people responsible for those accounts paid their bills on time. The utility company is a private organization and interested in tracking who is paying for each account so this data structure is appropriate for their uses, but it was not convenient for predicting homelessness.
+\red{add that more appropriate methods could be used to deal with time series - LSTM}
+
+\subsection*{Limitations}
+% mislabeling of negative cases
+The first limitation is the incompleteness of the data. Before any models are run, of all the people in the data labeled as positive, our confidence that they are actually positive is high - they matched someone who was recorded as experiencing homelessness in the Spokane area. Our confidence in the correct labeling of the negative cases, on the other hand, is lower. Some of the cases labeled as negative in the data may, in reality, be positive cases if they did experience homelessness but this was not recorded in the City of Spokane CMIS database. Because some of the negative cases may be positive cases in reality, the model may have predicted them as positive because they have similar characteristics to other positive cases, but that prediction was labelled as incorrect. This is an unknown factor in this data, but it may cause the model performance to appear worse than it actually is. This problem is likely common to the task of predicting homelessness. \red{add citation}
+
+Another point of interest is that the people predicted as positive by the models may be members of a more general at-risk population. The only outcomes we measured were related to homelessness, but the model predictions and the data investigation reveal that many people labeled as negatives have similar characteristics to the positive cases. These False Positives's may be financially stressed or at-risk in other ways, but we did not have data on other types of outcomes to investigate this. \red{add info about Bryne's study - high prediction associated with drug addiction}
+
+% incompleteness of data
+Another limitation of the data was not capturing much of the population. The utility billing data was structured to track accounts and ensure the people responsible for those accounts paid their bills on time. The utility company is a private organization and interested in tracking who is paying for each account so this data structure is appropriate for their uses, but it was not convenient for predicting homelessness.
 
 There were often multiple people associated with a single utility account. These were likely people like spouses, parents, cotenants, or landlords. With these multi-person accounts, it was not recorded who, out of the people associated with the account, paid for each bill. For this project it was assumed that the main account holder always paid since they were ultimately financially responsible for the account, but this is likely not always true. There may be useful information regarding who paid a utility bill for each month; specifically, it may be a risk indicator if someone other than the main account holder paid the bill for a given month.
 
-Another limitation to the billing data was that Avista and City utility billing information was matched using address, not person, so it is unknown if the same person actually paid both bills. This choice was made because matching on address and month across the billing systems of Avista and the City of Spokane had a much higher match rate than matching on the recorded account holder names. It is likely that many of the City utility bills for apartments were paid by the landlord and so would remain unaltered if the tenant was experiencing financial stress. This aspect is addressed, to some degree, by the selection of explanatory variables. It was found that the aggregated measure TOTAL\_60\_DAYS\_AMT, the combined amount owed to Avista and the City for bills over 60 days old, was most associated with the outcome measure out of all other variables related to amount owed. This indicates that even if many landlords did pay consistently for the City utilities even for people who were at risk of homelessness, there was enough information in the amounts owed in City utilities regarding homelessness that aggregating the Avista and City amounts owed produced a variable more strongly associated with CMIS\_MATCH than the individual variables.
+% matching, don't know who pays bills
+Avista and City utility billing information was matched using address, not person, so it is unknown if the same person actually paid both bills. This choice was made because matching on address and month across the billing systems of Avista and the City of Spokane had a much higher match rate than matching on the recorded account holder names. It is likely that many of the City utility bills for apartments were paid by the landlord and so would remain unaltered if the tenant was experiencing financial stress. This aspect is addressed, to some degree, by the selection of explanatory variables. It was found that the aggregated measure TOTAL\_60\_DAYS\_AMT, the combined amount owed to Avista and the City for bills over 60 days old, was most associated with the outcome measure out of all other variables related to amount owed. This indicates that even if many landlords did pay consistently for the City utilities even for people who were at risk of homelessness, there was enough information in the amounts owed in City utilities regarding homelessness that aggregating the Avista and City amounts owed produced a variable more strongly associated with CMIS\_MATCH than the individual variables.
 
-Another limitation, as mentioned previously, is that the data on the outcome measures are likely incomplete. If people move away or never report their status of homelessness, they are not captured by the CMIS database and are not labeled as a positive case. This is likely a problem with predicting homelessness, to some degree, on any scale and in any location - even if there were a national homelessness tracking system some people would still move out of the country or not report their homelessness status.
-
+% challenges including location
 Location was hypothesized to be an important predictor of homelessness, but there were challenges with including location as a predictor in the models. The variables available that contain geographical location information were POSTAL, the person's postal code, BLOCKGROUP\_GEOID, the U.S. Census blockgroup number, and SPA\_PREM\_ID, the assigned identification number for a specific residence. The unit of blockgroup is smaller than that of postal code, but blockgroup areas often do not fall within a single postal code boundary. All of these variables are categorical with POSTAL having 17 unique levels represented in the data, BLOCKGROUP\_GEOID having 279, and SPA\_PREM\_ID having 60785. Because these categorical variables had so many possible values, they could not be incorporated into the logistic model without causing convergence issues.
 
+%------------------- CONCLUSION ---------------------------------
+\section*{Conclusion}
+
+%------------------- SUPPORTING INFORMATION ---------------------------------
+\section*{Supporting information}
 
 
 
 
-
-
-\section*{Materials and methods}
+%------------------- EXAMPLE ---------------------------------
+\section*{Example - Materials and methods}
 \subsection*{Etiam eget sapien nibh}
 
 % For figure citations, please use "Fig" instead of "Figure".
@@ -638,7 +658,7 @@ Figure caption text here, please use this space for the figure panel description
 \end{figure}
 
 % Results and Discussion can be combined.
-\section*{Results}
+\section*{Example - Results}
 Nulla mi mi, venenatis sed ipsum varius, Table~\ref{table1} volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
 
 % Place tables after the first paragraph in which they are cited.
@@ -683,16 +703,16 @@ Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel
 	\item Third bulleted item.
 \end{itemize}
 
-\section*{Discussion}
+\section*{Example - Discussion}
 Nulla mi mi, venenatis sed ipsum varius, Table~\ref{table1} volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero  %   ~\cite{bib3}.
 
-\section*{Conclusion}
+\section*{Example - Conclusion}
 
 CO\textsubscript{2} Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque. Quisque augue sem, tincidunt sit amet feugiat eget, ullamcorper sed velit. 
 
 Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo justo ac dui pretium imperdiet. Sed suscipit iaculis mi at feugiat. Ut neque ipsum, luctus id lacus ut, laoreet scelerisque urna. Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed. Nam condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec, auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum, libero lectus luctus est, non vulputate nisl augue at dolor. For more information, see %\nameref{S1_Appendix}.
 
-\section*{Supporting information}
+\section*{Example - Supporting information}
 
 % Include only the SI item label in the paragraph heading. Use the \nameref{label} command to cite SI items in the text.
 \paragraph*{S1 Fig.}

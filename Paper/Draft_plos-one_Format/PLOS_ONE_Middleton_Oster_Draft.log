@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  10 DEC 2021 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  13 DEC 2021 08:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -680,9 +680,7 @@ Overfull \hbox (2.2222pt too wide) in paragraph at lines 257--264
 
 [1
 
-{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../img/homelessness_usa.png> <../img/homelessness_spokane.png>] [2] [3] [4] (c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [5]
+{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../img/homelessness_usa.png> <../img/homelessness_spokane.png>] [2] [3] [4] [5]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 356.
@@ -711,12 +709,12 @@ File: ../img/cat_theil.png Graphic file (type png)
 Package pdftex.def Info: ../img/cat_theil.png  used on input line 412.
 (pdftex.def)             Requested size: 379.4175pt x 296.30527pt.
  [10 <../img/cat_theil.png>]
-Overfull \hbox (51.80751pt too wide) in paragraph at lines 457--473
+Overfull \hbox (51.80751pt too wide) in paragraph at lines 458--474
  [][] 
  []
 
 [11]
-Overfull \hbox (42.33519pt too wide) in alignment at lines 485--507
+Overfull \hbox (42.33519pt too wide) in alignment at lines 487--509
  [] [] [] 
  []
 
@@ -724,52 +722,42 @@ Overfull \hbox (42.33519pt too wide) in alignment at lines 485--507
 <../img/ROC.png, id=199, 674.52pt x 432.4155pt>
 File: ../img/ROC.png Graphic file (type png)
 <use ../img/ROC.png>
-Package pdftex.def Info: ../img/ROC.png  used on input line 533.
+Package pdftex.def Info: ../img/ROC.png  used on input line 535.
 (pdftex.def)             Requested size: 379.4175pt x 243.23972pt.
 
-Overfull \hbox (2.58594pt too wide) in paragraph at lines 557--569
-[][]
+Overfull \hbox (2.58594pt too wide) in paragraph at lines 560--571
+[][] 
  []
 
-[14 <../img/ROC.png>]
-
-Package caption Warning: \label without proper reference on input line 568.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tbl:meanParams' on page 15 undefined on input line 572.
-
-[15] [16] [17]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18] [19] [20] (./PLOS_ONE_Middleton_Oster_Draft.bbl
+[14] [15 <../img/ROC.png>] [16] [17] [18] [19] [20] (./PLOS_ONE_Middleton_Oster_Draft.bbl
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [21]) 
+ (c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+) [21]) 
 AED: lastpage setting LastPage
 [22] (./PLOS_ONE_Middleton_Oster_Draft.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `PLOS_ONE_Middleton_Oster_Draft.out' has not changed.
 (rerunfilecheck)             Checksum: D4F8328BAE7CD8B0AD35B3DD8E10E57B;1257.
  ) 
 Here is how much of TeX's memory you used:
- 16745 strings out of 478542
- 256415 string characters out of 5854402
- 664626 words of memory out of 5000000
- 34201 multiletter control sequences out of 15000+600000
+ 16753 strings out of 478542
+ 256569 string characters out of 5854402
+ 665948 words of memory out of 5000000
+ 34203 multiletter control sequences out of 15000+600000
  412546 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,108p,1925b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,12n,108p,1925b,530s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (22 pages, 1297699 bytes).
+Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (22 pages, 1299389 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 303 compressed objects within 4 object streams
- 103 named destinations out of 1000 (max. 500000)
+ 379 PDF objects out of 1000 (max. 8388607)
+ 315 compressed objects within 4 object streams
+ 109 named destinations out of 1000 (max. 500000)
  25172 words of extra memory for PDF output out of 29859 (max. 10000000)
 

@@ -1,7 +1,7 @@
 import pandas as pd
 import pickle
 import time
-from condensed_code import *
+from log_helper_methods import *
 
 def main():
     startTime = time.time()
