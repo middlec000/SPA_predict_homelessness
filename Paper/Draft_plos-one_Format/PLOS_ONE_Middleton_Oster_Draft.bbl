@@ -1,107 +1,100 @@
 \begin{thebibliography}{10}
 
 \bibitem{hud_hmls_def}
-Criteria and recordkeeping requirements for definition of homelessness.
-\newblock Accessed: 2021-05-23.
+Exchange H. Criteria and Recordkeeping Requirements for Definition of
+  Homelessness; 2012.
+\newblock Available from:
+  \url{https://www.hudexchange.info/resource/1974/criteria-and-recordkeeping-requirements-for-definition-of-homeless/}.
 
 \bibitem{PITcount}
-Point-in-time count and housing inventory count.
+Exchange H. Point-in-Time Count and Housing Inventory Count; 2020.
 \newblock \url{https://www.hudexchange.info/programs/hdx/pit-hic/}.
-\newblock Accessed: 2020-09-04.
 
-\bibitem{SpokanePop}
-Quickfacts spokane county, washington.
-\newblock
-  \url{https://www.census.gov/quickfacts/fact/table/spokanecountywashington}.
-\newblock Accessed: 2021-11-29.
+\bibitem{2019AHAR}
+Henry M, Watt R, Mahathey A, Ouellette J, Sitler A, Associates A.
+\newblock The 2019 Annual Homeless Assessment Report (AHAR) to Congress.
+\newblock The U.S. Department of Housing and Urban Development; 2020.
+
+\bibitem{shinn2019homelessness}
+Shinn M, Cohen R.
+\newblock Homelessness Prevention: A Review of the literature.
+\newblock Center for Evidence-Based Solutions to Homelessness. 2019;.
+
+\bibitem{evans2016impact}
+Evans WN, Sullivan JX, Wallskog M.
+\newblock The impact of homelessness prevention programs on homelessness.
+\newblock Science. 2016;353(6300):694--699.
+
+\bibitem{rolston2013evaluation}
+Rolston H, Geyer J, Locke G, Metraux S, Treglia D.
+\newblock Evaluation of the homebase community prevention program.
+\newblock Final Report, Abt Associates Inc, June. 2013;6:2013.
+
+\bibitem{goodman2016homelessness}
+Goodman S, Messeri P, O'Flaherty B.
+\newblock Homelessness prevention in New York City: On average, it works.
+\newblock Journal of housing economics. 2016;31:14--34.
+
+\bibitem{shinn2013efficient}
+Shinn M, Greer AL, Bainbridge J, Kwon J, Zuiderveen S.
+\newblock Efficient targeting of homelessness prevention services for families.
+\newblock American journal of public health. 2013;103(S2):S324--S330.
+
+\bibitem{von2019predicting}
+Von~Wachter T, Bertrand M, Pollack H, Rountree J, Blackwell B.
+\newblock Predicting and preventing homelessness in Los Angeles.
+\newblock California Policy Lab and University of Chicago Poverty Lab. 2019;.
+
+\bibitem{o2004wrong}
+O’Flaherty B.
+\newblock Wrong person and wrong place: for homelessness, the conjunction is
+  what matters.
+\newblock Journal of Housing Economics. 2004;13(1):1--15.
+
+\bibitem{white2020utilities}
+White R, Sokol C.
+\newblock Utilities pause shutoffs as state prepares for financial impacts of
+  COVID-19.
+\newblock The Spokane Review. 2020;.
+
+\bibitem{van2009longitudinal}
+Van~den Bree MB, Shelton K, Bonner A, Moss S, Thomas H, Taylor PJ.
+\newblock A longitudinal population-based study of factors in adolescence
+  predicting homelessness in young adulthood.
+\newblock Journal of Adolescent Health. 2009;45(6):571--578.
 
 \bibitem{bewick2005statistics}
-Viv Bewick, Liz Cheek, and Jonathan Ball.
+Bewick V, Cheek L, Ball J.
 \newblock Statistics review 14: Logistic regression.
-\newblock {\em Critical care}, 9(1):1--7, 2005.
+\newblock Critical care. 2005;9(1):1--7.
+
+\bibitem{fawcett2006introduction}
+Fawcett T.
+\newblock An introduction to ROC analysis.
+\newblock Pattern recognition letters. 2006;27(8):861--874.
+
+\bibitem{marcot2020optimal}
+Marcot BG, Hanea AM.
+\newblock What is an optimal value of k in k-fold cross-validation in discrete
+  Bayesian network analysis?
+\newblock Computational Statistics. 2020; p. 1--23.
+
+\bibitem{SpokanePop}
+Bureau USC. QuickFacts Spokane County, Washington; 2019.
+\newblock
+  \url{https://www.census.gov/quickfacts/fact/table/spokanecountywashington}.
+
+\bibitem{vanberlo2021interpretable}
+VanBerlo B, Ross MA, Rivard J, Booker R.
+\newblock Interpretable machine learning approaches to prediction of chronic
+  homelessness.
+\newblock Engineering Applications of Artificial Intelligence. 2021;102:104243.
 
 \bibitem{byrne2020classification}
-Thomas Byrne, Travis Baggett, Thomas Land, Dana Bernson, Maria-Elena Hood,
-  Cheryl Kennedy-Perez, Rodrigo Monterrey, David Smelson, Marc Dones, and
-  Monica Bharel.
+Byrne T, Baggett T, Land T, Bernson D, Hood ME, Kennedy-Perez C, et~al.
 \newblock A classification model of homelessness using integrated
   administrative data: Implications for targeting interventions to improve the
   housing status, health and well-being of a highly vulnerable population.
-\newblock {\em PloS one}, 15(8):e0237905, 2020.
-
-\bibitem{evans2016impact}
-William~N Evans, James~X Sullivan, and Melanie Wallskog.
-\newblock The impact of homelessness prevention programs on homelessness.
-\newblock {\em Science}, 353(6300):694--699, 2016.
-
-\bibitem{fawcett2006introduction}
-Tom Fawcett.
-\newblock An introduction to roc analysis.
-\newblock {\em Pattern recognition letters}, 27(8):861--874, 2006.
-
-\bibitem{goodman2016homelessness}
-Sarena Goodman, Peter Messeri, and Brendan O'Flaherty.
-\newblock Homelessness prevention in new york city: On average, it works.
-\newblock {\em Journal of housing economics}, 31:14--34, 2016.
-
-\bibitem{2019AHAR}
-Meghan Henry, Rian Watt, Anna Mahathey, Jillian Ouellette, Aubrey Sitler, and
-  Abt Associates.
-\newblock The 2019 annual homeless assessment report (ahar) to congress.
-\newblock 2020.
-
-\bibitem{marcot2020optimal}
-Bruce~G Marcot and Anca~M Hanea.
-\newblock What is an optimal value of k in k-fold cross-validation in discrete
-  bayesian network analysis?
-\newblock {\em Computational Statistics}, pages 1--23, 2020.
-
-\bibitem{o2004wrong}
-Brendan O’Flaherty.
-\newblock Wrong person and wrong place: for homelessness, the conjunction is
-  what matters.
-\newblock {\em Journal of Housing Economics}, 13(1):1--15, 2004.
-
-\bibitem{rolston2013evaluation}
-Howard Rolston, Judy Geyer, Gretchen Locke, Stephen Metraux, and Dan Treglia.
-\newblock Evaluation of the homebase community prevention program.
-\newblock {\em Final Report, Abt Associates Inc, June}, 6:2013, 2013.
-
-\bibitem{shinn2019homelessness}
-Marybeth Shinn and Rebecca Cohen.
-\newblock Homelessness prevention: A review of the literature.
-\newblock {\em Center for Evidence-Based Solutions to Homelessness}, 2019.
-
-\bibitem{shinn2013efficient}
-Marybeth Shinn, Andrew~L Greer, Jay Bainbridge, Jonathan Kwon, and Sara
-  Zuiderveen.
-\newblock Efficient targeting of homelessness prevention services for families.
-\newblock {\em American journal of public health}, 103(S2):S324--S330, 2013.
-
-\bibitem{van2009longitudinal}
-Marianne~BM Van~den Bree, Katherine Shelton, Adrian Bonner, Sebastian Moss,
-  Hollie Thomas, and Pamela~J Taylor.
-\newblock A longitudinal population-based study of factors in adolescence
-  predicting homelessness in young adulthood.
-\newblock {\em Journal of Adolescent Health}, 45(6):571--578, 2009.
-
-\bibitem{vanberlo2021interpretable}
-Blake VanBerlo, Matthew~AS Ross, Jonathan Rivard, and Ryan Booker.
-\newblock Interpretable machine learning approaches to prediction of chronic
-  homelessness.
-\newblock {\em Engineering Applications of Artificial Intelligence},
-  102:104243, 2021.
-
-\bibitem{PredictPreventHmlsnsLA}
-Till Von~Wachter, MARIANNE BERTRAND, HAROLD POLLACK, JANEY ROUNTREE, and BRIAN
-  BLACKWELL.
-\newblock Predicting and preventing homelessness in los angeles.
-\newblock 2019.
-
-\bibitem{white2020utilities}
-Rebecca White and Chad Sokol.
-\newblock Utilities pause shutoffs as state prepares for financial impacts of
-  covid-19.
-\newblock {\em The Spokane Review}.
+\newblock PloS one. 2020;15(8):e0237905.
 
 \end{thebibliography}
