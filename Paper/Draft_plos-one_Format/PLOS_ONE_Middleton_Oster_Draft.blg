@@ -3,51 +3,51 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: PLOS_ONE_Middleton_Oster_Draft.aux
 The style file: plain.bst
 Database file #1: PLOS_ONE_MO_Bibliography.bib
-Warning--to sort, need author or key in PITcount
 Warning--to sort, need author or key in hud_hmls_def
+Warning--to sort, need author or key in PITcount
 Warning--to sort, need author or key in SpokanePop
 Warning--empty journal in 2019AHAR
 Warning--empty journal in PredictPreventHmlsnsLA
 Warning--empty year in white2020utilities
-You've used 21 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            633 strings with 8462 characters,
-and the built_in function-call counts, 6854 in all, are:
-= -- 653
-> -- 383
+            613 strings with 7848 characters,
+and the built_in function-call counts, 5885 in all, are:
+= -- 557
+> -- 336
 < -- 1
-+ -- 159
-- -- 132
-* -- 524
-:= -- 1171
-add.period$ -- 62
-call.type$ -- 21
-change.case$ -- 129
++ -- 139
+- -- 116
+* -- 447
+:= -- 1003
+add.period$ -- 53
+call.type$ -- 18
+change.case$ -- 112
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 219
-empty$ -- 494
-format.name$ -- 132
-if$ -- 1371
+cite$ -- 24
+duplicate$ -- 187
+empty$ -- 422
+format.name$ -- 116
+if$ -- 1179
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 18
-newline$ -- 107
-num.names$ -- 36
-pop$ -- 131
+int.to.str$ -- 18
+missing$ -- 15
+newline$ -- 92
+num.names$ -- 30
+pop$ -- 120
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 94
 quote$ -- 0
-skip$ -- 150
+skip$ -- 128
 stack$ -- 0
-substring$ -- 388
-swap$ -- 24
+substring$ -- 322
+swap$ -- 21
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
+type$ -- 72
 warning$ -- 6
-while$ -- 60
-width$ -- 23
-write$ -- 218
+while$ -- 50
+width$ -- 20
+write$ -- 185
 (There were 6 warnings)

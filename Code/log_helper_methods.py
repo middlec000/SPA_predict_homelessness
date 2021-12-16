@@ -126,3 +126,21 @@ def calc_time_from_sec(seconds: float) -> None:
     mn = int(mn - 60*hr)
     print(f"hours:minutes:seconds = {hr}:{mn}:{sec}")
     return
+
+def accumulate(df, grp_by_col, cumulative_col, new_col_name):
+    '''
+    05/02/21
+    Finds cumulative counts.
+    '''
+    month_col = 'MONTH'
+    cumulative = df[[month_col, grp_by_col, cumulative_col]].copy()
+    # Find number of unique cumulateive elements
+    cumulative = cumulative.drop_duplicates([grp_by_col, cumulative_col], keep='first').groupby([grp_by_col, month_col]).nunique()
+    # Find cumulative count of unique elements
+    cumulative[new_col_name] = (cumulative.groupby(grp_by_col)[cumulative_col].cumcount() + 1).astype('int64')
+    cumulative.drop(cumulative_col, axis=1, inplace=True)
+    # Join counts back to df
+    new_df = df.join(cumulative, how='left', on=[grp_by_col, month_col])
+    # Forward fill index gaps
+    new_df[new_col_name].ffill(inplace=True)
+    return new_df

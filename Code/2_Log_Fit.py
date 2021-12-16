@@ -8,7 +8,7 @@ def main():
 
     datapath = '../Data/'
 
-    save_filename = 'bill'
+    save_filename = 'reduced1'
 
     filename = datapath+'processed.pickle'
     infile = open(filename,'rb')
@@ -19,14 +19,14 @@ def main():
     #    print(column)
 
     keep = [
-        # 'PAST_DUE',
+        'PAST_DUE',
         # 'TOTAL_60_DAYS_AMT',
         'TOTAL_CUR_BALANCE',
-        # 'NUM_PREM_FOR_PER',
-        # 'BREAK_ARRANGEMENT',
+        'NUM_PREM_FOR_PER',
+        'BREAK_ARRANGEMENT',
         # 'MULTI_DWELL_SIZE',
         # 'SNAP_GEO',
-        # 'NUM_PER_FOR_PREM',
+        'NUM_PER_FOR_PREM',
         # 'HAS_COTENANT',
         'PER-PREM-MONTH_ID',
         'CMIS_MATCH',

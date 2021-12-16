@@ -1,9 +1,14 @@
 # Changes to Paper
 ## New Outline
 ### Introduction  
+* State of homelessness in USA  
 * Predicting homelessness on large scale (state, national) preferable
     - Lose tracking of fewer people since they all stay in same larger region
     - Additional information sources when people move
+* Goals
+    - Determine usefulness of ubiquitous utility customer billing data
+    - Create model that produces few false-negatives
+* Precedent Research
 * Other studies' data sources
     - Medical (emergency services)
     - Mental health
@@ -16,8 +21,10 @@
 ### Methods  
 * Data
     - Sources
+    - Description
     - Preparation
-    - Feature selection
+    - Feature engineering and selection
+    - Limitations
 * Model
     - Logistic on person-place-month
     - maximum risk for person

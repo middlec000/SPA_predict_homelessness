@@ -15,9 +15,11 @@ Introduction
         NYC study predict chances of readmission to shelters and length of stay [7]
             K-Means to cluster into: chronic, episodic, and transitional
         Cox regression [8]
-        The Economic Roundtable log regression to identify top 10%
-        Silicon Valley Triage Tool
-        others...
+        The Economic Roundtable log regression to identify top 10% [9]
+            Silicon Valley Triage Tool [10]
+            workers, young adults [11]
+        first time, return to homelessness in LA [12]
+        
     Our Contribution
         using ML
         both static and time-varying features
