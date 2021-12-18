@@ -1,0 +1,22 @@
+Crisis Indicator: Triage Tool for Identifying Homeless Adults in Crisis
+
+identifies homeless individuals in hospitals and jails
+
+goal: identify most expensive 10%
+"This group accounts for well over half of all public costs for homeless 
+adults, and their costs decrease by 86 percent when they live in permanent supportive housing."
+
+data
+    demographic characteristics, medical diagnoses, and use of hospital and jail facilities
+
+    2,907 sample records
+
+"The most powerful components of the model are the number of days spent in hospitals as an inpatient or in jail mental health facilities as an inmate.  Health conditions have a tipping effect in the model, some disorders increase and others diminish the likelihood that an individual is in the 10th decile."
+
+Performance
+    FNR = 0.22 (referred to as shortfall)
+    FPR = 0.27 (referred to as burden)
+
+plotted FNR, FPR at different thresholds and chose where they intersect as useful threshold
+
+best practice to use tiered need triaging: identify all at risk - identify medium risk, identify high risk

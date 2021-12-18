@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.metrics import auc, roc_curve
+from typing import List
 
 def get_folds_ids(id_col, k):
     # 04/24/21
@@ -144,3 +145,36 @@ def accumulate(df, grp_by_col, cumulative_col, new_col_name):
     # Forward fill index gaps
     new_df[new_col_name].ffill(inplace=True)
     return new_df
+
+def generate_log(original_billing: dict, original_sa: dict, final_df: pd.DataFrame) -> dict:
+    """Generates log for preprocessing step.
+
+    Args:
+        original_billing (dict): [description]
+        original_sa (dict): [description]
+        final_df (pd.DataFrame): [description]
+
+    Returns:
+        dict: [description]
+    """
+    retained_rows = len(final_df)
+    retained_accts = final_df.SPA_ACCT_ID.nunique()
+    retained_premisses = final_df.SPA_PREM_ID.nunique()
+    retained_ppl = final_df.SPA_PER_ID.nunique()
+    retained_pos_cases = final_df[final_df.CMIS_MATCH].SPA_PER_ID.nunique()
+    retained_neg_cases = final_df[~final_df.CMIS_MATCH].SPA_PER_ID.nunique()
+    retention_stats = {
+        'Rows': retained_rows,
+        'Rows (% of Billing)': 100*retained_rows/original_billing['rows'],
+        'Accounts': retained_accts,
+        'Accounts (% of Billing)': 100*retained_accts/original_billing['accounts'],
+        'Premisses': retained_premisses,
+        'Premisses (% of Billing)': 100*retained_premisses/original_billing['premisses'],
+        'People': retained_ppl,
+        'People (% of Service Agreements': 100*retained_ppl/original_sa['people'],
+        'Positive Cases': retained_pos_cases,
+        'Positive Cases (% of Service Agreements)': 100*retained_pos_cases/original_sa['pos_people'],
+        'Negative Cases': retained_neg_cases,
+        'Negative Cases (% of Service Agreements)': 100*retained_neg_cases/original_sa['neg_people'],
+    }
+    return retention_stats

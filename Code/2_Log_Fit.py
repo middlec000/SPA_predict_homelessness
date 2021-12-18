@@ -6,11 +6,13 @@ from log_helper_methods import *
 def main():
     startTime = time.time()
 
+   
+    input_filename = 'processed_all_ids.pickle'
+    save_filename  = 'reduced_pre_hmls_all_ids'
+
+
     datapath = '../Data/'
-
-    save_filename = 'reduced1'
-
-    filename = datapath+'processed.pickle'
+    filename = datapath+input_filename
     infile = open(filename,'rb')
     df = pickle.load(infile)
     infile.close()

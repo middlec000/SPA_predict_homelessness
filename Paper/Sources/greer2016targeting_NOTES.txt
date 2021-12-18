@@ -1,0 +1,12 @@
+Targeting Services to Individuals Most Likely to Enter Shelter: Evaluating the Efficiency of Homelessness Prevention
+
+scope
+10,220 individuals who applied for community-based homelessness prevention in New York City from 2004 to 2010
+
+Cox regression
+custom points based model
+
+predict shelter entry over the next 2–8 years
+
+same study as shinn2013efficient??
+

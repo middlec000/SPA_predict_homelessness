@@ -1,17 +1,9 @@
 import pandas as pd
-import numpy as np
 
-data = {'id': [0,0,0,0,1,1,1,1,2,2,2], 'month':[0,1,2,3, 1,2,3,4, 1,2,3], 'enroll_date': [np.nan, np.nan, np.nan, np.nan, (2,3),(2,3),(2,3),(2,3), (1,2),(1,2),(1,2)]}
-df = pd.DataFrame(data=data)
+datapath = '../Data/'
 
-print(df)
+sa = pd.read_csv(datapath+'ServiceAgreements_Anon.csv').\
+    rename({'spa_prem_id':'SPA_PREM_ID', 'spa_acct_id':'SPA_ACCT_ID', 'spa_per_id':'SPA_PER_ID', 'homelessMatch':'CMIS_MATCH', 'EnrollDate':'ENROLL_DATE', 'apartment':'APARTMENT'}, axis=1)
 
-df['min_enroll'] = df['enroll_date'].apply(lambda x: np.nan if x is np.nan else min(x))
-df['drop_me'] = (df['month'] > df['min_enroll'])
+sa = sa.iloc[:200]
 
-print(df)
-
-df = df[~df['drop_me']]
-df = df.drop('drop_me', axis=1)
-
-print(df)

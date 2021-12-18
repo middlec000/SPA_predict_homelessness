@@ -1,0 +1,17 @@
+Applications of Machine Learning Methods to Predict Readmission and Length-of-Stay for Homeless Families: The Case of Win Shelters in New York City
+
+predict shelter reentry and long-term length-of-stay
+
+data
+    6,000  homeless  families served by Women-in-Need (Win) agency shelters
+    New York City
+
+models
+    logistic regression
+    K-Means clustering
+        transitionally homeless
+        episodically homeless
+        chronically homeless
+
+studies to look at
+    Early, 2004; Shelton et al., 2009; Shinn et al., 2007

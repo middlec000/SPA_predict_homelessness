@@ -2,21 +2,23 @@
 ## New Outline
 ### Introduction  
 * State of homelessness in USA  
+* Precedent Research
+  * Other studies focus on predicting shelter reentry or high cost from homeless population
+  * Richer data sources when focusing on those already in service system:
+      - Medical (emergency services)
+      - Mental health
+      - Financial assistance usage
+      - Department of Justice
 * Predicting homelessness on large scale (state, national) preferable
     - Lose tracking of fewer people since they all stay in same larger region
     - Additional information sources when people move
-* Goals
+    - Additional cost savings of preventing first-time homelessness
+  * Want financial info
+      - Taxes, salary, etc.
+      - We use utility billing history as proxy
+* Goals of this Study
     - Determine usefulness of ubiquitous utility customer billing data
     - Create model that produces few false-negatives
-* Precedent Research
-* Other studies' data sources
-    - Medical (emergency services)
-    - Mental health
-    - Financial assistance usage
-    - Department of Justice
-* Really want financial info
-    - Potential sources: taxes, salary, etc.
-    - We use utility billing history as proxy
 
 ### Methods  
 * Data
@@ -24,33 +26,48 @@
     - Description
     - Preparation
     - Feature engineering and selection
+      - Outcome Measure
+      - Predictor Measures
+        - selected those that are likely to be widely available across US
+      - Engineered Features
     - Limitations
+      - Turned out data coverage still lacking
+      - 
 * Model
     - Logistic on person-place-month
-    - maximum risk for person
+    - Maximum risk for person
 * Evaluation
     - K-Folds
     - ROC curve
+    - Other Metrics
 
 ### Results  
 * ROC curve
-* Other metrics comparable to other studies: Precision, Recall, etc.
+* Other metrics
 
 ### Discussion  
 * Compare performance results to other studies
 * Outcome selection
-    - data most correlated with CMIS_MATCH (interesting)
+    - data most correlated with CMIS_MATCH, not others tried (interesting)
 * Predictor selection
     - no performance change between grouped, ungrouped billing features (interesting bc landlord likely pays some)
-    - selected those that are likely to be widely available across US
+    - Selected those that are likely to be widely available across US
+    - Difficulty using geographical predictors
+      - Too many levels
 * More appropriate methods for dealing with time component - LSTM (other study)
     - P/N cases did separate more at certain points in time (not immediately before experiencing homelessness)
+    - Socioeconomic "pathology" of homelessness over time
 
 ### Conclusion  
 * Utility billing data contains important info in predicting homelessness
-* Combining data from multiple sources (medical, DOJ, financial) seems best approach
+* Combining data from multiple sources (medical, DOJ, financial) likely best approach
+* Standardized reporting
 * National homelessness data collection + prediction program
-* Future research: combining utility data with other useful data
+* Future research: combining utility data with other useful data, study cost savings of preventing first-time homelessness
+
+### Supporting Documents
+* Model parameters
+  * Model assumptions not met so cannot be interpreted meaningfully, only heuristically
 
 ---
 ## General
@@ -62,13 +79,8 @@
 ### Abstract
 ### Introduction
 ### Methods
-* Clarify data preprocessing regarding time - only looking at predictors before homelessness is experienced
-* Update variables used
+* Clarify data preprocessing regarding time - only looking at predictors BEFORE homelessness is experienced
 ### Results
-* Report area under ROC, balanced accuracy
-* Report at threshold of 0.5
-* Report at 90% TPR
-* Report mean model coefficients
 ### Discussion
 VanBerlo (2020) ML model:  
 tpr: 92.1  = tp / p = tp / (tp + fn)  
@@ -96,12 +108,6 @@ fpr: 65.7, 36.6
 
 ### Conclusion
 * Add conclusion
-
----
-## Studies to Add
-* Study 1: [A classification model of homelessness using integrated administrative data: Implications for targeting interventions to improve the housing status, health and well-being of a highly vulnerable population](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0237905)
-* Study 2: [An Open-Source Interpretable Machine Learning Approach to Prediction of Chronic Homelessness](https://towardsdatascience.com/an-open-source-interpretable-machine-learning-approach-to-prediction-of-chronic-homelessness-8215707aa572)
-* [Original Paper](https://arxiv.org/abs/2009.09072v1)
 
 ---
 # Journal Prospects

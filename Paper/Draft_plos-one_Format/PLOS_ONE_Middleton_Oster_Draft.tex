@@ -489,11 +489,11 @@ Another major limitation of the data is incomplete outcome measurement. Positive
         \toprule
         Threshold &   TPR &   FPR & PPV & Accuracy &  Balanced Accuracy & F-1 Score \\
         \midrule
-        0.500 & 0.000 & 0.000 & 0.000 &     0.996 &     0.500 &   - \\
-        0.003 & 0.715 & 0.192 & 0.715 &     0.807 &     0.761 & 0.715 \\
-        0.002 & 0.778 & 0.255 & 0.778 &     0.745 &     0.762 & 0.778 \\
-        0.002 & 0.901 & 0.532 & 0.901 &     0.470 &     0.684 & 0.901 \\
-        0.002 & 0.921 & 0.566 & 0.921 &     0.436 &     0.677 & 0.921 \\
+        0.500 & 0.000 & 0.001 & 0.000 &     0.995 &     0.500 &   -   \\
+        0.002 & 0.717 & 0.186 & 0.717 &     0.813 &     0.765 & 0.717 \\
+        0.002 & 0.780 & 0.248 & 0.780 &     0.752 &     0.766 & 0.780 \\
+        0.001 & 0.901 & 0.579 & 0.901 &     0.423 &     0.661 & 0.901 \\
+        0.001 & 0.921 & 0.658 & 0.921 &     0.344 &     0.631 & 0.921 \\
         \bottomrule
     \end{tabular}
     \caption{Selected thresholds and their corresponding performance metrics. These (FPR, TPR) points are shown in the ROC plot shown in Fig \ref{fig:ROC}. TPR (True Positive Rate) is also referred to as Sensitivity, Recall, and Hit Rate. FPR (False Positive Rate) is also referrred to as Fallout Rate. PPV (Positive Predictive Value) is also referred to as Precision.}
@@ -507,11 +507,11 @@ In order to make the results of this study comparable to other homelessness pred
     \toprule
               Feature &  Mean Coeff &  Mean OR &  Mean [0.025 &  Mean 0.975] \\
     \midrule
-    PAST\_DUE &       0.309 &    1.362 &        1.351 &        1.373 \\
+    PAST\_DUE &       0.338 &    1.403 &        1.391 &        1.415 \\
     TOTAL\_CUR\_BALANCE &       0.000 &    1.000 &        1.000 &        1.000 \\
-     NUM\_PREM\_FOR\_PER &      -6.236 &    0.002 &        0.002 &        0.002 \\
-    BREAK\_ARRANGEMENT &       0.494 &    1.639 &        1.486 &        1.807 \\
-     NUM\_PER\_FOR\_PREM &      -0.145 &    0.865 &        0.819 &        0.913 \\
+    BREAK\_ARRANGEMENT &       0.592 &    1.807 &        1.635 &        1.997 \\
+    NUM\_PER\_FOR\_PREM &       0.105 &    1.111 &        1.060 &        1.165 \\
+    NUM\_PREM\_FOR\_PER &      -6.914 &    0.001 &        0.001 &        0.001 \\
     \bottomrule
     \end{tabular}
     \caption{Mean logistic model coefficient (Coeff), mean odds ratio (OR), and mean 95\% confidence interval for the odds ratio for each model feature over all folds. Odds ratio describes how much the predicted odds of an event will increase if a single variable is increased by one.}
@@ -522,16 +522,19 @@ The odds ratio for each feature shown in Table \ref{tbl:meanParams} give some id
 
 %------------------- DISCUSSION ---------------------------------
 \section*{Discussion}
-\subsection*{Performance Comparison}
+\subsection*{Model Performance}
 Comparing binary classification models is difficult because their scores in performance metrics differ based on the chosen binning threshold. For the Logistic Regression model, the default threshold of 0.5 is likely not the most appropriate for the use-case of predicting homelessness since homelessness is a rare event. Notice the poor performance of our model at the threshold of 0.5 in Table \ref{tbl:performance}. 
 
-% Call for standardized reporting
+\subsubsection*{Call for Standardized Reporting}
 So far the related research has published model performances based on the default prediction binning threshold of 0.5 with a variety of performance metrics reported \red{Add citation}. Because in this use-case it is much worse to incur a Type II Error (false negative) than a Type I Error (false positive), model performance and evaluation should focus on a threshold where the True Positive Rate (TPR) is high, meaning most of the positive cases are correctly predicted. This focus on correctly predicting positive cases has been repeatedly pointed out in the literature \cite{vanberlo2021interpretable} \red{ADD SOURCES HERE}. We propose the reporting standard of choosing the binning threshold that produces a TPR as near to 0.90 (90.0\%) as possible, then report False Positive Rate (FPR) and other metrics at the same threshold. A TPR of 0.90 is appropriately high for this use-case. Reporting the FPR allows homelessness prediction programs to asses the cost and savings of the prediction model based on their service population. Reporting the Area Under the Curve for the Receiver Operator Characteristic is another helpful metric to report that provides a measure of model performance at all thresholds \red{Do we care about performance at other thresholds?}. Displaying the ROC plot is also very helpful for comparing models. 
 
-% Compare to previous research
+\subsubsection*{Comparison with Current Research}
+\red{UPDATE}
 We compare our model to those developed in previous studies by choosing the binning threshold that produces most closely the same TPR as reported by each of the previous studies, then comparing the FPR and Positive Predictive Value (PPV), when given. For the same TPR a lower FPR and higher PPV are preferred. Shinn's Screening Model achieved a TPR of 0.716 with a FPR of 0.657 and no PPV reported \cite{shinn2013efficient}. At the same TPR our model achieved a FPR of 0.192. Byrne's Logistic Regression Model achieved a TPR of 0.778 with a FPR of 0.049 (calculated from reported True Negative Rate: FPR = 1 - TNR) and PPV of 0.117 \cite{byrne2020classification}. At the same TPR our model achieved a FPR of 0.255 and PPV of 0.778. VanBerlo's HIFIS-RNN-MLP Model achieved a TPR of 0.921 and PPV of 0.651 with no FPR reported \cite{vanberlo2021interpretable}. At the same TPR our model achieved a PPV of 0.921.
 
 When comparing our model with the selected previous studies at the same TPR, our model achieved a lower FPR than Shinn's Screening Model, a lower FPR and higher PPV than Byrne's Logistic Model, and a higher PPV than VanBerlo's HIFIS-RNN-MLP Model. The result that our model achieved a higher PPV but a lower FPR than Byrne's Logistic Model indicates that more of our model's predicted positives are true positives but a larger proportion of negatives were falsely predicted as positives by our model. This seems contradictory, especially considering how much higher our PPV is. Byrne's FPR is suspiciously low. \red{Rephrase previous}
+
+\red{our model may appear to perform better because we have more negatives than others}
 
 \subsection*{Model Usage}
 For model use, a specific binning threshold must be chosen with different thresholds yielding different model performance. For HPPs that plan to target a small segment of the population, a high threshold is appropriate so that only a few predictions are binned as positives. High thresholds correspond to the lower left region of the ROC plot where the TPR and the FPR are both low. For HPPs that plan to target large portions of the population, a low threshold, corresponding to the upper right portion of the ROC plot, is appropriate. 
