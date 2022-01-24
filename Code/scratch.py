@@ -1,9 +1,11 @@
 import pandas as pd
+from log_helper_methods import get_metrics
 
-datapath = '../Data/'
+data = {
+    'SPA_PER_ID': [0, 1, 2, 3],
+    'CMIS_MATCH': [True, False, True, False],
+    'prediction': [0.2, 0.9, 0.4, 0.25]
+}
+df = pd.DataFrame(data=data)
 
-sa = pd.read_csv(datapath+'ServiceAgreements_Anon.csv').\
-    rename({'spa_prem_id':'SPA_PREM_ID', 'spa_acct_id':'SPA_ACCT_ID', 'spa_per_id':'SPA_PER_ID', 'homelessMatch':'CMIS_MATCH', 'EnrollDate':'ENROLL_DATE', 'apartment':'APARTMENT'}, axis=1)
-
-sa = sa.iloc[:200]
-
+print(get_metrics(df, y_true='CMIS_MATCH', y_pred='prediction'))

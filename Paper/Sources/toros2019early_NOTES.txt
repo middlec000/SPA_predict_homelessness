@@ -1,0 +1,34 @@
+Goal: predict persistent homelessness
+
+model 1
+    subpopulation: low-wage workers
+    AUC: 0.89 (page 81)
+    Metrics @TPR=0.90 (page 78)
+        FPR: 0.297
+        Accuracy: 0.721
+        PPV: 0.227
+
+model 2
+    subpopulation: youth receiving public assistance
+    AUC: 0.88 (page 87)
+    Metrics @TPR=0.90 (page 85)
+        FPR: 0.364
+        Accuracy: 0.658
+        PPV: 0.182
+
+predictors
+    demographic characteristics
+    homeless and employment histories
+    use of services provided by the 
+        health,
+        behavioral health, 
+        social service, and 
+        justice systems
+
+expense rises as people remain homeless for longer
+
+"Individuals will have far less social, economic, legal, and medical
+damage in their lives, making it more feasible and less costly to help
+them become stably housed."
+
+"Historic pictures are used to illustrate this report. These pictures make two points. First, homelessness is not new in Los Angeles, what is new is the number of people living without shelter. Second, we have responded successfully to homelessness in the past by providing housing and jobs."
