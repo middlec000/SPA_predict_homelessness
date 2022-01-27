@@ -44,7 +44,7 @@ def plot_roc(output):
     plt.ylabel('True Positive Rate', fontsize=fontsize)
     plt.yticks(ticks, fontsize=fontsize-2)
     plt.legend(fontsize=fontsize)
-    # plt.savefig(fname='results_images/ROC.png', bbox_inches='tight')
+    plt.savefig(fname='results_images/ROC.png', bbox_inches='tight')
     plt.show()
     return
 

@@ -14,11 +14,8 @@ def main():
     outfile.close()
     return
 
-def preprocess():
-    # filename = 'processed00.pickle'
-    datapath = '../Data/'
-
-    # start timer
+def preprocess(datapath: str):
+    # Start Timer
     startTime = time.time()
 
     # Load Billing Data
@@ -38,7 +35,7 @@ def preprocess():
 
     df = df.rename({'ARREARSMONTH':'MONTH'}, axis=1)
 
-    # Create additional attribute
+    # Create combined billing attribute
     df['TOTAL_CUR_BALANCE'] = df['RES_EL_CUR_BAL_AMT'] + df['RES_GAS_CUR_BAL_AMT'] + df['CITY_TOT_DUE']
 
     keep = [
@@ -66,14 +63,14 @@ def preprocess():
     df = df[~df.TOTAL_CUR_BALANCE.isna()]
 
     # Change NA for the following attributes to 0
-    # Assume no data means there have been 0 occurrances of each of these
+    # Assume no data means there have been 0 occurrences of each of these
     df['BREAK_ARRANGEMENT'] = df['BREAK_ARRANGEMENT'].replace(to_replace=np.nan, value=0.0)
     df['PAST_DUE'] = df['PAST_DUE'].replace(to_replace=np.nan, value=0.0)
 
     # Just choose last of duplicates
     df = df.groupby(['SPA_ACCT_ID', 'SPA_PREM_ID', 'MONTH']).last().reset_index()
 
-    # Attach Service Agreements Data
+    # Load Service Agreements Data
     sa = pd.read_csv(datapath+'ServiceAgreements_Anon.csv').rename({
         'spa_prem_id':'SPA_PREM_ID', 
         'spa_acct_id':'SPA_ACCT_ID', 
@@ -102,18 +99,20 @@ def preprocess():
     Solution:  
     * Only retain the main account holder for each account
     """
+    # Only keep info regarding the 'MAIN' account holder
+    sa = sa[sa['ACCT_REL_TYPE_CD'] == 'MAIN']
+    sa = sa.drop('ACCT_REL_TYPE_CD', axis=1).drop_duplicates()
 
+    # DEAL WITH CMIS_MATCH
     # Replace NaN with False in CMIS_MATCH
     sa.CMIS_MATCH = sa.CMIS_MATCH.replace(to_replace=np.nan, value=False).astype('bool')
     # If any CMIS_MATCH == True for person, then set CMIS_MATCH == True for all instances of person
     sa = sa.set_index('SPA_PER_ID')
     sa.update(sa.groupby('SPA_PER_ID')["CMIS_MATCH"].any())
+    # TODO: change back
+    # sa.update(sa.groupby(['SPA_ACCT_ID', 'SPA_PREM_ID'])["CMIS_MATCH"].any())
     sa = sa.reset_index()
     sa = sa.drop_duplicates()
-
-    # Only keep info regarding the 'MAIN' account holder
-    sa = sa[sa['ACCT_REL_TYPE_CD'] == 'MAIN']
-    sa = sa.drop('ACCT_REL_TYPE_CD', axis=1).drop_duplicates()
 
     # DEAL WITH ENROLL_DATE
     # Convert Dates to months since December, 2015
@@ -122,14 +121,9 @@ def preprocess():
     enroll_dates = sa[~sa["ENROLL_DATE"].isnull()].groupby(["SPA_PER_ID"])["ENROLL_DATE"].min()
     sa = sa.set_index('SPA_PER_ID')
     sa.update(enroll_dates)
-    # sa = sa.reset_index()
+    sa = sa.reset_index()
     sa = sa.drop_duplicates()
     del enroll_dates
-
-    # If any CMIS_MATCH for person, then CMIS_MATCH for all instances of person
-    sa.update(sa.groupby('SPA_PER_ID')['CMIS_MATCH'].any())
-    sa = sa.drop_duplicates()
-    sa = sa.reset_index()
 
     # Collect Original Service Agreements Stats
     original_sa_stats = {
@@ -169,16 +163,17 @@ def preprocess():
     df = df[~(df['MONTH'] > df['ENROLL_DATE'])]
     df = df.drop('ENROLL_DATE', axis=1)
 
+    # FEATURE ENGINEERING
     # Create Combined ID
     df['PER-PREM-MONTH_ID'] = df['SPA_PER_ID'].astype('str') + '-' + df['SPA_PREM_ID'].astype('str') + '-' + df['MONTH'].astype('str')
 
-    # Create additional features
-    # Determine cumulative number of places a person has paid bills at so far
+    # Cumulative number of places a person has paid bills at for each month
     df = accumulate(df, grp_by_col='SPA_PER_ID', cumulative_col='SPA_PREM_ID', new_col_name='NUM_PREM_FOR_PER')
 
-    # Determine cumulative number of people a premesis has seen so far
+    # Cumulative number of people a premesis has seen for each month
     df = accumulate(df, grp_by_col='SPA_PREM_ID', cumulative_col='SPA_PER_ID', new_col_name='NUM_PER_FOR_PREM')
 
+    # CHECK RESULTS
     # Check nulls
     print(f"\nNulls: \n{df.isnull().sum().sum()}")
 
@@ -188,7 +183,7 @@ def preprocess():
     # Check Data Types
     print(f'\nData Types: \n{df.dtypes}')
 
-    # Save
+    # Create Output
     output = {
         'Data': df,
         'Features': df.columns.to_list(),
@@ -202,11 +197,14 @@ def preprocess():
     print('\nData Retention Stats:')
     print_dict(output["Data_Retention_Stats"])
 
-    """# Save
+    """
+    # Save
     outfile = open(datapath+filename, 'wb')
     pickle.dump(output, outfile)
-    outfile.close()"""
+    outfile.close()
+    """
 
+    print("Preprocessing Time:")
     print(calc_time_from_sec(time.time()-startTime))
     return output
 
