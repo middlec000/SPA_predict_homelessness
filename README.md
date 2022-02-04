@@ -6,15 +6,27 @@ Currently I have chosen to not license this repository. This means that no one b
 Predict the likelihood an individual will experience homelessness based on their utility customer data.  
 
 ## Background
-This project was the pilot study for Spokane Predictive Analytics (SPA), a collaboration among: Avsita Utilities, the City of Spokane, Urbanova, and Eastern Washington University. Data was provided by Avista Utilities and the City of Spokane. Matching and deidentifying (the process of replacing identifying information such as names and addresses with internally generated ID numbers) was perforemed by the data analysis team at Avsita Utilities.   
+This project was the pilot study for Spokane Predictive Analytics (SPA), a collaboration among: Avista Utilities, the City of Spokane, Urbanova, and Eastern Washington University. Data was provided by Avista Utilities and the City of Spokane. Matching and de-identifying (the process of replacing identifying information such as names and addresses with internally generated ID numbers) was performed by the data analysis team at Avista Utilities.   
 
-This Repository contains the code used to 1) investigate the data, 2) preprocess the data from this stage into a useful format for model fitting, and 3) train models to predict if an individual will experience homelessness based on thier utility billing behaviour.
+This Repository contains the code used to 1) investigate the data, 2) preprocess the data from this stage into a useful format for model fitting, and 3) train models to predict if an individual will experience homelessness based on their utility billing behavior.
 
-# File Descriptions
-## 00_Data_Exploration
+## Data Description
+The data was provided in three groups: geographical (GeoData_Anon - unused), Avista service agreements (ServiceAgreements_Anon), and billing data (SpaData_YYYY_Anon). A complete list of all variables provided in all three groups can be found in the [data dictionary](supporting_documents/data_dictionary_md).  
+
+The geographical data was not used for this project because of the tradeoff of granularity - the number of levels of (categorical) geographical identifiers was too large to predict on, but if these levels were further grouped they became less useful.  
+
+The billing data has Composite Key of ('SPA_ACCT_ID', 'SPA_PREM_ID', 'MONTH') = (account id, location id, month) and consists of information related to customers missing payments and Avista's activity in seeking payment.
+
+The service agreements data has Composite Key ('SPA_ACCT_ID', 'SPA_PREM_ID') and consists of information related to the types of service agreements the utility company has with each customer.  
+
+After preprocessing the data used consists of the following:  
+
+
+# File Descriptions in Code/
+## [0_Data_Exploration.ipynb](Code/0_Data_Exploration.ipynb)
 The data is explored using visual and numerical tools to answer several important questions about the data and investigate relationships within.
 ### Which Outcome Measure to Use?
-Determine which of several potential outcome measures is the most correlated with the predictor attributes.
+Determine which of several potential outcome measures is the most correlated with the provided data.
 ### Which Years to Use?
 Determine if there is a difference in relationships between predictors and outcome in different years.
 ### Which Billing Attributes to Keep?
@@ -30,34 +42,20 @@ Look at the attributes most correlated with the outcome and assess how different
 ### Geographical
 Determine if there are any useful groupings of positives or negatives based on geographical attributes.
 
-## 0_Preprocessing
+## [helper_methods.py](Code/helper_methods.py)
+Supporting methods used by other files.
+
+## [preprocessing.py](Code/preprocessing.py)
 The data is combined from multiple files, reformatted, and some new features are created in an effort to extract more information from the given data.
 
-## 1_ANN_Preprocess
-The data is further manipulated from the output of `0_Preprocessing` to be used specifically for a neural network model.
-
-## 1_Logistic_Preprocess
-The data is further manipulated from the output of `0_Preprocessing` to be used specifically for a logistic regression model.
-
-## 2_ANN_Fit \*
-A vanilla neural network model is fit to the data produced from `1_ANN_Preprocess` and predictions are made.
-
-## 2_LSTM_Fit \*
-An Long-Short Term Memory model is fit to the data produced from `1_ANN_Preprocess` and predictions are made.
-
-## 2_Logistic_Fit
+## [log_fit.py](Code/log_fit.py)
 The logistic model is fit to the data produced from `1_Logistic_Preprocess` and predictions are made.
 
-## 2_Transformer_Fit \*
-A transformer model is fit to the data produced from `1_ANN_Preprocess` and predictions are made.
-
-## 3_Logistic_Postprocessing
-Take output from `2_Logistic_Fit` and take the maximum risk for each person. Also reformat for use in `4_Indicative_Time`.
-
-## 4_Indicative_Time
-The predictions from the logistic regression model are analyzed to determine if there are one or more common high predicted risk times.
-
-## 4_ROC_Curves
+## [plot_roc.py](Code/plot_roc.py)
 The predictions from each model are compared using a Receiver Operator Characteristic (ROC) plot.
 
-\* In Progress or Unfinished
+## [main.py](Code/main.py)
+Uses previous files to perform preprocessing, model fitting, and ROC curve plotting.
+
+## [ROC_Curve.ipynb](Code/ROC_Curve.ipynb)
+Another way to plot the ROC Curve as well as print several tables used in the paper.

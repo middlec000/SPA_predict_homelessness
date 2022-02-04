@@ -1,11 +1,17 @@
-import pandas as pd
-from log_helper_methods import get_metrics
+import numpy as np
+from sklearn.linear_model import LogisticRegression
 
-data = {
-    'SPA_PER_ID': [0, 1, 2, 3],
-    'CMIS_MATCH': [True, False, True, False],
-    'prediction': [0.2, 0.9, 0.4, 0.25]
-}
-df = pd.DataFrame(data=data)
+X = np.random.uniform(low=0, high=10, size=15).reshape(-1, 1)
+y = [1,0,1,1,0,0,0,1,0,1,0,1,0,0,0]
 
-print(get_metrics(df, y_true='CMIS_MATCH', y_pred='prediction'))
+model = LogisticRegression().fit(
+    X=X, 
+    y=y)
+
+X_test = np.random.uniform(low=0, high=10, size=4).reshape(-1, 1)
+predictions = model.predict_proba(
+    X=X_test)
+
+print(model.classes_)
+print(predictions)
+print(predictions[:,1])

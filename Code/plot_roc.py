@@ -19,8 +19,10 @@ def main():
 
 
 def plot_roc(output):
+    # Load summary data
     summary = output['Performance']
 
+    # Setup plotting parameters
     plt.rcParams.update({
         'figure.figsize':(11,7), 
         'figure.dpi':120
@@ -32,7 +34,7 @@ def plot_roc(output):
 
     plt.plot(summary['fpr'], summary['tpr'], color='black', label='log', linestyle='-', linewidth=linewidth)
 
-    # Refernce line
+    # Reference line
     plt.plot([1, 0], [1, 0], color='black', label='y=x', linestyle='dashdot', linewidth=linewidth)
     # Grid
     ticks = np.arange(0, 1.1, 0.1)

@@ -66,7 +66,7 @@ def log_k_folds(df: pd.DataFrame, event_col: str, id_col: str, k: int, model: ob
             
         # Get predictions
         predictions = None
-        if model == "logit":
+        if model == "logit":           
             exog = np.asarray(df_train.drop([id_col, event_col], axis=1), dtype='float')
             endog = np.asarray(df_train[event_col], dtype='bool')
             model_local = sm.Logit(endog=endog, exog=exog).fit(disp=False)

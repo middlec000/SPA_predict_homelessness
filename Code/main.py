@@ -6,17 +6,27 @@ from plot_roc import plot_roc
 from helper_methods import *
 
 def main():
-    time0 = time()
+    t0 = time()
     datapath = "../Data/"
+
     preprocessed = preprocess(datapath = datapath)
+    t1 = time()
+    print("\nPreprocessing Time:")
+    print(calc_time_from_sec(t1-t0))
+
     output = log_fit(preprocessed = preprocessed)
+    t2 = time()
+    print("\nFitting Time:")
+    print(calc_time_from_sec(t2-t1))
     del preprocessed
+
+    print('\nData Retention Stats:')
     print_dict(output['Data_Retention_Stats'])
 
     print("Total Time:")
-    print(calc_time_from_sec(seconds = time() - time0))
+    print(calc_time_from_sec(seconds = time() - t0))
 
-    # plot_roc(output = output)
+    plot_roc(output = output)
 
     # Save Output
     filename = "output.pickle"

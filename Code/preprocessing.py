@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import pickle
-import time
 from helper_methods import *
 
 def main():
@@ -15,9 +14,6 @@ def main():
     return
 
 def preprocess(datapath: str):
-    # Start Timer
-    startTime = time.time()
-
     # Load Billing Data
     # This just grabs all the seperate billing data files
     fileyears = ['2015', '2016', '2017', '2018', '2019', '2020']
@@ -51,23 +47,20 @@ def preprocess(datapath: str):
     df = df[keep]
 
     # Reformat Dates
-    print(f'Earliest Month: {df.MONTH.min()}')
-    print(f'Latest Month: {df.MONTH.max()}')
-    df.MONTH = df.MONTH.apply(lambda x: date_map(date=x, relative_to=201512, format='yyyymm'))
-    print(f'Earliest Month: {df.MONTH.min()}')
-    print(f'Latest Month: {df.MONTH.max()}')
+    earliest_date = 201512
+    df.MONTH = df.MONTH.apply(lambda x: date_map(date=x, relative_to=earliest_date, format='yyyymm'))
 
     # Prepare for Matching
     df = df.drop_duplicates()
 
     df = df[~df.TOTAL_CUR_BALANCE.isna()]
 
-    # Change NA for the following attributes to 0
+    # Change Null values for the following attributes to 0
     # Assume no data means there have been 0 occurrences of each of these
     df['BREAK_ARRANGEMENT'] = df['BREAK_ARRANGEMENT'].replace(to_replace=np.nan, value=0.0)
     df['PAST_DUE'] = df['PAST_DUE'].replace(to_replace=np.nan, value=0.0)
 
-    # Just choose last of duplicates
+    # Just choose last of remaining duplicates
     df = df.groupby(['SPA_ACCT_ID', 'SPA_PREM_ID', 'MONTH']).last().reset_index()
 
     # Load Service Agreements Data
@@ -76,8 +69,7 @@ def preprocess(datapath: str):
         'spa_acct_id':'SPA_ACCT_ID', 
         'spa_per_id':'SPA_PER_ID', 
         'homelessMatch':'CMIS_MATCH', 
-        'EnrollDate':'ENROLL_DATE', 
-        'apartment':'APARTMENT'
+        'EnrollDate':'ENROLL_DATE'
         }, axis=1)
 
     # Retain only columns we want to add to billing - note: all CMIS_MATCHes have ENROLL_DATEs
@@ -93,12 +85,13 @@ def preprocess(datapath: str):
 
     """
     Problems:
-    * Some accounts have multiple people associated with them at a time, some only have one
-    * Some people are associated with multiple accounts (sometimes at different 'ACCT_REL_TYPE_CD')  
+    * Some accounts have multiple people associated with them at one time, some only have one
+    * Some people are associated with multiple accounts (sometimes as different 'ACCT_REL_TYPE_CD')  
 
     Solution:  
     * Only retain the main account holder for each account
     """
+
     # Only keep info regarding the 'MAIN' account holder
     sa = sa[sa['ACCT_REL_TYPE_CD'] == 'MAIN']
     sa = sa.drop('ACCT_REL_TYPE_CD', axis=1).drop_duplicates()
@@ -111,21 +104,19 @@ def preprocess(datapath: str):
     sa.update(sa.groupby('SPA_PER_ID')["CMIS_MATCH"].any())
     # TODO: change back
     # sa.update(sa.groupby(['SPA_ACCT_ID', 'SPA_PREM_ID'])["CMIS_MATCH"].any())
-    sa = sa.reset_index()
-    sa = sa.drop_duplicates()
+    sa = sa.reset_index().drop_duplicates()
 
     # DEAL WITH ENROLL_DATE
     # Convert Dates to months since December, 2015
     sa['ENROLL_DATE'] = sa['ENROLL_DATE'].apply(lambda x: date_map(date=x, relative_to='2015-01-01', format='yyyy-mm-dd'))
     # Take min ENROLL_DATE
-    enroll_dates = sa[~sa["ENROLL_DATE"].isnull()].groupby(["SPA_PER_ID"])["ENROLL_DATE"].min()
+    min_enroll_dates = sa[~sa["ENROLL_DATE"].isnull()].groupby(["SPA_PER_ID"])["ENROLL_DATE"].min()
     sa = sa.set_index('SPA_PER_ID')
-    sa.update(enroll_dates)
-    sa = sa.reset_index()
-    sa = sa.drop_duplicates()
-    del enroll_dates
+    sa.update(min_enroll_dates)
+    sa = sa.reset_index().drop_duplicates()
+    del min_enroll_dates
 
-    # Collect Original Service Agreements Stats
+    # Collect Service Agreements stats prior to joining with billing data
     original_sa_stats = {
         'rows': len(sa),
         'accounts': sa['SPA_ACCT_ID'].nunique(),
@@ -136,10 +127,7 @@ def preprocess(datapath: str):
     }
     print(f'\nOriginal Service Agreement Stats\n{original_sa_stats}')
 
-    # Check Matching
-    print('\nService Agreement Grouping:')
-    print(sa.groupby(['SPA_ACCT_ID', 'SPA_PREM_ID']).size().value_counts())
-
+    # Inner join Billing and Service Agreements data
     sa = sa.set_index(['SPA_ACCT_ID', 'SPA_PREM_ID'])
     df = df.join(sa, on=['SPA_ACCT_ID', 'SPA_PREM_ID'], how='inner')
     df = df.drop_duplicates()
@@ -167,15 +155,15 @@ def preprocess(datapath: str):
     # Create Combined ID
     df['PER-PREM-MONTH_ID'] = df['SPA_PER_ID'].astype('str') + '-' + df['SPA_PREM_ID'].astype('str') + '-' + df['MONTH'].astype('str')
 
-    # Cumulative number of places a person has paid bills at for each month
+    # Cumulative number of premises a person has paid bills at each month
     df = accumulate(df, grp_by_col='SPA_PER_ID', cumulative_col='SPA_PREM_ID', new_col_name='NUM_PREM_FOR_PER')
 
-    # Cumulative number of people a premesis has seen for each month
+    # Cumulative number of people a premises has seen for each month
     df = accumulate(df, grp_by_col='SPA_PREM_ID', cumulative_col='SPA_PER_ID', new_col_name='NUM_PER_FOR_PREM')
 
     # CHECK RESULTS
     # Check nulls
-    print(f"\nNulls: \n{df.isnull().sum().sum()}")
+    print(f"\nNumber of Nulls: \n{df.isnull().sum().sum()}")
 
     # Check Grouping
     print(f"\nDuplicates? \n{df.groupby(['PER-PREM-MONTH_ID']).size().value_counts()}")
@@ -193,19 +181,6 @@ def preprocess(datapath: str):
             final_df = df
             )
     }
-
-    print('\nData Retention Stats:')
-    print_dict(output["Data_Retention_Stats"])
-
-    """
-    # Save
-    outfile = open(datapath+filename, 'wb')
-    pickle.dump(output, outfile)
-    outfile.close()
-    """
-
-    print("Preprocessing Time:")
-    print(calc_time_from_sec(time.time()-startTime))
     return output
 
 if __name__ == '__main__':
