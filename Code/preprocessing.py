@@ -102,8 +102,6 @@ def preprocess(datapath: str):
     # If any CMIS_MATCH == True for person, then set CMIS_MATCH == True for all instances of person
     sa = sa.set_index('SPA_PER_ID')
     sa.update(sa.groupby('SPA_PER_ID')["CMIS_MATCH"].any())
-    # TODO: change back
-    # sa.update(sa.groupby(['SPA_ACCT_ID', 'SPA_PREM_ID'])["CMIS_MATCH"].any())
     sa = sa.reset_index().drop_duplicates()
 
     # DEAL WITH ENROLL_DATE
@@ -152,9 +150,6 @@ def preprocess(datapath: str):
     df = df.drop('ENROLL_DATE', axis=1)
 
     # FEATURE ENGINEERING
-    # Create Combined ID
-    df['PER-PREM-MONTH_ID'] = df['SPA_PER_ID'].astype('str') + '-' + df['SPA_PREM_ID'].astype('str') + '-' + df['MONTH'].astype('str')
-
     # Cumulative number of premises a person has paid bills at each month
     df = accumulate(df, grp_by_col='SPA_PER_ID', cumulative_col='SPA_PREM_ID', new_col_name='NUM_PREM_FOR_PER')
 
@@ -166,13 +161,13 @@ def preprocess(datapath: str):
     print(f"\nNumber of Nulls: \n{df.isnull().sum().sum()}")
 
     # Check Grouping
-    print(f"\nDuplicates? \n{df.groupby(['PER-PREM-MONTH_ID']).size().value_counts()}")
+    print(f"\nDuplicates? \n{df.groupby(['SPA_PER_ID', 'SPA_PREM_ID', 'MONTH']).size().value_counts()}")
 
     # Check Data Types
     print(f'\nData Types: \n{df.dtypes}')
 
     # Create Output
-    output = {
+    preprocessed = {
         'Data': df,
         'Features': df.columns.to_list(),
         'Data_Retention_Stats': generate_log(
@@ -181,7 +176,7 @@ def preprocess(datapath: str):
             final_df = df
             )
     }
-    return output
+    return preprocessed
 
 if __name__ == '__main__':
     main()
