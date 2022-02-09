@@ -14,7 +14,7 @@ I used this project as my thesis for my MS in Applied Mathematics degree though 
 
 ## Data Description
 The de-identified data was provided in three groups: geographical (GeoData_Anon.csv - unused), Avista service agreements (ServiceAgreements_Anon.csv), and billing data (SpaData_YYYY_Anon.csv).  
-A complete list of all variables provided in all three groups can be found in the [data dictionary](supporting_documents/data_dictionary_md).  
+A complete list of all variables provided in all three groups can be found in the [data dictionary](supporting_docs/data_dictionary.md).  
 
 The Geographical data was not used for this project because of an unfortunate tradeoff in granularity - the number of levels of (categorical) geographical identifiers was too large to predict on, but if these levels were aggregated they became unhelpful.  
 
@@ -31,6 +31,24 @@ After investigation the features deemed useful and used for model fitting were:
 | BREAK_ARRANGEMENT | Start Severance: Break Arrangement                                                              | integer | Avista - collections activity                              |
 | PAST_DUE          | Past Due Notice                                                                                 | integer | Avista - collections activity                              |
 | SPA_PREM_ID       | Anonymized id mapping to an Avista premise.                                                     | integer | Avista                                                     |  
+
+## Challenges
+### Problem Framing
+It was unclear which problem framing would be most suitable for the given objective and available data, so several were investigated:
+* Predict number of months until an individual will experience homelessness (continuous variable).  
+* Predict if an individual is within six months of experiencing homelessness (binary variable). The current research indicates that positive cases begin to become distinguishable from negative cases around six months previous of experiencing homelessness.
+* Predict if an individual is within one month of experiencing homelessness (binary variable).
+* Predict if an individual will ever experience homelessness (binary variable).  
+
+The data was most correlated with the last outcome measure so that problem statement was adopted.
+### Billing Record ID Structure
+The original billing information from the utilities organizations tracks account numbers, not individuals. The outcomes were recorded on an individual level, causing a discrepancy in data keys.  
+
+There were instances where multiple people (two or more of: main, cotenant, landlord, family member, and third party agency) were associated with a single (account, location, month). Ideally all individuals would be retained, but individuals other than the main account holder were not financially responsible for the account so their homelessness outcomes were not related to the account billing activity. Only the main account holder was associated with the account's billing history.  
+
+There were also instances where a single person was associated with multiple (location, month)s. A random choice was made so that (person, location, month) could be used as a composite key for the data.
+### Data Imbalance
+After preprocessing there were 302 positive cases and 84,066 negative cases. This made the prediction task of identifying the few positive cases difficult. Surprisingly, neither oversampling the positive class nor undersampling the negative class improved model performance, so no sampling method other than the standard K-Folds was used.
 
 # File Descriptions in Code/
 ## [0_Data_Exploration.ipynb](Code/0_Data_Exploration.ipynb)
