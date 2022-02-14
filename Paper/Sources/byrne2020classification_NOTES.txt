@@ -1,7 +1,6 @@
 Data
-5,050,639 individuals aged 11 years and older
-Massachusetts state databases
-2011–2015
+5,050,639 Persons aged 11 years or older who had health insurance between 2011 and 2015 as reported in the Massachusetts All-Payer Claims Database (APCD)
+98% of Massachusetts state residents
 homelessness 0.82%
 
 Model
@@ -11,10 +10,10 @@ logistic regression
 Performance
 AUC: 94.0
 balanced accuracy: 86.4
-tpr: 77.8 (sensitivity)
-tnr: 95.1 (specificity)
-ppv: 11.7
-npv: 99.8
+tpr: 0.778 (sensitivity)
+tnr: 0.951 (specificity)
+ppv: 0.117
+npv: 0.998
 
 Additional
 Strong association between predicted homelessness and fatal opioid overdose: "...predicted homeless status was associated with a nearly

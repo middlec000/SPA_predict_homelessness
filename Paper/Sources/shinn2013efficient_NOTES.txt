@@ -1,3 +1,20 @@
+Scope of Data
+    "...11,105 families with incomes less than 200% of the federal poverty level26 who applied for Home- Base prevention services from the New York City Department of Homeless Services between October 1, 2004, and June 30, 2008."
+
+Model Performance
+    prior contact model (info from prior contact with shelter system)
+        tpr = 0.255, fpr = 0.114
+    eviction model
+        tpr = 0.674, fpr = 0.574
+    worker model (workers deciding risk level)
+        tpr = 0.716, fpr = 0.657
+    screening model (points-based system using pruned regression parameters)
+        tpr = 0.919, fpr = 0.657 (cutoff = 5 points)
+        tpr = 0.747, fpr = 0.366 (cutoff = 7 points)
+    full model (cox regression)
+        tpr: 0.90
+        fpr: 0.61 (eyeball from ROC + grid)
+
 there have been homelessness prevention programs for a while
     increased dramatically since 2009
     those programs may not be very effective

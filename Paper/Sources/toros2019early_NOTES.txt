@@ -1,7 +1,11 @@
+Title: Early Intervention to Prevent Persistent Homelessness
+
 Goal: predict persistent homelessness
 
+used Logistic Regression
+
 model 1
-    subpopulation: low-wage workers
+    subpopulation: unemployed workers receiving unemployment benefits
     AUC: 0.89 (page 81)
     Metrics @TPR=0.90 (page 78)
         FPR: 0.297

@@ -1,6 +1,9 @@
-6521 individuals
-forecast chronic homelessness 6 months into the client’s future
-London, Canada
+Data Scope
+    6521 individuals
+    City of London's (Canada) Homeless Individuals and Families Information System1 (HIFIS)
+
+Goal
+    forecast chronic homelessness 6 months into the client’s future
 
 Introduction
     Problem
@@ -41,12 +44,30 @@ Methods
         Local Interpretable Model-Agnostic Explanations (LIME) used to increase interpretability
             approximate nonlinear model with linear model
 Results
-    fp's perferred over fn's [26]
+    fp's preferred over fn's [26]
 
     Model Performance
         validation set most recent time steps
-        Table 2
-    Interpretability
+        HIFIS-RNN-MLP (machine learning model)
+            tpr: 0.921 (recall)
+            ppv: 0.651 (precision)
+            f1: 0.763
+            auc: 0.976
+            accuracy: 0.971
+        Logistic Regression
+            tpr: 0.932
+            ppv: 0.617
+            f1: 0.742
+            auc: 0.989
+            accuracy: 0.967
+        Random Forest
+            tpr: 0.740
+            ppv: 0.872
+            f1: 0.800
+            auc: 0.991
+            accuracy: 0.981
+
+    Interoperability
         "These findings corroborate Shinn et al.’s result that previous shelter stays were the strongest predictive feature for familial homelessness"
         "administration of a SPDAT screening questionnaire 1 time step ago is highly predictive of chronic homelessness (i.e. "(-1)30-Day_SPDAT"), perhaps commending London case workers’ ability to identify high-risk clients weeks prior to transitioning to chronic homelessness as defined here."
         aggregate days of receipt of housing subsidies

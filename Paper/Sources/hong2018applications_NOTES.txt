@@ -8,6 +8,9 @@ data
 
 models
     logistic regression
+        auc: 0.70
+        tpr: 0.90
+        fpr: 0.69 (eyeball from ROC + grid)
     K-Means clustering
         transitionally homeless
         episodically homeless

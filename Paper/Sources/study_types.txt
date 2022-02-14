@@ -1,0 +1,8 @@
+Prediction based no people already enrolled in assistance programs
+    hong2018applications
+    shinn2013efficient
+    toros2019early (youth model)
+    vanberlo2021interpretable
+
+Prediction on entire population of first-time homelessness
+    byrne2020classification
