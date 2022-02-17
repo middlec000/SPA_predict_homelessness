@@ -51,17 +51,44 @@ O’Flaherty B.
   what matters.
 \newblock Journal of Housing Economics. 2004;13(1):1--15.
 
-\bibitem{white2020utilities}
-White R, Sokol C.
-\newblock Utilities pause shutoffs as state prepares for financial impacts of
-  COVID-19.
-\newblock The Spokane Review. 2020;.
+\bibitem{byrne2020classification}
+Byrne T, Baggett T, Land T, Bernson D, Hood ME, Kennedy-Perez C, et~al.
+\newblock A classification model of homelessness using integrated
+  administrative data: Implications for targeting interventions to improve the
+  housing status, health and well-being of a highly vulnerable population.
+\newblock PloS one. 2020;15(8):e0237905.
+
+\bibitem{vanberlo2021interpretable}
+VanBerlo B, Ross MA, Rivard J, Booker R.
+\newblock Interpretable machine learning approaches to prediction of chronic
+  homelessness.
+\newblock Engineering Applications of Artificial Intelligence. 2021;102:104243.
 
 \bibitem{van2009longitudinal}
 Van~den Bree MB, Shelton K, Bonner A, Moss S, Thomas H, Taylor PJ.
 \newblock A longitudinal population-based study of factors in adolescence
   predicting homelessness in young adulthood.
 \newblock Journal of Adolescent Health. 2009;45(6):571--578.
+
+\bibitem{flaming2011crisis}
+Flaming D, Burns P.
+\newblock Crisis indicator: Triage tool for identifying homeless adults in
+  crisis.
+\newblock Economic Roundtable Research Report; 2011.
+
+\bibitem{hong2018applications}
+Hong B, Malik A, Lundquist J, Bellach I, Kontokosta CE.
+\newblock Applications of machine learning methods to predict readmission and
+  length-of-stay for homeless families: The case of win shelters in new york
+  city.
+\newblock Journal of Technology in Human Services. 2018;36(1):89--104.
+
+\bibitem{toros2019early}
+Toros H, Flaming D, Burns P.
+\newblock Early intervention to prevent persistent homelessness Predictive
+  models for identifying unemployed workers and young adults who become
+  persistently homeless.
+\newblock Available at SSRN 3370634. 2019;.
 
 \bibitem{bewick2005statistics}
 Bewick V, Cheek L, Ball J.
@@ -84,31 +111,10 @@ Bureau USC. QuickFacts Spokane County, Washington; 2019.
 \newblock
   \url{https://www.census.gov/quickfacts/fact/table/spokanecountywashington}.
 
-\bibitem{vanberlo2021interpretable}
-VanBerlo B, Ross MA, Rivard J, Booker R.
-\newblock Interpretable machine learning approaches to prediction of chronic
-  homelessness.
-\newblock Engineering Applications of Artificial Intelligence. 2021;102:104243.
-
-\bibitem{toros2019early}
-Toros H, Flaming D, Burns P.
-\newblock Early intervention to prevent persistent homelessness Predictive
-  models for identifying unemployed workers and young adults who become
-  persistently homeless.
-\newblock Available at SSRN 3370634. 2019;.
-
-\bibitem{hong2018applications}
-Hong B, Malik A, Lundquist J, Bellach I, Kontokosta CE.
-\newblock Applications of machine learning methods to predict readmission and
-  length-of-stay for homeless families: The case of win shelters in new york
-  city.
-\newblock Journal of Technology in Human Services. 2018;36(1):89--104.
-
-\bibitem{byrne2020classification}
-Byrne T, Baggett T, Land T, Bernson D, Hood ME, Kennedy-Perez C, et~al.
-\newblock A classification model of homelessness using integrated
-  administrative data: Implications for targeting interventions to improve the
-  housing status, health and well-being of a highly vulnerable population.
-\newblock PloS one. 2020;15(8):e0237905.
+\bibitem{white2020utilities}
+White R, Sokol C.
+\newblock Utilities pause shutoffs as state prepares for financial impacts of
+  COVID-19.
+\newblock The Spokane Review. 2020;.
 
 \end{thebibliography}

@@ -13,6 +13,8 @@ data
 
 "The most powerful components of the model are the number of days spent in hospitals as an inpatient or in jail mental health facilities as an inmate.  Health conditions have a tipping effect in the model, some disorders increase and others diminish the likelihood that an individual is in the 10th decile."
 
+logistic regression
+
 Performance
     FNR = 0.22 (referred to as shortfall)
     FPR = 0.27 (referred to as burden)

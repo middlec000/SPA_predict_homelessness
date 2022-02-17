@@ -1,5 +1,6 @@
 import pandas as pd
 import pickle
+from imblearn.over_sampling import RandomOverSampler
 from helper_methods import *
 
 def main():
@@ -42,10 +43,10 @@ def log_fit(preprocessed):
         df = df, 
         event_col = 'CMIS_MATCH',
         id_col = 'SPA_PER_ID',
-        k = 4, 
+        k = 10, 
         model = 'logit', 
         scaler = None,
-        sampler = None,
+        sampler = RandomOverSampler(sampling_strategy='minority', random_state=42)
     )
 
     # Convert Data Types

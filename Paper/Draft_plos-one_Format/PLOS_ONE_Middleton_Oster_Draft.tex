@@ -356,53 +356,29 @@ Present a model that performs well compared to current research that relies only
 \section*{Materials and Methods}
 \subsection*{The Data}
 % Sources
-The data used for this project was obtained from Avista Utilities and the City of Spokane. Avista Utilities provided monthly residential customer billing information for electricity and natural gas utilities. The City of Spokanen provided monthly combined water, sewer, and garbage billing information as well as outcome data on who has been recorded as experiencing homelessness and at what times.
+The data used for this project was obtained from Avista Utilities and the City of Spokane. Avista Utilities provided monthly residential utility customer billing information for electricity and natural gas utilities. The City of Spokanen provided monthly combined water, sewer, and garbage utility billing information as well as outcome data on who has been recorded as experiencing homelessness each month from their Community Management Information System (CMIS), which complies with the HUD HMIS (Homeless Management Information System) regulatory requirements.
+
+% Makeup
+After the preprocessing steps described below, the data covers 3,674,901 rows, 96,768 Avista billing accounts, 64,728 locations (premisses), 91,591 people (357 positive cases and 91,234 negative cases). The timeframe the data covers is from December, 2015, through December, 2020. Prior to December, 2015, Avista used a different account tracking system and it would have been difficult to combine data from both systems. \red{ADD proportion of Spokane population}
+% Data Imbalance
+The high degree of imbalance in the dataset, that is, the large number of negative cases, people who were never recorded as experiencing homelessness within the dataset, compared to the small number of positive cases, people who were recorded as experiencing homelessness, is a challenge to predicting homelessness. Specifically, positive cases made up 0.39\% of the people represented in the dataset. This imbalance adds difficulty to the model's task of distinguishing between positive and negative cases because it is difficult to identify the few positive cases among the many negative cases, especially if there are many negative cases that are similar to the positive cases. In this study identifying the positive cases in the dataset is much more important than the negative cases.
 
 \subsubsection*{Data Preperation}
-% Data Imbalance
-The high degree of imbalance in the dataset, that is, the large number of negative cases, people who were never recorded as experiencing homelessness within the dataset, compared to the small number of positive cases, people who were recorded as experiencing homelessness, was a major challenge to model fitting. Specifically, there were 302 positive cases and 84,066 negative cases. This imbalance adds difficulty to the model's task of distinguishing between positive and negative cases because it is difficult to identify the few positive cases among the many negative cases, especially if there are many negative cases that are similar to the positive cases. In this study identifying the positive cases in the dataset is much more important than the negative cases.
-
 % Matching + De-Identifying
-Initial data matching and de-identifying was performed by the data team at Avista Utilities. This process involved gathering the data from its sources and matching on name, address, and month. After matching, the data was de-identified by replacing any identifiable characteristics of the data such as name and address with internally generated identification numbers. Additional matching was performed by the authors. After this process, the data contained information on 85,345 people who have been listed as the main account holder on a utility billing account in Spokane County from December, 2015 to December, 2020. For each person there are monthly entries with information about thier utility billing activities. 
+Initial data matching and de-identifying was performed by the data team at Avista Utilities. This process involved joining the utility billing data from Avista and the City of Spokane on name, address, and month. This dataset was the joined to the City of Spokane's CMIS data on homelessness where matching was based on last for of social security number. After matching, the data was de-identified by replacing any identifiable characteristics of the data such as name and address with internally generated identification numbers. 
 
-% Association Metrics
-To measure relationships between variables in the data, different association metrics were used depending on the variable types. The following is a list of variable pairing types and the metric used to measure strength of association between the variables: absolute value of Spearman Correlation for continuous-continuous, Point-Biserial Correlation for binary-continuous, Theil Uncertainty Coefficient for categorical-categorical, and Correlation Ratio for continuous-categorical(with more than two levels). \red{REMOVE PREVIOUS PAGARAPH?}
+% Account Centric -> People Centric
+At this stage the utility billing activity was tied to utility customer accounts, not individual people, and each account had one or more people associated with it. All accounts had at least one (main) account holder, but many had additional parties associated with them: cotenants, landlords, third party family members, and third party agencies that could assist in bill payment. The modeling task in this context is clearly people-centric, meaning the trained model should take as input a single person's billing information and output the predicted likelihood of experiencing homelessness. This required the data be reconfigured from account-centric to people centric. To acheive this only the main account holder was associated with each account's billing activity and all other people associated with the account were removed.
 
-% Data Homogeneity
-\red{MOVE BELOW PART TO DISCUSSION?}
-When attempting to learn patterns and relationships from data, it is important to understand if certain parts of the data are different from other parts. For this project we are distinguishing between positive (someone who has experienced homelessness) and negative (someone who has not experienced homelessness) cases, but the relationships between the predictor variables and the outcome may change over time. Perhaps there were different relationships between the predictor variables and homelessness during different years. 
+% Association Metrics + Predictor Variables
+Only the variables that were most related to the outcome of homelessness and beleived to be widely available accross the U.S. were retained for model fitting. To measure relationships between variables in the data, different association metrics were used depending on the variable types. The following is a list of variable pairing types and the metric used to measure strength of association between the variables: absolute value of Spearman Correlation for continuous-continuous, Point-Biserial Correlation for binary-continuous, Theil's Uncertainty Coefficient for categorical-categorical, and Correlation Ratio for continuous-categorical (with more than two levels). Because this modeling task focuses on prediction, intercorrelation between predictor variables was largely ignored. The chosen outcome was binary so Point-Biserial Correlation and Theil's Uncertainty Coefficient were used; the other measures of association were used for other potential outcome variables - see Discussion. The short list of predictor variables and their definitions is shown in Table~\ref{tbl:varsUsed}. These are the variables used in the model. The variable BREAK\_ARRANGEMENT can be interpreted as the number of times a person has established a service break arrangement with the utility company.
 
-The year 2020 was expected to contain different relationships than the previous years because the COVID-19 pandemic caused people and the utility agencies to behave differently than they had in previous years. For example, for the greater part of 2020, the utility agencies tracked in our dataset did not perform service shut-offs as they had in previous years \cite{white2020utilities}. 
+\subsubsection*{Feature Engineering}
+An effort was made to extract additional information from the data by engineering features. The amount owed by each person at the start of each month, TOTAL\_CUR\_BALANCE, was initially provided as separate attributes: amount owed to Avista in electricity bills, amount owed to Avista in gas bills, and amount owed to the City of Spokane in the combined bill amounts for water, sewer, and garbage. To make the variables used more closely resemble those that might be available in other utilities companies, the amounts owed were aggregated into a single attribute representing total amount owed to all utilities entities. This combined amount was more strongly correlated with the outcome of homelessness than any of the individual amounts owed.
 
-To investigate if there was a difference in the associations between the variables and the outcome in different years, the data was split by year, the strength of association of each variable with the outcome (CMIS\_MATCH) was measured, these strengths were then ranked, and the rankings were compared from year to year. Table~\ref{tbl:corr_years} displays these rankings. Surprisingly, they appear to be very similar from year to year. This means that the important relationships within the data are similar from year to year, so all available years, 2015 to 2020, were included in further analysis and modeling.
+The cumulative number of utility account holders who have lived at each location over time was calculated and recorded as NUM\_PER\_FOR\_PREM. This variable relates to the number of people who have moved away from each location and is likely an indicator of a mismatch between the tenant's desire and ability to live at that location. The housing may be desirable to the tenant, but they are forced to move because they cannot afford to stay either because their financial situation has deteriorated or the rent has increased. The housing may also be undesirable to the tenant and their stay was intended to be temporary from the start, in which case moving away would indicate an improvement in financial health. People move for other reasons besides the housing desirability and their ability to pay rent, but this variable was intended to capture some of the information related to housing desirability and financial health.
 
-\begin{table}[!h]
-    \centering
-    \begin{tabular}{lcccccc}
-        \toprule
-                 Variable &  2015 &  2016 &  2017 &  2018 &  2019 &  2020 \\
-        \midrule
-         NUM\_PER\_FOR\_PREM &   NaN &     2 &     3 &     2 &     1 &     1 \\
-         NUM\_PREM\_FOR\_PER &   NaN &     1 &     1 &     1 &     2 &     2 \\
-        TOTAL\_CUR\_BALANCE &     3 &     4 &     4 &     4 &     4 &     3 \\
-        BREAK\_ARRANGEMENT &     4 &     3 &     2 &     3 &     3 &     4 \\
-                 PAST\_DUE &     5 &     5 &     5 &     5 &     5 &     5 \\
-        \bottomrule
-    \end{tabular}
-\caption{Ranks of Spearman Correlation of each predictor with the outcome for each year. Variables are sorted by 2020 rankings.}
-\label{tbl:corr_years}
-\end{table}
-
-\subsection*{Feature Engineering and Selection}
-An effort was made to extract additional information from the data by engineering additional features before it was used to fit models. The amount owed by each person at the start of each month was initially provided as separate attributes: amount owed to Avista in electricity bills, amount owed to Avista in gas bills, and amount owed to the City of Spokane in the combined bill amounts for water, sewer, and garbage. To make the variables used more closely resemble those that might be available in other utilities companies, the amounts owed were aggregated into a single attribute representing total amount owed to all utilities. This combined amount was more strongly correlated with the outcome of homelessness than any of the individual amounts owed.
-
-The cumulative number of utility account holders who have lived at each location over time was calculated and stored as NUM\_PER\_FOR\_PREM. This variable relates to the number of people who have moved away from each location and is likely an indicator of a mismatch between the tenant's desire and ability to live at that location. The housing may be desirable to the tenant, but they are forced to move because they cannot afford to stay either because their financial situation has deteriorated or the rent has increased. The housing may also be undesirable to the tenant and their stay was intended to be temporary from the start, in which case moving away would indicate an improvement in financial health. People move for other reasons besides the housing desirability and their ability to pay rent, but this variable was intended to capture some of the information related to housing desirability and financial health. NUM\_PER\_FOR\_PREM was found to be associated with the outcome.
-
-The cumulative number of locations where an individual has paid utilities was also calculated and stored as NUM\_PREM\_FOR\_PER. This variable is intended to capture the number of places each person has lived, though it is imperfect because some people pay utilities at multiple premises for reasons other than moving; they may own multiple properties or pay their child's utility bills.
-
-% Predictor Variables
-The predictor variables were chosen as those likely to be found anywhere there exists a utilty customer database. The short list of predictor variables and their definitions is shown in Table~\ref{tbl:varsUsed}. These are the variables used in the model. The variable BREAK\_ARRANGEMENT can be interpreted as the number of times a person has established a service break arrangement with the utility company.
-
+The cumulative number of locations where an individual has paid utility bills was also calculated and recorded as NUM\_PREM\_FOR\_PER. This variable is intended to capture the number of places each person has lived, though some people pay utilities at multiple premises for reasons other than moving; they may own multiple properties or pay someone else's utility bills. This variable only captures locations where an individual is a main account holder because only main account holders were retained.
 
 \begin{table}[htb]
     \centering
@@ -410,7 +386,7 @@ The predictor variables were chosen as those likely to be found anywhere there e
         \toprule
         Variable (Feature) &                  Description \\
         \midrule \vspace{0.25cm}
-        PER-PREM-MONTH\_ID & Unique identifier for a person at a premises (address) during a month. \\
+        SPA\_PER\_ID & Unique identifier for each person. \\
         \hline \vspace{0.25cm}
         CMIS\_MATCH & The binary outcome: If a person is ever recorded experiencing homelessness or not. \\
         \hline \vspace{0.25cm}
@@ -430,7 +406,7 @@ The predictor variables were chosen as those likely to be found anywhere there e
 \end{table}
 
 \subsection*{The Model}
-We used multivariable binary logistic regression to predict risk of experiencing first time homelessness. This type of model has been used for predicting risk of homelessness in at least one other study \cite{van2009longitudinal} \red{add more studies here} and fits the situation of predicting the likelihood of a binary event based on a set of predictors. For each set of new people's data fed into the model, the model will produce an output of the predicted probability an event will occur given the variable values contained in the data. This matches the intended usage patterns for the model. 
+We used multivariable binary logistic regression to predict risk of experiencing first time homelessness. This type of model has been used for predicting risk of homelessness in several other studies \cite{byrne2020classification, vanberlo2021interpretable, van2009longitudinal,flaming2011crisis, hong2018applications, toros2019early} and fits the situation of predicting the likelihood of a binary event based on a set of continuous predictors. For each set of new person's data fed into the model, the model will produce an output of the predicted probability an event will occur given the variable values for that person. This matches the intended use-case for the model. 
 
 In the context of this project, the logistic regression model, or log model, treats each person-place-month combination as a separate entity with a separate outcome. To find a prediction for each person, the maximum is taken of all the predictions for each person over time and at all locations. This maximum risk prediction becomes the prediction for that person.
 
@@ -542,12 +518,40 @@ As mentioned in the Methods Section, model evaluation was highly sensitive to wh
 
 The choice of $k$ also had an effect on model evaluation. Over several runs it was found that the best model performance was achieved from $k=2$ to $k=5$. For balanced datasets, performance is generally increased with increasing $k$ until about $k=10$ where performance does not increase significantly if $k$ is increased further. Training on large datasets, at least 5000 entities, can achieve good results with $k$ values as low as 5. Typically $k=10$ is used by convention \cite{marcot2020optimal}. With imbalanced data, however, if the value of $k$ is large then there are very few positive cases in the test set, so the models have difficulty distinguishing this small set from all the negative cases. This is likely the reason why lower $k$ values were found to produce better performance for this study.
 
-\subsection*{Outcome Variable Selection}
+\subsection*{Discussion on Data Preparation}
+\subsubsection*{Accounts and People}
+The data preparation scheme used for this project associated only the main account holder with each account's billing history with all other people associated with an account removed. This step removes many people from the dataset because they are not a main account holder on any account. Only 38\% of people are retained after preprocessing, though many of these are removed because their accounts did not exist in the time frame in which billing histories were provided. 
+
+\subsubsection*{Data Homogeneity}
+When attempting to learn patterns and relationships from data, it is important to understand if certain parts of the data are different from other parts. For this project we are distinguishing between positive and negative cases, but the relationships between the predictor variables and the outcome may change over time. Perhaps there were different relationships between the predictor variables and homelessness during different years. 
+
+The year 2020 was expected to contain different relationships than the previous years because the COVID-19 pandemic caused people and the utility agencies to behave differently than they had in previous years. For example, for the greater part of 2020, the utility agencies tracked in our dataset did not perform service shut-offs as they had in previous years \cite{white2020utilities}. 
+
+To investigate if there was a difference in the associations between the variables and the outcome in different years, the data was split by year, the strength of association of each variable with the outcome (CMIS\_MATCH) was measured, these strengths were then ranked, and the rankings were compared from year to year. Table~\ref{tbl:corr_years} displays these rankings. Surprisingly, they appear to be very similar from year to year. This means that the important relationships within the data are similar from year to year, so all available years, 2015 to 2020, were included in further analysis and modeling.
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{lcccccc}
+        \toprule
+                 Variable &  2015 &  2016 &  2017 &  2018 &  2019 &  2020 \\
+        \midrule
+         NUM\_PER\_FOR\_PREM &   NaN &     2 &     3 &     2 &     1 &     1 \\
+         NUM\_PREM\_FOR\_PER &   NaN &     1 &     1 &     1 &     2 &     2 \\
+        TOTAL\_CUR\_BALANCE &     3 &     4 &     4 &     4 &     4 &     3 \\
+        BREAK\_ARRANGEMENT &     4 &     3 &     2 &     3 &     3 &     4 \\
+                 PAST\_DUE &     5 &     5 &     5 &     5 &     5 &     5 \\
+        \bottomrule
+    \end{tabular}
+\caption{Ranks of Spearman Correlation of each predictor with the outcome for each year. Variables are sorted by 2020 rankings.}
+\label{tbl:corr_years}
+\end{table}
+
+\subsubsection*{Outcome Variable Selection}
 Though the eventual choice of outcome measure was the binary variable of if a person was ever recorded as experiencing homelessness (CMIS\_MATCH), several others were investigated. One was a numerical variable describing the number of months until an individual experienced an episode of homelessness. This seemed promising, but posed the challenge of assigning some value(s) to negative cases. Two more outcome variables investigated were the binary variables recording if an individual was within six months or one month of experiencing an episode of homelessness, respectively. 
 
 The outcome used for modeling was chosen to be the one that had the highest association with the predictor variables based on appropriate association metrics. CMIS\_MATCH had the largest associations with the predictor variables compared to the other potential outcome measures. An interesting result here is that the variables recording if an individual will experience homelessness within six months and one month are associated less with the explanatory variables than CMIS\_MATCH. This seems to indicate that the data used for this project is better at discerning if an individual will ever experience homelessness than it is at discerning either if the individual will experience homelessness within the month or within six months.
 
-\subsection*{Predictor Variable Selection}
+\subsubsection*{Predictor Variable Selection}
 \begin{itemize}
     \item selected those that are likely to be widely available across US
     \item no performance change between grouped, ungrouped billing features (interesting bc landlord likely pays some)

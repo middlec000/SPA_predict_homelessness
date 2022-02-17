@@ -22,11 +22,14 @@ def get_folds_ids(id_col, k):
 
 def log_k_folds(df: pd.DataFrame, event_col: str, id_col: str, k: int, model: object, sampler: object=None, scaler: object=None, inverted:bool=False) -> pd.DataFrame:
     '''
-    10/26/21
+    2/17/22
     Chooses k-folds based on 'id_col'
     Supported use of the following models:
         statsmodels.discrete.discrete_model.Logit
             set model='logit'
+    Supported use of the following sampling methods:
+        imblearn.over_sampling.RandomOverSampler
+        imblearn.under_sampling.RandomUnderSampler
     
     Returns:
         predictions (pandas DataFrame), models (List[statsmodels.discrete.discrete_model.Logit])
@@ -61,10 +64,10 @@ def log_k_folds(df: pd.DataFrame, event_col: str, id_col: str, k: int, model: ob
         # Undersample, oversample, etc.
         if sampler != None:
             fold_sampler = copy.deepcopy(sampler)
-            X_res, y_res = fold_sampler.fit_sample(X=df_train.drop(event_col, axis=1), y=df_train[event_col])
+            X_res, y_res = fold_sampler.fit_resample(X=df_train.drop(event_col, axis=1), y=df_train[event_col])
             df_train = pd.concat([X_res, y_res], axis=1)
             
-        # Get predictions
+        # Fit Model and Get predictions
         predictions = None
         if model == "logit":           
             exog = np.asarray(df_train.drop([id_col, event_col], axis=1), dtype='float')
@@ -75,6 +78,7 @@ def log_k_folds(df: pd.DataFrame, event_col: str, id_col: str, k: int, model: ob
             predictions = pd.Series(model_local.predict(exog=exog_test))
         else:
             print("Model not supported.")
+            return
 
         # Append to predictions, actuals
         id_prediction_actual = id_prediction_actual.append(pd.concat([

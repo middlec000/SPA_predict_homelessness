@@ -48,7 +48,7 @@ There were instances where multiple people (two or more of: main, cotenant, land
 
 There were also instances where a single person was associated with multiple (location, month)s. A random choice was made so that (person, location, month) could be used as a composite key for the data.
 ### Data Imbalance
-After preprocessing there were 302 positive cases and 84,066 negative cases. This made the prediction task of identifying the few positive cases difficult. Surprisingly, neither oversampling the positive class nor undersampling the negative class improved model performance, so no sampling method other than the standard K-Folds was used.
+After preprocessing there were 357 positive cases and 91,234 negative cases. This made the prediction task of identifying the few positive cases difficult. Oversampling the positive class was employed, but it did not significantly improved model performance.
 
 # File Descriptions in Code/
 ## [0_Data_Exploration.ipynb](Code/0_Data_Exploration.ipynb)
@@ -98,15 +98,16 @@ Supporting methods used for various programming tasks in this project.
 * Create feature `NUM_PER_FOR_PREM`, the cumulative number of people a premises has seen for each month.
 
 ## [log_fit.py](Code/log_fit.py)
-Using the method of K-Folds (k=4, splitting on `SPA_PER_ID`) the logistic model is fit to the data and predictions are made.  
-Various performance metrics are calculated: tp, fp, tn, fn, tnr, ppv, npv, f-1 score, accuracy, balanced accuracy, area under the curve.  
-Definitions and descriptions [here](https://en.wikipedia.org/wiki/Sensitivity_and_specificity).
+The method of K-Folds is employed with k=10 and the folds based on randomly choosing from the `SPA_PER_ID`s. For each of the 10 train/test data splits corresponding to the 10 folds, random oversampling was performed on the training set to balance the data. For each fold a logistic model is fit to the training data and predictions are made on the test data. A prediction is made for each (`SPA_PER_ID`, `SPA_PREM_ID`, `MONTH`). A single prediction for each person (`SPA_PER_ID`) is desired so the maximum prediction over all locations (`SPA_PREM_ID`s) and times (`MONTH`s) is retained as the final prediction for each person.  
+
+Various performance metrics are calculated for the predictions: tp, fp, tn, fn, tnr, ppv, npv, f-1 score, accuracy, balanced accuracy, area under the curve.  
+Definitions and descriptions at [https://en.wikipedia.org/wiki/Sensitivity_and_specificity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity).
 
 ## [plot_roc.py](Code/plot_roc.py)
-The performance of the model is analyzed using a Receiver Operator Characteristic (ROC) plot.
+The performance of the model is displayed using a Receiver Operator Characteristic (ROC) plot.
 
 ## [main.py](Code/main.py)
-Uses previous files to perform preprocessing, model fitting, and ROC curve plotting.
+Uses previous files to perform preprocessing, model fitting, and ROC curve plotting all from one place.
 
 ## [ROC_Curve.ipynb](Code/ROC_Curve.ipynb)
-Another file for plotting the ROC Curve as well as comparing my model performance to current research and printing several tables used in my paper.
+Another file for plotting the ROC Curve as well as comparing model performance to current research and printing average model parameters.
