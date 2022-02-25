@@ -1,0 +1,23 @@
+"mental illness, physical
+disability, substance abuse, domestic violence, and previous incarceration into vulnerabilities that
+heighten the risk of homelessness, and persistent racial discrimination compounds these vulnerabilities for
+minorities."
+
+effectiveness
+    proportion of homelessness that is prevented
+
+efficiency (precision)
+    only target people who would have become homeless
+
+predictors for homelessness
+    having already been in a shelter
+    being doubled-up with another household or not being a leaseholder
+    having a pending eviction
+    receipt of public assistance
+    high levels of rent arrears or debt
+
+"Most people who appear to be at high risk manage to
+avoid entering shelter, even without services."
+
+"Individuals who are exiting institutional care are particularly vulnerable to homelessness"
+

@@ -159,3 +159,7 @@ tbl:performance
 ## Other Labels
 fig1
 table1
+
+# Needed References/Sources
+## HAP expensive  
+``The per-person cost of averting homelessness through financial assistance is estimated as $10,300 and would be much less with better targeting of benefits to lower-income callers. The estimated benefits, not including many health benefits, exceed $20,000''~cite{evans2016impact}.

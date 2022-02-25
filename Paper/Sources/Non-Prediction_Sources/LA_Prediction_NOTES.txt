@@ -1,0 +1,19 @@
+The California Policy Lab and the University of Chicago Poverty Lab
+
+Split prediction into
+    first time homelessness
+    return to homelessness
+
+Models produced ranked list of individuals and their risk of homelessness
+
+usually already cleints of local assistance agencies
+    more agencies -> higher risk
+    mental health, criminal justice
+
+homelessness can occur quickly - important to act fast
+    important to update models/data quickly
+
+"Experts note that research on prevention programs
+for individuals leaving institutional settings (e.g., correctional facilities or the
+foster care system) would be fruitful."
+
