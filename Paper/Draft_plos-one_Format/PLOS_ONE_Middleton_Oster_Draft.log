@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  1 MAR 2022 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  2 MAR 2022 14:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -668,19 +668,19 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 <../img/homelessness_all.png, id=25, 672.47235pt x 436.87215pt>
 File: ../img/homelessness_all.png Graphic file (type png)
 <use ../img/homelessness_all.png>
-Package pdftex.def Info: ../img/homelessness_all.png  used on input line 271.
+Package pdftex.def Info: ../img/homelessness_all.png  used on input line 255.
 (pdftex.def)             Requested size: 379.4175pt x 246.48657pt.
- [2 <../img/homelessness_all.png>] [3] [4] [5]
-
-LaTeX Warning: Citation `hong2018appplicaitons' on page 6 undefined on input line 338.
-
-[6] [7] [8] [9] [10] [11]
-<../img/ROC.png, id=175, 676.32675pt x 433.62pt>
+ [2 <../img/homelessness_all.png>] [3] [4] [5] [6] [7] [8] [9] [10] [11]
+<../img/ROC.png, id=183, 676.32675pt x 433.62pt>
 File: ../img/ROC.png Graphic file (type png)
 <use ../img/ROC.png>
-Package pdftex.def Info: ../img/ROC.png  used on input line 489.
+Package pdftex.def Info: ../img/ROC.png  used on input line 456.
 (pdftex.def)             Requested size: 379.4175pt x 243.26224pt.
- [12 <../img/ROC.png>] [13] [14] [15] [16] [17] (./PLOS_ONE_Middleton_Oster_Draft.bbl
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12 <../img/ROC.png>] [13] [14] [15] [16] [17] (./PLOS_ONE_Middleton_Oster_Draft.bbl
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -695,25 +695,22 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ) [19]) 
 AED: lastpage setting LastPage
 [20] (./PLOS_ONE_Middleton_Oster_Draft.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `PLOS_ONE_Middleton_Oster_Draft.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16695 strings out of 478542
- 255102 string characters out of 5854402
- 658218 words of memory out of 5000000
+ 16691 strings out of 478542
+ 255064 string characters out of 5854402
+ 661448 words of memory out of 5000000
  34154 multiletter control sequences out of 15000+600000
- 413071 words of font info for 103 fonts, out of 8000000 for 9000
+ 412897 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,108p,2374b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (20 pages, 400993 bytes).
+ 108i,12n,108p,2474b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (20 pages, 413166 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 347 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
+ 91 named destinations out of 1000 (max. 500000)
  25099 words of extra memory for PDF output out of 29859 (max. 10000000)
 

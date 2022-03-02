@@ -1,19 +1,19 @@
 # Fdb version 3
-["bibtex PLOS_ONE_Middleton_Oster_Draft"] 1646176219 "PLOS_ONE_Middleton_Oster_Draft.aux" "PLOS_ONE_Middleton_Oster_Draft.bbl" "PLOS_ONE_Middleton_Oster_Draft" 1646183763
+["bibtex PLOS_ONE_Middleton_Oster_Draft"] 1646261064 "PLOS_ONE_Middleton_Oster_Draft.aux" "PLOS_ONE_Middleton_Oster_Draft.bbl" "PLOS_ONE_Middleton_Oster_Draft" 1646261070
   "PLOS_ONE_MO_Bibliography.bib" 1645123256 16579 c313c07062e29df771bb6185355a9a69 ""
-  "PLOS_ONE_Middleton_Oster_Draft.aux" 1646183762 6465 60ffe0c6c6f480710fa916c80b8cd548 "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.aux" 1646261069 7090 f1ee08c6de1af485d80e6f8061b6ae9b "pdflatex"
   "plos2015.bst.bst" 0 -1 0 ""
   (generated)
   "PLOS_ONE_Middleton_Oster_Draft.blg"
   "PLOS_ONE_Middleton_Oster_Draft.bbl"
-["pdflatex"] 1646183759 "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" "PLOS_ONE_Middleton_Oster_Draft.pdf" "PLOS_ONE_Middleton_Oster_Draft" 1646183763
+["pdflatex"] 1646261065 "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" "PLOS_ONE_Middleton_Oster_Draft.pdf" "PLOS_ONE_Middleton_Oster_Draft" 1646261070
   "../img/ROC.png" 1646183079 56697 a1e10de0dd68d2f174f7916e17107b30 ""
   "../img/homelessness_all.png" 1646175218 201248 a196cb7cd5b27a609c39bd93995eea42 ""
-  "PLOS_ONE_Middleton_Oster_Draft.aux" 1646183762 6465 60ffe0c6c6f480710fa916c80b8cd548 "pdflatex"
-  "PLOS_ONE_Middleton_Oster_Draft.bbl" 1646176220 4667 0899621c387a95048df6130af88a5c26 "bibtex PLOS_ONE_Middleton_Oster_Draft"
-  "PLOS_ONE_Middleton_Oster_Draft.out" 1646183761 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "PLOS_ONE_Middleton_Oster_Draft.tex" 1646183757 75043 c9d8e234f2951623069f5d13d662b488 ""
-  "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" 1646183757 75043 c9d8e234f2951623069f5d13d662b488 ""
+  "PLOS_ONE_Middleton_Oster_Draft.aux" 1646261069 7090 f1ee08c6de1af485d80e6f8061b6ae9b "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.bbl" 1646261065 4667 0fbe76e1c9eb3eaa2f999156051e7d37 "bibtex PLOS_ONE_Middleton_Oster_Draft"
+  "PLOS_ONE_Middleton_Oster_Draft.out" 1646261067 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.tex" 1646261058 75472 619f01d5ee7578e1a0b9eced81acb6f7 ""
+  "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" 1646261058 75472 619f01d5ee7578e1a0b9eced81acb6f7 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1628612588 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1628616055 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1628614971 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -40,6 +40,7 @@
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1628606140 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1628606140 32080 340ef9bf63678554ee606688e7b5339d ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1628606140 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1628606140 36281 c355509802a035cadc5f15869451dcee ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1628606140 35752 024fb6c41858982481f6968b5fc26508 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1628606140 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1628606140 32762 7fee39e011c23b3589931effd97b9702 ""
@@ -154,7 +155,7 @@
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1628628446 2801562 7213db24cbddc94e17b940051d813949 ""
   "c:/texlive/2021/texmf.cnf" 1628628211 713 e69b156964470283e0530f5060668171 ""
   (generated)
-  "PLOS_ONE_Middleton_Oster_Draft.log"
-  "PLOS_ONE_Middleton_Oster_Draft.aux"
-  "PLOS_ONE_Middleton_Oster_Draft.out"
   "PLOS_ONE_Middleton_Oster_Draft.pdf"
+  "PLOS_ONE_Middleton_Oster_Draft.log"
+  "PLOS_ONE_Middleton_Oster_Draft.out"
+  "PLOS_ONE_Middleton_Oster_Draft.aux"

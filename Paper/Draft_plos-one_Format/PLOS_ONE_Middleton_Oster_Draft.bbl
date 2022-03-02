@@ -40,6 +40,13 @@ Shinn M, Greer AL, Bainbridge J, Kwon J, Zuiderveen S.
 \newblock Efficient targeting of homelessness prevention services for families.
 \newblock American journal of public health. 2013;103(S2):S324--S330.
 
+\bibitem{toros2019early}
+Toros H, Flaming D, Burns P.
+\newblock Early intervention to prevent persistent homelessness Predictive
+  models for identifying unemployed workers and young adults who become
+  persistently homeless.
+\newblock Available at SSRN 3370634. 2019;.
+
 \bibitem{von2019predicting}
 Von~Wachter T, Bertrand M, Pollack H, Rountree J, Blackwell B.
 \newblock Predicting and preventing homelessness in Los Angeles.
@@ -64,13 +71,6 @@ VanBerlo B, Ross MA, Rivard J, Booker R.
   homelessness.
 \newblock Engineering Applications of Artificial Intelligence. 2021;102:104243.
 
-\bibitem{toros2019early}
-Toros H, Flaming D, Burns P.
-\newblock Early intervention to prevent persistent homelessness Predictive
-  models for identifying unemployed workers and young adults who become
-  persistently homeless.
-\newblock Available at SSRN 3370634. 2019;.
-
 \bibitem{byrne2020classification}
 Byrne T, Baggett T, Land T, Bernson D, Hood ME, Kennedy-Perez C, et~al.
 \newblock A classification model of homelessness using integrated
@@ -83,6 +83,11 @@ Flaming D, Burns P.
 \newblock Crisis indicator: Triage tool for identifying homeless adults in
   crisis.
 \newblock Economic Roundtable Research Report; 2011.
+
+\bibitem{SpokanePop}
+Bureau USC. QuickFacts Spokane County, Washington; 2019.
+\newblock
+  \url{https://www.census.gov/quickfacts/fact/table/spokanecountywashington}.
 
 \bibitem{van2009longitudinal}
 Van~den Bree MB, Shelton K, Bonner A, Moss S, Thomas H, Taylor PJ.
@@ -111,10 +116,5 @@ White R, Sokol C.
 \newblock Utilities pause shutoffs as state prepares for financial impacts of
   COVID-19.
 \newblock The Spokane Review. 2020;.
-
-\bibitem{SpokanePop}
-Bureau USC. QuickFacts Spokane County, Washington; 2019.
-\newblock
-  \url{https://www.census.gov/quickfacts/fact/table/spokanecountywashington}.
 
 \end{thebibliography}

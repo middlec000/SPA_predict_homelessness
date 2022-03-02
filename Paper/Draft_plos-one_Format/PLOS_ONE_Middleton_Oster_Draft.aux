@@ -21,19 +21,20 @@
 \citation{PITcount}
 \citation{PITcount}
 \citation{PITcount}
-\citation{PITcount}
 \citation{2019AHAR}
 \citation{2019AHAR}
 \citation{shinn2019homelessness}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Annual Homelessness Counts in the USA and Spokane County}}{2}{figure.caption.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Annual Homelessness Counts in the United States, Washington State, and Spokane County. The counts for Spokane County are displayed in 100s, the counts for Washington State are displayed in 1000s, and the counts for the United States are displayed in 100,000s.\nobreakspace  {}\cite  {PITcount}\relax }}{2}{figure.caption.5}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:homelessness_counts}{{1}{2}{Annual Homelessness Counts in the USA and Spokane County}{figure.caption.5}{}}
+\newlabel{fig:homelessness_counts}{{1}{2}{Annual Homelessness Counts in the United States, Washington State, and Spokane County. The counts for Spokane County are displayed in 100s, the counts for Washington State are displayed in 1000s, and the counts for the United States are displayed in 100,000s.~\cite {PITcount}\relax }{figure.caption.5}{}}
 \citation{shinn2019homelessness}
 \citation{evans2016impact}
 \citation{evans2016impact}
 \citation{rolston2013evaluation,goodman2016homelessness}
 \citation{shinn2013efficient}
 \citation{shinn2019homelessness}
+\citation{evans2016impact}
+\citation{toros2019early}
 \citation{shinn2013efficient}
 \citation{von2019predicting}
 \citation{o2004wrong}
@@ -43,49 +44,51 @@
 \citation{vanberlo2021interpretable,toros2019early}
 \citation{byrne2020classification,shinn2013efficient}
 \citation{flaming2011crisis}
-\citation{toros2019early}
 \citation{byrne2020classification}
 \citation{flaming2011crisis}
 \citation{hong2018applications}
 \citation{shinn2013efficient}
 \citation{toros2019early}
 \citation{vanberlo2021interpretable}
-\citation{byrne2020classification,flaming2011crisis,hong2018appplicaitons,toros2019early}
+\citation{byrne2020classification,flaming2011crisis,hong2018applications,toros2019early}
 \citation{shinn2013efficient}
 \citation{vanberlo2021interpretable}
 \citation{hong2018applications}
 \citation{vanberlo2021interpretable}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Variables Used}}{9}{table.caption.15}\protected@file@percent }
-\newlabel{tbl:varsUsed}{{1}{9}{Variables Used}{table.caption.15}{}}
+\citation{SpokanePop}
 \citation{byrne2020classification,van2009longitudinal,flaming2011crisis,hong2018applications,toros2019early}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Variables Used}}{9}{table.caption.13}\protected@file@percent }
+\newlabel{tbl:varsUsed}{{1}{9}{Variables Used}{table.caption.13}{}}
 \citation{bewick2005statistics}
+\citation{fawcett2006introduction}
 \newlabel{eq:tpr}{{1}{10}{Model Evaluation}{equation.0.1}{}}
 \newlabel{eq:fpr}{{2}{10}{Model Evaluation}{equation.0.2}{}}
 \newlabel{eq:ppv}{{3}{10}{Model Evaluation}{equation.0.3}{}}
 \newlabel{eq:f1}{{4}{10}{Model Evaluation}{equation.0.4}{}}
 \newlabel{eq:acc}{{5}{10}{Model Evaluation}{equation.0.5}{}}
 \newlabel{eq:ba}{{6}{10}{Model Evaluation}{equation.0.6}{}}
-\citation{fawcett2006introduction}
 \citation{marcot2020optimal}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Mean logistic model coefficient (Coeff), mean odds ratio (OR), and mean 95\% confidence interval for the odds ratio for each model feature over all folds. Odds ratio describes how much the predicted odds of an event will increase if a single variable is increased by one.\relax }}{12}{table.caption.20}\protected@file@percent }
-\newlabel{tbl:meanParams}{{2}{12}{Mean logistic model coefficient (Coeff), mean odds ratio (OR), and mean 95\% confidence interval for the odds ratio for each model feature over all folds. Odds ratio describes how much the predicted odds of an event will increase if a single variable is increased by one.\relax }{table.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces ROC curve}}{12}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:ROC}{{2}{12}{ROC curve}{figure.caption.21}{}}
+\newlabel{eq:minmaxscale}{{7}{11}{K-Folds}{equation.0.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces ROC curve}}{12}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:ROC}{{2}{12}{ROC curve}{figure.caption.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Mean logistic model coefficient (Coeff), mean odds ratio (OR), and mean 95\% confidence interval for the odds ratio for each model feature over all folds. The relative importance of the features can be determined by examining their model coefficients.\relax }}{13}{table.caption.20}\protected@file@percent }
+\newlabel{tbl:meanParams}{{2}{13}{Mean logistic model coefficient (Coeff), mean odds ratio (OR), and mean 95\% confidence interval for the odds ratio for each model feature over all folds. The relative importance of the features can be determined by examining their model coefficients.\relax }{table.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Selected thresholds and their corresponding performance metrics. These (FPR, TPR) points are displayed in the ROC plot shown in Fig\nobreakspace  {}\ref  {fig:ROC}. TPR (True Positive Rate) is also referred to as Sensitivity, Recall, and Hit Rate. FPR (False Positive Rate) is also referred to as Fallout Rate. PPV (Positive Predictive Value) is also referred to as Precision.\relax }}{13}{table.caption.21}\protected@file@percent }
+\newlabel{tbl:performance}{{3}{13}{Selected thresholds and their corresponding performance metrics. These (FPR, TPR) points are displayed in the ROC plot shown in Fig~\ref {fig:ROC}. TPR (True Positive Rate) is also referred to as Sensitivity, Recall, and Hit Rate. FPR (False Positive Rate) is also referred to as Fallout Rate. PPV (Positive Predictive Value) is also referred to as Precision.\relax }{table.caption.21}{}}
 \citation{vanberlo2021interpretable,hong2018applications}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Selected thresholds and their corresponding performance metrics. These (FPR, TPR) points are displayed in the ROC plot shown in Fig\nobreakspace  {}\ref  {fig:ROC}. TPR (True Positive Rate) is also referred to as Sensitivity, Recall, and Hit Rate. FPR (False Positive Rate) is also referred to as Fallout Rate. PPV (Positive Predictive Value) is also referred to as Precision.\relax }}{13}{table.caption.22}\protected@file@percent }
-\newlabel{tbl:performance}{{3}{13}{Selected thresholds and their corresponding performance metrics. These (FPR, TPR) points are displayed in the ROC plot shown in Fig~\ref {fig:ROC}. TPR (True Positive Rate) is also referred to as Sensitivity, Recall, and Hit Rate. FPR (False Positive Rate) is also referred to as Fallout Rate. PPV (Positive Predictive Value) is also referred to as Precision.\relax }{table.caption.22}{}}
 \citation{shinn2013efficient}
 \citation{toros2019early}
 \citation{hong2018applications}
 \citation{vanberlo2021interpretable}
 \citation{byrne2020classification}
 \citation{byrne2020classification}
-\citation{byrne2020classification}
+\citation{SpokanePop}
 \citation{white2020utilities}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Ranks of Spearman Correlation between each predictor and the outcome, by year. Variables are sorted by 2020 rankings.\relax }}{15}{table.caption.30}\protected@file@percent }
-\newlabel{tbl:corr_years}{{4}{15}{Ranks of Spearman Correlation between each predictor and the outcome, by year. Variables are sorted by 2020 rankings.\relax }{table.caption.30}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Ranks of Spearman Correlation between each predictor and the outcome, by year. Variables are sorted by 2020 rankings.\relax }}{15}{table.caption.29}\protected@file@percent }
+\newlabel{tbl:corr_years}{{4}{15}{Ranks of Spearman Correlation between each predictor and the outcome, by year. Variables are sorted by 2020 rankings.\relax }{table.caption.29}{}}
 \citation{SpokanePop}
 \citation{byrne2020classification}
+\citation{byrne2020classification,flaming2011crisis,hong2018applications,shinn2013efficient,vanberlo2021interpretable}
 \bibdata{PLOS_ONE_MO_Bibliography.bib}
 \bibcite{hud_hmls_def}{1}
 \bibcite{PITcount}{2}
@@ -95,19 +98,19 @@
 \bibcite{rolston2013evaluation}{6}
 \bibcite{goodman2016homelessness}{7}
 \bibcite{shinn2013efficient}{8}
-\bibcite{von2019predicting}{9}
-\bibcite{o2004wrong}{10}
-\bibcite{hong2018applications}{11}
-\bibcite{vanberlo2021interpretable}{12}
-\bibcite{toros2019early}{13}
+\bibcite{toros2019early}{9}
+\bibcite{von2019predicting}{10}
+\bibcite{o2004wrong}{11}
+\bibcite{hong2018applications}{12}
+\bibcite{vanberlo2021interpretable}{13}
 \bibcite{byrne2020classification}{14}
 \bibcite{flaming2011crisis}{15}
-\bibcite{van2009longitudinal}{16}
-\bibcite{bewick2005statistics}{17}
-\bibcite{fawcett2006introduction}{18}
-\bibcite{marcot2020optimal}{19}
-\bibcite{white2020utilities}{20}
-\bibcite{SpokanePop}{21}
+\bibcite{SpokanePop}{16}
+\bibcite{van2009longitudinal}{17}
+\bibcite{bewick2005statistics}{18}
+\bibcite{fawcett2006introduction}{19}
+\bibcite{marcot2020optimal}{20}
+\bibcite{white2020utilities}{21}
 \bibstyle{plos2015.bst}
 \newlabel{LastPage}{{}{20}{}{page.20}{}}
 \xdef\lastpage@lastpage{20}

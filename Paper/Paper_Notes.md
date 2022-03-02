@@ -6,11 +6,10 @@ Figure caption text here, please use this space for the figure panel description
 \label{fig1}  
 \end{figure}
 
-## Methods
-Data Scaling
-
 ## Discussion
 study cost savings of preventing first-time homelessness
+
+tried to predict first-time homelessness
 
 * Want financial info
     - Taxes, salary, etc.
@@ -25,6 +24,10 @@ Importance of features
 ## Focus on minimizing FNs
 ``The team considered false negatives to be more harmful than false positives and therefore throughout the study, the goal was to train a proficient model that primarily minimized false negatives, while balancing a desired decrease in false positives.''~\cite{vanberlo2021interpretable}
 ``While  additional  services  rarely  will  create  hardship  for the  recipient,  misallocating  limited  resources  can  have  serious  consequences for constrained shelter providers. More concerning, then, are false negatives, which  would  mean  that  those  most  at-risk  are  left  unsupported.  Given  the potential  impact  of  this  type  of  oversight,  we  evaluate  and  tune  our  models to maximize recall or sensitivity, thereby reducing the potential false negative rate.  The  trade-off  here,  however,  is  an increase  in  the  false  positive  rate.''~\cite{hong2018applications}
+
+---
+# Questions for Dr. Oster
+Add diagram for data preprocessing? Some papers do this and it is helpful, but some work.
 
 ---
 # Journal Prospects
