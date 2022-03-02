@@ -1,6 +1,7 @@
 import pandas as pd
 import pickle
 from imblearn.over_sampling import RandomOverSampler
+from sklearn.preprocessing import MinMaxScaler
 from helper_methods import *
 
 def main():
@@ -44,8 +45,8 @@ def log_fit(preprocessed):
         event_col = 'CMIS_MATCH',
         id_col = 'SPA_PER_ID',
         k = 10, 
-        model = 'logit', 
-        scaler = None,
+        model = 'logit',
+        scaler = MinMaxScaler(feature_range=(0,1), copy=True),
         sampler = RandomOverSampler(sampling_strategy='minority', random_state=42)
     )
 

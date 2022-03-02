@@ -22,7 +22,7 @@ def get_folds_ids(id_col, k):
 
 def log_k_folds(df: pd.DataFrame, event_col: str, id_col: str, k: int, model: object, sampler: object=None, scaler: object=None, inverted:bool=False) -> pd.DataFrame:
     '''
-    2/17/22
+    3/1/22
     Chooses k-folds based on 'id_col'
     Supported use of the following models:
         statsmodels.discrete.discrete_model.Logit
@@ -30,6 +30,8 @@ def log_k_folds(df: pd.DataFrame, event_col: str, id_col: str, k: int, model: ob
     Supported use of the following sampling methods:
         imblearn.over_sampling.RandomOverSampler
         imblearn.under_sampling.RandomUnderSampler
+    Supported use of the following scaling methods:
+        sklearn.preprocessing.MinMaxScaler
     
     Returns:
         predictions (pandas DataFrame), models (List[statsmodels.discrete.discrete_model.Logit])
@@ -97,25 +99,24 @@ def get_metrics(df: pd.DataFrame, y_true: str, y_pred: str) -> pd.DataFrame:
     # True Positive Rate (TPR) aka Sensitivity aka Recall aka Hit Rate
     # False Positive Rate (FPR) aka False Alarm Rate
     fpr, tpr, threshold = roc_curve(y_true=df[y_true].astype('bool'), y_score=df[y_pred])
-    data = {'threshold': threshold, 'fpr': fpr, 'tpr': tpr}
-    summary = pd.DataFrame(data=data)
+    summary = pd.DataFrame(data={'threshold': threshold, 'fpr': fpr, 'tpr': tpr})
     # Basic Measures
     summary['tp'] = summary['tpr'] * p
     summary['fp'] = summary['fpr'] * n
     summary['tn'] = n - summary['fp']
     summary['fn'] = p - summary['tp']
-    # True Negative Rate (TNR)/Specificity
+    # True Negative Rate (TNR) aka Specificity aka Selectivity
     summary['tnr'] = summary['tn'] / n
     # Balanced Accuracy
     summary['balanced'] = (summary['tpr'] + summary['tnr']) / 2
-    # Positive Predictive Value (PPV)/Precision
-    summary['ppv'] = summary['tp'] / (summary['tp'] + summary['fn'])
+    # Positive Predictive Value (PPV) aka Precision
+    summary['ppv'] = summary['tp'] / (summary['tp'] + summary['fp'])
     # Negative Predictive Value (NPV)
-    summary['npv'] = summary['tn'] / (summary['tn'] + summary['fp'])
-    # F-1
+    summary['npv'] = summary['tn'] / (summary['tn'] + summary['fn'])
+    # F-1 Score
     summary['f-1'] = 2 * summary['ppv'] * summary['tpr'] / (summary['ppv'] + summary['tpr'])
-    # Accuracy
-    summary['accuracy'] = (summary['tp'] + summary['tn']) / (p + n)
+    # Accuracy (ACC)
+    summary['accuracy'] = (summary['tp'] + summary['tn']) / total
     # Area Under (ROC) Curve (AUC)
     summary['auc'] = auc(x=summary['fpr'], y=summary['tpr'])
     return summary

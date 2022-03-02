@@ -1,13 +1,19 @@
 Crisis Indicator: Triage Tool for Identifying Homeless Adults in Crisis
 
-identifies homeless individuals in hospitals and jails
+identifies homeless individuals in hospitals and jails who cost the public the most
 
 goal: identify most expensive 10%
 "This group accounts for well over half of all public costs for homeless 
 adults, and their costs decrease by 86 percent when they live in permanent supportive housing."
 
 data
-    demographic characteristics, medical diagnoses, and use of hospital and jail facilities
+    Predictors
+        demographic characteristics
+        medical diagnoses
+        use of hospital and jail facilities
+        use of government assistance
+    Outcome
+        cost level (top 10%)
 
     2,907 sample records
 

@@ -26,6 +26,15 @@ Abstract
 Introduction
 Methods
     Data and sample
+        Predictors
+            mental health
+            substance abuse
+            emergency medical service use
+            incarceration
+            veteran status
+            mother's occupation
+        Outcome
+            general homelessness
 
     Measures
         measures of homelessness

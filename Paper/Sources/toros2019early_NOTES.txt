@@ -4,6 +4,21 @@ Goal: predict persistent homelessness
 
 used Logistic Regression
 
+Data
+    "over one-million residents of Los Angeles County who were homeless sometime within a 15-year window. These  individuals received some type of public benefits during this period: Medi-Cal, food  stamps/SNAP, CalWORKs cash aid, or General Relief cash aid."
+
+    Predictors
+        emergency medical services
+        disability
+        jail
+        demographics
+        health diagnoses
+        employment and earnings
+        social services
+
+    Outcome
+        persistently homeless: "homeless more than once within three years"
+
 model 1
     subpopulation: unemployed workers receiving unemployment benefits
     AUC: 0.89 (page 81)

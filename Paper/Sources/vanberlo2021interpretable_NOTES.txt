@@ -1,6 +1,22 @@
-Data Scope
-    6521 individuals
-    City of London's (Canada) Homeless Individuals and Families Information System1 (HIFIS)
+Interpretable Machine Learning Approaches to Prediction of Chronic Homelessness
+
+Data
+    6,521 individuals
+    4 years
+    City of London's (Canada) Homeless Individuals and Families Information System (HIFIS)
+
+    Predictors
+        demographics
+        prior shelter stays
+        types of services received
+        length of stay
+        education level
+        income
+        health issue
+
+    Outcome
+        "if clients were at risk of becoming or continuing to be chronically homelessness 6 months in the future."
+            "chronically homeless if they had at least 180 stays over the most recent 365.25 days."
 
 Goal
     forecast chronic homelessness 6 months into the client’s future

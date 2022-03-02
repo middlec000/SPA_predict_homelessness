@@ -29,7 +29,7 @@ def main():
     plot_roc(output = output)
 
     # Save Output
-    filename = "output.pickle"
+    filename = "output0.pickle"
     outfile = open(datapath + filename, 'wb')
     pickle.dump(output, outfile)
     outfile.close()

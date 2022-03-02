@@ -4,7 +4,21 @@ predict shelter reentry and long-term length-of-stay
 
 data
     6,000  homeless  families served by Women-in-Need (Win) agency shelters
+    6,093  unique  individuals 
     New York City
+
+    Predictors
+        demographic data
+        medical history, 
+        criminal history, 
+        family history, 
+        education level, 
+        employment status, 
+        income
+        incidents involving clients that occurred while in the shelter
+    Outcomes
+        shelter re-entry
+        length of stay > 9mo
 
 models
     logistic regression

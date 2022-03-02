@@ -1,5 +1,18 @@
-Scope of Data
-    "...11,105 families with incomes less than 200% of the federal poverty level26 who applied for Home- Base prevention services from the New York City Department of Homeless Services between October 1, 2004, and June 30, 2008."
+Goal: prevention
+
+Data
+    "...11,105 families with incomes less than 200% of the federal poverty level26 who applied for Home-Base prevention services from the New York City Department of Homeless Services between October 1, 2004, and June 30, 2008."
+
+    Predictors
+        Demographics
+        education level
+        housing conditions
+        disability
+        criminal justice record
+        childhood experiences (adolescent mother, adversity index)
+        shelter history
+    Outcome
+        shelter entry
 
 Model Performance
     prior contact model (info from prior contact with shelter system)

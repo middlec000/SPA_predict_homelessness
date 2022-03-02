@@ -1,17 +1,9 @@
-import numpy as np
-from sklearn.linear_model import LogisticRegression
+import pandas as pd
 
-X = np.random.uniform(low=0, high=10, size=15).reshape(-1, 1)
-y = [1,0,1,1,0,0,0,1,0,1,0,1,0,0,0]
+data = {'one': [1,2,3], 'two':[2,3,4]}
+df = pd.DataFrame(data=data)
+df['three'] = df['one'] / (df['one'] + df['two'])
 
-model = LogisticRegression().fit(
-    X=X, 
-    y=y)
+print(df)
 
-X_test = np.random.uniform(low=0, high=10, size=4).reshape(-1, 1)
-predictions = model.predict_proba(
-    X=X_test)
-
-print(model.classes_)
-print(predictions)
-print(predictions[:,1])
+print(3/7.0)
