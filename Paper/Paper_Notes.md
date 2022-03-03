@@ -6,16 +6,7 @@ Figure caption text here, please use this space for the figure panel description
 \label{fig1}  
 \end{figure}
 
-## Discussion
-study cost savings of preventing first-time homelessness
-
-tried to predict first-time homelessness
-
-* Want financial info
-    - Taxes, salary, etc.
-    - We use utility billing history as proxy
-
-Importance of features
+## Acknowledgements
 
 ---
 # Needed References/Sources
@@ -28,6 +19,10 @@ Importance of features
 ---
 # Questions for Dr. Oster
 Add diagram for data preprocessing? Some papers do this and it is helpful, but some work.
+
+Get rid of call for standardized reporting?
+
+Help make Table 1 look nicer (even horizontal line spacing)
 
 ---
 # Journal Prospects

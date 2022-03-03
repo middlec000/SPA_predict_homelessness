@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  2 MAR 2022 14:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  3 MAR 2022 06:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -680,7 +680,7 @@ Package pdftex.def Info: ../img/ROC.png  used on input line 456.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12 <../img/ROC.png>] [13] [14] [15] [16] [17] (./PLOS_ONE_Middleton_Oster_Draft.bbl
+[12 <../img/ROC.png>] [13] [14] [15] [16] [17] [18] (./PLOS_ONE_Middleton_Oster_Draft.bbl
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -690,27 +690,27 @@ Overfull \hbox (4.3895pt too wide) in paragraph at lines 4--8
 \OT1/cmtt/m/n/10 criteria-[]and-[]recordkeeping-[]requirements-[]for-[]definition-[]of-[]homeless/$[]\OT1/cmr/m/n/10 (-20) .  
  []
 
-[18] (c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
+[19] (c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [19]) 
+)) 
 AED: lastpage setting LastPage
 [20] (./PLOS_ONE_Middleton_Oster_Draft.aux)
 Package rerunfilecheck Info: File `PLOS_ONE_Middleton_Oster_Draft.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16691 strings out of 478542
- 255064 string characters out of 5854402
- 661448 words of memory out of 5000000
+ 16694 strings out of 478542
+ 255091 string characters out of 5854402
+ 660449 words of memory out of 5000000
  34154 multiletter control sequences out of 15000+600000
- 412897 words of font info for 102 fonts, out of 8000000 for 9000
+ 412957 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,108p,2474b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,12n,108p,2474b,521s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (20 pages, 413166 bytes).
+Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (20 pages, 414648 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 91 named destinations out of 1000 (max. 500000)
+ 351 PDF objects out of 1000 (max. 8388607)
+ 300 compressed objects within 3 object streams
+ 92 named destinations out of 1000 (max. 500000)
  25099 words of extra memory for PDF output out of 29859 (max. 10000000)
 

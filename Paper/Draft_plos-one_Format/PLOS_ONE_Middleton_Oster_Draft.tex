@@ -228,7 +228,7 @@ Andrew M.\ Oster\textsuperscript{1*} \\
 \end{flushleft}
 % Please keep the abstract below 300 words
 \section*{Abstract}
-In this work, we present a statistical model that predicts risk of first known homelessness based on monthly de-identified residential utility customer billing data. This model was fit using records from 91,591 residential utility primary account holders from December, 2015 to December, 2020. The resulting logistic regression model achieved an Area Under the Curve of 0.808 and a False Positive Rate of 0.522 and a Positive Predictive Value of 0.007 at a True Positive Rate of 0.899. This study aims at predicting first-time homelessness based on data available on the general public where nearly all precedent research focuses on predicting chronic homelessness based on individuals already seeking assistance.
+In this work, we present a logistic regression model that predicts risk of first known homelessness based on monthly de-identified residential utility customer billing data. This model was fit using records from 91,591 utility primary account holders from December, 2015 to December, 2020 and achieved an Area Under the Curve of 0.808 and a False Positive Rate of 0.522 and a Positive Predictive Value of 0.007 at a True Positive Rate of 0.899. This study aims at predicting first-time homelessness based on data available on the general public where nearly all precedent research focuses on predicting chronic homelessness based on individuals already seeking assistance.
 
 
 \section*{Introduction}
@@ -263,7 +263,7 @@ Programs focused on providing assistance to people experiencing homelessness are
 We will refer to programs as homelessness prevention programs (HPPs) if they focus on preventing people from experiencing homelessness. These programs include permanent deep rental housing subsidies, eviction prevention programs, community based services such as short term financial assistance, education, and job placement. Homeless assistance programs (HAPs), we shall say, are those that are aimed at assisting people who are currently experiencing an episode of homelessness and include shelters and other emergency services. There are two aspects of HPPs that make them more attractive than HAPs. The first is cost. The services that HPPs typically offer are less expensive for taxpayers than those provided by HAPs~\cite{shinn2019homelessness}. The second reason is that if the HPP is successful it will spare people the trauma typical of experiencing homelessness.
 
 \subsubsection*{Cost Effectiveness of Homelessness Prevention Programs}
-Research has shown that many types of HPPs are cost effective in practice, meaning that treating the social issue of homelessness with HPPs instead of HAPs is at least as effective at keeping people off the streets and costs less money. This is due to the high cost of the financial health and mental health rehabilitation service HAPs must provide. Once someone experiences an episode of homelessness, they require housing, a return to financial stability, and often mental health counseling. \red{add source}
+Research has shown that many types of HPPs are cost effective in practice, meaning that treating the social issue of homelessness with HPPs instead of HAPs is at least as effective at keeping people off the streets and costs less money. This is due to the high cost of the financial health and mental health rehabilitation service HAPs must provide. Once someone experiences an episode of homelessness, they require housing, a return to financial stability, and often mental health counseling.
 
 A study on permanent deep rental housing subsidies, one of the most promising types of HPP, found that ``among the 67 percent of families who successfully used their [rent subsidy] voucher to lease housing, homelessness was prevented entirely''~\cite{shinn2019homelessness}. Another study analyzed an eviction prevention program from 2010 to 2012 in Chicago that distributed rent assistance based on at-risk individuals calling a Homelessness Prevention Call Center. Researchers found that ``the volatile nature of funding availability leads to good-as-random variation in the allocation of resources to individuals seeking assistance'' and that ``those calling when funding is available are 76\% less likely to enter a homeless shelter''~\cite{evans2016impact}. The program was especially helpful for the lowest income callers, and, the authors claim, could have been more efficient with better targeting of this group~\cite{evans2016impact}. In New York City a program called HomeBase provides community based services to at-risk individuals. Two studies have concluded that this program is cost effective at preventing homelessness~\cite{rolston2013evaluation, goodman2016homelessness}. 
 
@@ -345,7 +345,7 @@ The high degree of imbalance in the dataset, that is, the large number of negati
 Initial data matching and de-identifying was performed by the data team at Avista Utilities. This process involved joining the utility billing data from Avista and the City of Spokane on name, address, and month. This dataset was then joined to the City of Spokane's CMIS homelessness data where matching was based on last four digits of social security number. After matching, the data was de-identified by replacing any identifiable characteristics of the data such as name and address with internally generated identification numbers. 
 
 % Account Centric -> People Centric
-At this stage the utility billing activity was tied to utility customer accounts, not individual people, and each account had one or more people associated with it. All accounts had at least one (main) account holder, but many had additional parties associated with them: cotenants, landlords, third party family members, and third party agencies that could assist in bill payment. The modeling task in this context is clearly people-centric, meaning the trained model should take as input a single person's billing information and output their predicted likelihood of experiencing homelessness. This required the data be reconfigured from account-centric to people-centric. To acheive this only the main account holder was associated with each account's billing activity and all other people associated with the account were removed. If a person was associated with more than one account, one account was chosen at random to associate with the person.
+At this stage the utility billing activity was tied to utility customer accounts, not individual people, and each account had one or more people associated with it. All accounts had at least one (main) account holder, but many had additional parties associated with them: cotenants, landlords, third party family members, and third party agencies that could assist in bill payment. The modeling task in this context is clearly people-centric, meaning the trained model should take as input a single person's billing information and output their predicted likelihood of experiencing homelessness. This required the data be reconfigured from account-centric to people-centric. To acheive this only the main account holder was associated with each account's billing activity and all other people associated with the account were removed. If a person was associated with more than one account for the same month, one account was chosen at random to associate with the person for that month. After preprocessing the data had a composite key of person-place-month (SPA\_PER\_ID, SPA\_PREM\_ID, MONTH).
 
 % Association Metrics + Predictor Variables
 Only the variables that were most related to the outcome of homelessness and beleived to be widely available accross the U.S. were retained for model fitting. Point-Biserial Correlation was used to measure the strength of relationships between predictor variables and the chosen binary outcome of whether a person ever experiences first-time homelessness. Other measures of association were used for other potential outcome variables discussed in the Discussion Section. Because this modeling task focuses on prediction, intercorrelation between predictor variables was largely ignored. The short list of predictor variables used for model fitting and their definitions is shown in Table~\ref{tbl:varsUsed}. The variable BREAK\_ARRANGEMENT can be interpreted as the number of times a person has established a service break arrangement with the utility company.
@@ -420,9 +420,9 @@ The model was evaluated on how well it could predict the outcome for each person
 \end{multicols}
 \red{remove all or some of these equations?}
 
-The model is fit and used to predict the outcome of CMIS\_MATCH, but the predictions are likelihoods which have a continuous range from 0 to 1. These must be binned into binary class predictions before they can be compared to the true outcome values; either the model predicts the individual will or will not experience homelessness. The default binning threshold is 0.5, in which case predictions are classified as negative if they are less than 0.5 and positive if they are greather than or equal to 0.5~\cite{bewick2005statistics}. 
+The model is fit and used to predict the outcome of CMIS\_MATCH, but the predictions are likelihoods which are continuous with range from 0 to 1. These must be binned into binary class predictions before they can be compared to the true outcome values; either the model predicts the individual will or will not experience homelessness. The default binning threshold is 0.5, in which case predictions are classified as negative if they are less than 0.5 and positive if they are greather than or equal to 0.5~\cite{bewick2005statistics}. 
 
-The binning threshold can be adjusted to better suit model application. The model is intended to be used to inform HPPs which people to assist. Some assistance programs can assist many people and so cast a large net by choosing the model threshold to be relatively low, meaning many predictions are binned as positive. Some assistance programs cast a small net by choosing the threshold to be set relatively high, meaning that only high predicted risks are binned as positive. In general the models can be evaluated at many different thresholds and will produce different values of the performance metrics.
+The binning threshold can be adjusted to better suit model application. The model is intended to be used to inform HPPs which people to assist. Some assistance programs can assist many people and so cast a large net by choosing the model threshold to be relatively low, meaning many predictions are binned as positive. Some assistance programs cast a small net by choosing the threshold to be set relatively high, meaning that only high predicted risks are binned as positive. In practice, setting the binning threshold will likely depend on how many resources a HPP has at its disposal and the relative costs of false positives and false negatives. In general the models can be evaluated at many different thresholds and will produce different values of the performance metrics.
 
 To provide the HPPs with a large amountn of information in a concise way, the Receiver Operating Characteristic (ROC) curve is displayed. To create this curve, every possible binning threshold is chosen, the binned predictions are evaluated against the ground truth known outcomes, then FPR and TPR are calculated. The FPR and TPR paired values are plotted as points on the ROC curve~\cite{fawcett2006introduction}.
 
@@ -437,10 +437,10 @@ The model evaluation metrics are calculated on the combined predictions of all t
 % Oversampling
 The method of naive random oversampling the minority class (positives) was employed to combat the extreme imbalance in the dataset. Once the data split for each fold was performed, the training set was balanced by oversampling the minorty class until the number of positives and negatives was the same. The test set was not oversampled for any fold.
 
-In order to make the model parameters easily comparable, the method of min-max scaling was performed for each fold. After the data split was performed for each fold, the data was scaled using Eq~\ref{eq:minmaxscale} for feature $i$ so that all the values for that feature fall within the new range of [0, 1]. The min and max are found in the training set of each fold and then the scaling process is applied to both the training and test sets of each fold.
+In order to make the model parameters easily comparable, the method of min-max scaling was performed for each fold. After the data split was performed for each fold, the data was scaled using Eq~\ref{eq:minmaxscale} for feature $i$ and data point $j$, so that all the values for feature $i$ fall within the new range of [0, 1]. The min and max of feature $i$ are found in the training set of each fold and then the scaling process is applied to both the training and test sets of each fold.
 
 \begin{equation}
-    x_{i, scaled} = \frac{x_{i, original} - \text{min}(x_{i})}{\text{max}(x_{i}) - \text{min}(x_{i})}
+    x_{i, \hat{j}} = \frac{x_{i, j} - \text{min}(x_{i})}{\text{max}(x_{i}) - \text{min}(x_{i})}
     * (1 - 0) + 0
     \label{eq:minmaxscale}
 \end{equation}
@@ -458,23 +458,27 @@ In order for the model to be applied in practice, a specific binning threshold m
     \label{fig:ROC}
 \end{figure}
 
-The odds ratio for each feature shown in Table~\ref{tbl:meanParams} provide an idea of the importance of each feature to the logistic model. A feature with a coefficient further from zero means the model gives that feature more weight when computing the prediction. This direct comparison is only possible with data scaled to the same range, but there is a tradeoff to data scaling. With unscaled data, an odds ratio describes how much the predicted odds of an event will increase if a single variable is increased by one, but is meaningless with scaled data because the increase of one occurs in the scaled form, which translates to different amounts in the original data. \red{update wording}
+The coefficient for each feature shown in Table~\ref{tbl:meanParams} provides a measure of the feature's importance to the logistic model. A feature with a coefficient further from zero means the model gives that feature more weight when computing the prediction. From Table~\ref{tbl:meanParams} we can see that NUM\_PREM\_FOR\_PER and BREAK\_ARRANGEMENT are by far the most important features, PAST\_DUE moderately influences model predictions, and TOTAL\_CUR\_BALANCE and NUM\_PER\_FOR\_PREM are much less important to the model. This direct comparison is only possible with data scaled to the same range. With unscaled data, an odds ratio describes how much the predicted odds of an event will increase if a single variable is increased by one, but is meaningless with scaled data because the increase of one occurs in the scaled range, not the original data range. 
 
 \begin{table}[!h]
     \begin{tabular}{lcccc}
     \toprule
-    Feature &                   Coeff &       OR &       [0.025 &       0.975] \\
+    Feature &                    Coeff &       [0.025 &       0.975] &  OR \\
     \midrule
-    PAST\_DUE &                  0.406 &    1.501 &        1.499 &        1.503 \\
-    TOTAL\_CUR\_BALANCE  &       0.001 &    1.001 &        1.001 &        1.001 \\
-    NUM\_PREM\_FOR\_PER  &      -0.991 &    0.371 &        0.370 &        0.372 \\
-    BREAK\_ARRANGEMENT   &       0.803 &    2.231 &        2.201 &        2.262 \\
-    NUM\_PER\_FOR\_PREM  &       0.078 &    1.081 &        1.078 &        1.083 \\
+             PAST\_DUE &         0.406 &        0.405 &        0.407 &    1.501 \\
+    TOTAL\_CUR\_BALANCE &        0.001 &        0.001 &        0.001 &    1.001 \\
+     NUM\_PREM\_FOR\_PER &      -0.991 &       -0.995 &       -0.988 &    0.371 \\
+    BREAK\_ARRANGEMENT &         0.803 &        0.789 &        0.816 &    2.231 \\
+     NUM\_PER\_FOR\_PREM &       0.078 &        0.075 &        0.080 &    1.081 \\
     \bottomrule
     \end{tabular}
-    \caption{Mean logistic model coefficient (Coeff), mean odds ratio (OR), and mean 95\% confidence interval for the odds ratio for each model feature over all folds. The relative importance of the features can be determined by examining their model coefficients.}
+    \caption{Mean logistic model coefficient (Coeff), mean 95\% confidence interval for the coefficient for each model feature, and mean odds ratio (OR) over all folds. The relative importance of the features can be determined by examining their model coefficients.}
     \label{tbl:meanParams}
 \end{table}
+
+The sign of each model coefficient also provides information; a positive coefficient means that an increase in the feature causes and increased predicted risk, while a negative coefficient means an increase in the feature causes a decreased predicted risk. From Table~\ref{tbl:meanParams} we can see that an increase in any feature causes an increase in predicted risk, except for NUM\_PREM\_FOR\_PER where an increase in this feature causes a decrease in predicted risk.
+
+In order to make the results of this study comparable to other homelessness prediction studies, the results of our model evaluated at the threshold where the TPR is near the levels listed in the other studies are shown in Table~\ref{tbl:performance}. Each row in Table~\ref{tbl:performance} represents a single (FPR, TPR) point on the ROC curve in Fig~\ref{fig:ROC}. Most of the points plotted in on the ROC curve are not tabulated, but an overall sense of performance can be obtained for all thresholds using only the ROC plot.
 
 \begin{table}[htb]
     \centering
@@ -491,8 +495,6 @@ The odds ratio for each feature shown in Table~\ref{tbl:meanParams} provide an i
     \caption{Selected thresholds and their corresponding performance metrics. These (FPR, TPR) points are displayed in the ROC plot shown in Fig~\ref{fig:ROC}. TPR (True Positive Rate) is also referred to as Sensitivity, Recall, and Hit Rate. FPR (False Positive Rate) is also referred to as Fallout Rate. PPV (Positive Predictive Value) is also referred to as Precision.}
     \label{tbl:performance}
 \end{table}
-
-In order to make the results of this study comparable to other homelessness prediction studies, the results of our model evaluated at the threshold where the TPR is near the levels listed in the other studies are shown in Table~\ref{tbl:performance}. Each row in Table~\ref{tbl:performance} represents a single (FPR, TPR) point on the ROC curve in Fig~\ref{fig:ROC}. Most of the points plotted in on the ROC curve are not tabulated, but an overall sense of performance can be obtained for all thresholds using only the ROC plot.
 
 %------------------- DISCUSSION ---------------------------------
 \section*{Discussion}
@@ -514,6 +516,15 @@ We compare our model to those developed in previous studies by choosing the pred
 In comparison with the selected studies listed above at the comparable TPR, our model achieved a lower (better) FPR than Shinn's model, a much higher (worse) FPR than either of Toros' models, a lower (better) FPR than Hong's model, a much lower (worse) PPV than VanBerlo's model, and a much lower (worse) PPV than Byrne's model. It is important to note that all studies where model performance was reported other than Byrne's were predicting homelessness, return to homelessnes, or chronic homelessness based on some subpopulation already seeking government assistance. There is much more relevant data available to predict homelessness on these subpopulations because they have submitted financial, health, employment, etc. information as part of applying for government assistance. These subpopulations also have higher proportions of positive cases so the data imbalance is less severe.
 
 Byrne's study predicted homelessnes on essentially the entire population of Massachusetts using health insurance data. Byrne's is the study most directly comparable to ours, though Byrne's covers ``more than 98\% of Massachusetts residents''~\cite{byrne2020classification} while our study covers only about 17.5\% of Spokane County residents (based on the 2019 U.S. Census)~\cite{SpokanePop}.
+
+\subsection*{Model Parameters}
+The model parameters shown in Table~\ref{tbl:meanParams} reveal which features were most important to the model in predicting homelessness and which features, when increased, caused an increased predicted risk. NUM\_PREM\_FOR\_PER (Coeff = -0.991) is the most important feature since it has the greatest magnitude coefficient. BREAK\_ARRANGEMENT (0.803) is the second most important , PAST\_DUE (0.406) the third, NUM\_PER\_FOR\_PREM (0.078) the fourth, and TOTAL\_CUR\_BALANCE (0.001) is the least important.
+
+It is surprising that NUM\_PREM\_FOR\_PER is such an important feature and that it is protective - as the feature increases, the predicted risk of homelessness decreases. This means that if a person has been the main utility account holder at more locations, the model predicts them to be at a lower risk of homelessness. This contradicts the authors' hypothesis that people at risk of homelessness are more transient than the general population. This could be due to the upfront costs of moving such as paying rental deposits.
+
+BREAK\_ARRANGEMENT, the number of times an individual has established a service severance with Avista, is clearly a risk indicator. It is interesting that PAST\_DUE, the number of utility bills overdue, is about half as important as BREAK\_ARRANGEMENT in predicting homelessness. This seems to indicate that people at risk of experiencing homelessness may have slightly more bills past due, but are much more likely to establish a service severance with Avista than the general population. 
+
+TOTAL\_CUR\_BALANCE, though the smallest magnitude coefficient, is still helpful in predicting homelessness. This feature coefficient was significantly different from zero and increased model performance.
 
 \subsection*{Data Preparation}
 \subsubsection*{Including More People Per Account}
