@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  3 MAR 2022 06:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  3 MAR 2022 06:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -665,22 +665,22 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../img/homelessness_all.png, id=25, 672.47235pt x 436.87215pt>
-File: ../img/homelessness_all.png Graphic file (type png)
-<use ../img/homelessness_all.png>
-Package pdftex.def Info: ../img/homelessness_all.png  used on input line 255.
+<homelessness_all.png, id=25, 672.47235pt x 436.87215pt>
+File: homelessness_all.png Graphic file (type png)
+<use homelessness_all.png>
+Package pdftex.def Info: homelessness_all.png  used on input line 255.
 (pdftex.def)             Requested size: 379.4175pt x 246.48657pt.
- [2 <../img/homelessness_all.png>] [3] [4] [5] [6] [7] [8] [9] [10] [11]
-<../img/ROC.png, id=183, 676.32675pt x 433.62pt>
-File: ../img/ROC.png Graphic file (type png)
-<use ../img/ROC.png>
-Package pdftex.def Info: ../img/ROC.png  used on input line 456.
+ [2 <./homelessness_all.png>] [3] [4] [5] [6] [7] [8] [9] [10] [11]
+<ROC.png, id=183, 676.32675pt x 433.62pt>
+File: ROC.png Graphic file (type png)
+<use ROC.png>
+Package pdftex.def Info: ROC.png  used on input line 456.
 (pdftex.def)             Requested size: 379.4175pt x 243.26224pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12 <../img/ROC.png>] [13] [14] [15] [16] [17] [18] (./PLOS_ONE_Middleton_Oster_Draft.bbl
+[12 <./ROC.png>] [13] [14] [15] [16] [17] [18] (./PLOS_ONE_Middleton_Oster_Draft.bbl
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -699,8 +699,8 @@ Package rerunfilecheck Info: File `PLOS_ONE_Middleton_Oster_Draft.out' has not c
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16694 strings out of 478542
- 255091 string characters out of 5854402
+ 16693 strings out of 478542
+ 255000 string characters out of 5854402
  660449 words of memory out of 5000000
  34154 multiletter control sequences out of 15000+600000
  412957 words of font info for 103 fonts, out of 8000000 for 9000
