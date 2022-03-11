@@ -92,7 +92,7 @@ Supporting methods used for various programming tasks in this project.
 * Find the earliest month a person was recorded experiencing homelessness and store it in `ENROLL_DATE`.
 * Inner join to billing data on (`SPA_ACCT_ID`, `SPA_PREM_ID`).
 ### Combined
-* There are more duplicate (`SPA_ACCT_ID`, `SPA_PREM_ID`, `MONTH`)'s. Of these duplicates just take the last and drop the others.
+* There are duplicate (`SPA_PER_ID`, `SPA_PREM_ID`, `MONTH`)'s. Of these duplicates just take the last and drop the others.
 * Drop all data that occurs after an individual's `ENROLL_DATE`. This ensures we are predicting first-time (in this data) homelessness.
 * Create feature `NUM_PREM_FOR_PER`, the cumulative number of premises a person has paid bills at each month.
 * Create feature `NUM_PER_FOR_PREM`, the cumulative number of people a premises has seen for each month.
