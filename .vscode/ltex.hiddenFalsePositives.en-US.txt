@@ -1,0 +1,3 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThese numbers include individuals sheltered in emergency shelters, sheltered in transitional housing, and unsheltered \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QWe will refer to programs as homelessness prevention programs (HPPs) if they focus on preventing people from experiencing homelessness.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QHomeless assistance programs (HAPs), instead, are aimed at assisting people who are currently experiencing an episode of homelessness and include shelters and other emergency services.\\E$"}

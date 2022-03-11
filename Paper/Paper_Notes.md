@@ -30,6 +30,8 @@ I think we should leave model performance in the Abstract - other papers do this
 
 Publish preprint?  
 
+What is the proper way to write "Byrne et al.'s study..."?  
+
 ---
 # PLOS ONE
 Fee = [\$1,805](https://plos.org/publish/fees/)  
@@ -84,7 +86,7 @@ Our study does not fall into any of the specific reporting guidelines listed.
 * Disclosure of funding sources
 * Competing interests (None) - Done
 
-## Consider posting a preprint
-Do this?
+## Consider posting a preprint - Done
+Not doing one
 
 ## Access the submission system
