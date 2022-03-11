@@ -1,20 +1,21 @@
 # Fdb version 3
-["bibtex PLOS_ONE_Middleton_Oster_Draft"] 1647013007 "PLOS_ONE_Middleton_Oster_Draft.aux" "PLOS_ONE_Middleton_Oster_Draft.bbl" "PLOS_ONE_Middleton_Oster_Draft" 1647016204
+["bibtex PLOS_ONE_Middleton_Oster_Draft"] 1647017481 "PLOS_ONE_Middleton_Oster_Draft.aux" "PLOS_ONE_Middleton_Oster_Draft.bbl" "PLOS_ONE_Middleton_Oster_Draft" 1647017617
   "PLOS_ONE_MO_Bibliography.bib" 1645123256 16579 c313c07062e29df771bb6185355a9a69 ""
-  "PLOS_ONE_Middleton_Oster_Draft.aux" 1647016203 15119 08c68eb0fb87f5383b1192c1caf2dd5c "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.aux" 1647017616 15119 48832324f29a29e82b0ed035420f4097 "pdflatex"
   "plos2015.bst.bst" 0 -1 0 ""
   (generated)
-  "PLOS_ONE_Middleton_Oster_Draft.blg"
   "PLOS_ONE_Middleton_Oster_Draft.bbl"
-["pdflatex"] 1647016198 "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" "PLOS_ONE_Middleton_Oster_Draft.pdf" "PLOS_ONE_Middleton_Oster_Draft" 1647016204
-  "PLOS_ONE_Middleton_Oster_Draft.aux" 1647016203 15119 08c68eb0fb87f5383b1192c1caf2dd5c "pdflatex"
-  "PLOS_ONE_Middleton_Oster_Draft.bbl" 1647013008 4667 0fbe76e1c9eb3eaa2f999156051e7d37 "bibtex PLOS_ONE_Middleton_Oster_Draft"
-  "PLOS_ONE_Middleton_Oster_Draft.out" 1647016201 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "PLOS_ONE_Middleton_Oster_Draft.tex" 1647016196 84488 cda101850506f0fa5eff64bb876a2bd5 ""
+  "PLOS_ONE_Middleton_Oster_Draft.blg"
+["pdflatex"] 1647017611 "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" "PLOS_ONE_Middleton_Oster_Draft.pdf" "PLOS_ONE_Middleton_Oster_Draft" 1647017617
+  "PLOS_ONE_Middleton_Oster_Draft.aux" 1647017616 15119 48832324f29a29e82b0ed035420f4097 "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.bbl" 1647017482 4667 0fbe76e1c9eb3eaa2f999156051e7d37 "bibtex PLOS_ONE_Middleton_Oster_Draft"
+  "PLOS_ONE_Middleton_Oster_Draft.out" 1647017614 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.tex" 1647017609 84757 20be65ba636bca0948fbb9e8a17b5158 ""
   "ROC.png" 1646183079 56697 a1e10de0dd68d2f174f7916e17107b30 ""
-  "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" 1647016196 84488 cda101850506f0fa5eff64bb876a2bd5 ""
+  "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" 1647017609 84757 20be65ba636bca0948fbb9e8a17b5158 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1628612588 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1628616055 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "c:/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm" 1628614971 1536 73da8e8f1d2a4c957d51ca133585586b ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1628614971 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1628606140 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1628606140 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -50,6 +51,7 @@
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1628606140 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1628606140 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1628606140 31099 342ef5a582aacbd3346f3cf4579679fa ""
+  "c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb" 1628612588 154599 111aa29c1b43dc5b4a8516224bf12bac ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1628612588 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1628620514 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2021/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1628606696 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -230,7 +232,7 @@
   "c:/texlive/2021/texmf.cnf" 1628628211 713 e69b156964470283e0530f5060668171 ""
   "homelessness_all.png" 1646175218 201248 a196cb7cd5b27a609c39bd93995eea42 ""
   (generated)
+  "PLOS_ONE_Middleton_Oster_Draft.log"
+  "PLOS_ONE_Middleton_Oster_Draft.out"
   "PLOS_ONE_Middleton_Oster_Draft.aux"
   "PLOS_ONE_Middleton_Oster_Draft.pdf"
-  "PLOS_ONE_Middleton_Oster_Draft.out"
-  "PLOS_ONE_Middleton_Oster_Draft.log"
