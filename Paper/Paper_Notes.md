@@ -10,6 +10,10 @@ See below
 * Kim Boynton
 * David Lewis
 
+## Publish Preprint
+arXiv -> Statistics -> Applications  
+(wait until manuscript is ready)
+
 ---
 # Feedback from Dr. Oster
 
@@ -30,7 +34,7 @@ I think we should leave model performance in the Abstract - other papers do this
 
 Publish preprint?  
 
-What is the proper way to write "Byrne et al.'s study..."?  
+Plos says to remove figures and keep them separate from .tex file - remove non-image figures such as Fig 2. (Preprocessing Diagram) and Fig 3. ((Binning Threshold Examples)?
 
 ---
 # PLOS ONE
@@ -90,3 +94,9 @@ Our study does not fall into any of the specific reporting guidelines listed.
 Not doing one
 
 ## Access the submission system
+
+# PLOS Global Public Health
+Fee = [\$2,100](https://plos.org/publish/fees/)  
+
+[Submission Guidelines](https://journals.plos.org/globalpublichealth/s/submission-guidelines)  
+Essentially the same as for PLOS ONE (above)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  11 MAR 2022 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  12 MAR 2022 09:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -800,24 +800,24 @@ Package csquotes Info: ... none found.
  (./PLOS_ONE_Middleton_Oster_Draft.aux)
 \openout1 = `PLOS_ONE_Middleton_Oster_Draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 200.
+LaTeX Font Info:    ... okay on input line 200.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -856,22 +856,22 @@ LaTeX Font Info:    ... okay on input line 201.
 (c:/texlive/2021/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-Package hyperref Info: Link coloring OFF on input line 201.
-LaTeX Info: Redefining \ref on input line 201.
-LaTeX Info: Redefining \pageref on input line 201.
-LaTeX Info: Redefining \nameref on input line 201.
+Package hyperref Info: Link coloring OFF on input line 200.
+LaTeX Info: Redefining \ref on input line 200.
+LaTeX Info: Redefining \pageref on input line 200.
+LaTeX Info: Redefining \nameref on input line 200.
  (./PLOS_ONE_Middleton_Oster_Draft.out) (./PLOS_ONE_Middleton_Oster_Draft.out)
 \@outlinefile=\write4
 \openout4 = `PLOS_ONE_Middleton_Oster_Draft.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 201.
+LaTeX Info: Redefining \microtypecontext on input line 200.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 201.
+LaTeX Info: Redefining \showhyphens on input line 200.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -895,14 +895,14 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 201.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 212.
+(lastpage)             ! on input line 200.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 211.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 212.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 211.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/texlive/2021/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -910,21 +910,21 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<homelessness_all.png, id=29, 672.47235pt x 436.87215pt>
-File: homelessness_all.png Graphic file (type png)
-<use homelessness_all.png>
-Package pdftex.def Info: homelessness_all.png  used on input line 266.
+<Fig1.png, id=29, 672.47235pt x 436.87215pt>
+File: Fig1.png Graphic file (type png)
+<use Fig1.png>
+Package pdftex.def Info: Fig1.png  used on input line 265.
 (pdftex.def)             Requested size: 379.4175pt x 246.48657pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2] [3 <./homelessness_all.png>] [4] [5] [6] [7]
+[2] [3 <./Fig1.png>] [4] [5] [6] [7]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 4328) in paragraph at lines 437--438
+Underfull \hbox (badness 4328) in paragraph at lines 436--437
 []|\OT1/cmr/m/n/10 (+20) Cumulative count of unique in-di-vid-u-als
  []
 
@@ -960,12 +960,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [11] [12]
-<ROC.png, id=202, 676.32675pt x 433.62pt>
-File: ROC.png Graphic file (type png)
-<use ROC.png>
-Package pdftex.def Info: ROC.png  used on input line 570.
+<Fig4.png, id=199, 676.32675pt x 433.62pt>
+File: Fig4.png Graphic file (type png)
+<use Fig4.png>
+Package pdftex.def Info: Fig4.png  used on input line 569.
 (pdftex.def)             Requested size: 379.4175pt x 243.26224pt.
- [13 <./ROC.png>] [14] [15] [16] [17] [18] [19] [20]
+ [13 <./Fig4.png>] [14] [15] [16] [17] [18] [19] [20]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -985,17 +985,17 @@ Package rerunfilecheck Info: File `PLOS_ONE_Middleton_Oster_Draft.out' has not c
  ) 
 Here is how much of TeX's memory you used:
  30512 strings out of 478542
- 579630 string characters out of 5854402
- 989344 words of memory out of 5000000
+ 579555 string characters out of 5854402
+ 989130 words of memory out of 5000000
  47723 multiletter control sequences out of 15000+600000
  413861 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,15n,108p,2191b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,15n,108p,2121b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (22 pages, 441286 bytes).
+Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (22 pages, 442823 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 338 compressed objects within 4 object streams
+ 395 PDF objects out of 1000 (max. 8388607)
+ 335 compressed objects within 4 object streams
  102 named destinations out of 1000 (max. 500000)
  31255 words of extra memory for PDF output out of 35830 (max. 10000000)
 
