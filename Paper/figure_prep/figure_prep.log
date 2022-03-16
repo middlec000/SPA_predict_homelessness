@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  16 MAR 2022 10:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  16 MAR 2022 09:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex
-(c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex
+**c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/figure_prep/figure_prep.tex
+(c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/figure_prep/figure_prep.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-07-12> (c:/texlive/2021/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
@@ -797,27 +797,27 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./PLOS_ONE_Middleton_Oster_Draft.aux)
-\openout1 = `PLOS_ONE_Middleton_Oster_Draft.aux'.
+ (./figure_prep.aux)
+\openout1 = `figure_prep.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 199.
+LaTeX Font Info:    ... okay on input line 199.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -856,22 +856,22 @@ LaTeX Font Info:    ... okay on input line 200.
 (c:/texlive/2021/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-Package hyperref Info: Link coloring OFF on input line 200.
-LaTeX Info: Redefining \ref on input line 200.
-LaTeX Info: Redefining \pageref on input line 200.
-LaTeX Info: Redefining \nameref on input line 200.
- (./PLOS_ONE_Middleton_Oster_Draft.out) (./PLOS_ONE_Middleton_Oster_Draft.out)
+Package hyperref Info: Link coloring OFF on input line 199.
+LaTeX Info: Redefining \ref on input line 199.
+LaTeX Info: Redefining \pageref on input line 199.
+LaTeX Info: Redefining \nameref on input line 199.
+ (./figure_prep.out) (./figure_prep.out)
 \@outlinefile=\write4
-\openout4 = `PLOS_ONE_Middleton_Oster_Draft.out'.
+\openout4 = `figure_prep.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 200.
+LaTeX Info: Redefining \microtypecontext on input line 199.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 200.
+LaTeX Info: Redefining \showhyphens on input line 199.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -895,91 +895,63 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 200.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 211.
+(lastpage)             ! on input line 199.
+\g__nicematrix_max_cell_width_dim=\dimen341
+\c@iRow=\count373
+\c@jCol=\count374
+\l__nicematrix_cell_box=\box121
+\l__nicematrix_the_array_box=\box122
+\l__nicematrix_left_delim_dim=\dimen342
+\l__nicematrix_right_delim_dim=\dimen343
+LaTeX Font Info:    Trying to load font information for U+msa on input line 273.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 211.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 273.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/texlive/2021/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [1
-
-{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<Fig1.png, id=29, 672.47235pt x 436.87215pt>
-File: Fig1.png Graphic file (type png)
-<use Fig1.png>
-Package pdftex.def Info: Fig1.png  used on input line 265.
-(pdftex.def)             Requested size: 379.4175pt x 246.48657pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2] [3 <./Fig1.png>] [4] [5] [6] [7]
-<Fig2.png, id=135, 356.2911pt x 416.63655pt>
-File: Fig2.png Graphic file (type png)
-<use Fig2.png>
-Package pdftex.def Info: Fig2.png  used on input line 357.
-(pdftex.def)             Requested size: 341.47342pt x 399.31808pt.
-
-Underfull \hbox (badness 4328) in paragraph at lines 388--389
-[]|\OT1/cmr/m/n/10 (+20) Cumulative count of unique in-di-vid-u-als
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8] [9 <./Fig2.png>] [10] [11]
-<Fig3.png, id=184, 346.896pt x 175.25475pt>
-File: Fig3.png Graphic file (type png)
-<use Fig3.png>
-Package pdftex.def Info: Fig3.png  used on input line 448.
-(pdftex.def)             Requested size: 341.47342pt x 172.52397pt.
- [12 <./Fig3.png>]
-<Fig4.png, id=199, 676.32675pt x 433.62pt>
-File: Fig4.png Graphic file (type png)
-<use Fig4.png>
-Package pdftex.def Info: Fig4.png  used on input line 483.
-(pdftex.def)             Requested size: 379.4175pt x 243.26224pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13] [14 <./Fig4.png>] [15] [16] [17] [18] [19] [20]
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- (./PLOS_ONE_Middleton_Oster_Draft.bbl
-Overfull \hbox (4.3895pt too wide) in paragraph at lines 4--8
-\OT1/cmtt/m/n/10 criteria-[]and-[]recordkeeping-[]requirements-[]for-[]definition-[]of-[]homeless/$[]\OT1/cmr/m/n/10 (-20) .  
- []
-
-[21] (c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)) 
+)
+\g__nicematrix_dp_row_zero_dim=\dimen344
+\g__nicematrix_ht_row_zero_dim=\dimen345
+\g__nicematrix_ht_row_one_dim=\dimen346
+\g__nicematrix_dp_ante_last_row_dim=\dimen347
+\g__nicematrix_ht_last_row_dim=\dimen348
+\g__nicematrix_dp_last_row_dim=\dimen349
+\g__nicematrix_ddots_int=\count375
+\g__nicematrix_iddots_int=\count376
+\g__nicematrix_delta_x_one_dim=\dimen350
+\g__nicematrix_delta_y_one_dim=\dimen351
+\g__nicematrix_delta_x_two_dim=\dimen352
+\g__nicematrix_delta_y_two_dim=\dimen353
+\l__nicematrix_initial_i_int=\count377
+\l__nicematrix_initial_j_int=\count378
+\l__nicematrix_final_i_int=\count379
+\l__nicematrix_final_j_int=\count380
+ 
 AED: lastpage setting LastPage
-[22] (./PLOS_ONE_Middleton_Oster_Draft.aux)
-Package rerunfilecheck Info: File `PLOS_ONE_Middleton_Oster_Draft.out' has not changed.
+[1
+
+{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./figure_prep.aux)
+Package rerunfilecheck Info: File `figure_prep.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29266 strings out of 478542
- 554607 string characters out of 5854402
- 926333 words of memory out of 5000000
- 46485 multiletter control sequences out of 15000+600000
- 413030 words of font info for 101 fonts, out of 8000000 for 9000
+ 29996 strings out of 478542
+ 572948 string characters out of 5854402
+ 1015746 words of memory out of 5000000
+ 47395 multiletter control sequences out of 15000+600000
+ 409389 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,108p,2121b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (22 pages, 570172 bytes).
+ 108i,15n,108p,528b,799s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on figure_prep.pdf (1 page, 47718 bytes).
 PDF statistics:
- 389 PDF objects out of 1000 (max. 8388607)
- 329 compressed objects within 4 object streams
- 102 named destinations out of 1000 (max. 500000)
- 27169 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 34 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
+ 16397 words of extra memory for PDF output out of 17280 (max. 10000000)
 

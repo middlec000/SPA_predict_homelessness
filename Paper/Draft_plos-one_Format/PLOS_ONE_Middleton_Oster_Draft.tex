@@ -350,59 +350,11 @@ The high degree of imbalance in the dataset, that is, the large number of negati
 
 \subsubsection*{Data preparation}
 % Matching + De-Identifying
-A diagram of data preprocessing is displayed in Fig~\ref{fig:preprocessing} that captures the following description. Initial data matching and de-identifying was performed by the data team at Avista Utilities. This process involved joining the utility billing data from Avista and the City of Spokane on address and month. This dataset was then joined to the City of Spokane's CMIS homelessness data where matching was based on the last four digits of social security number. After matching, the data was de-identified by replacing any identifiable characteristics of the data such as name and address with internally generated identification numbers. 
+A diagram of data preprocessing is displayed in Fig~\ref{fig:preprocessing} that captures the following description. Initial data matching and de-identifying was performed by the data team at Avista Utilities. This process involved joining the utility billing data from Avista and the City of Spokane on address and month. This dataset was then joined to the City of Spokane's CMIS homelessness data where matching was based on the last four digits of social security number. After matching, the data was de-identified by replacing any identifiable characteristics of the data such as name and address with internally generated identification numbers.
 
-\begin{figure}[!h]
+\begin{figure}
     \centering
-    \begin{tikzpicture}[node distance=1cm]
-        \node (CoSutility) [org] {CoS Utilities};
-        \node (Avista) [org, left of=CoSutility, xshift=-2.65cm] {Avista Utilities};
-        \node (CoScmis) [org, right of=CoSutility, xshift=2.3cm] {CoS CMIS};
-
-        \node (Matching1) [process, below of=CoSutility] {Match on Address, Month};
-        \node (Matching2) [process, below of=Matching1] {Match on last 4 of SSN};
-        \node (DeID) [process, below of=Matching2] {De-identify data};
-
-        \node (Billing) [io, below of=DeID, xshift=-3cm] {Monthly Billing Records};
-        \node (Accounts) [io, below of=DeID, xshift=3cm] {Account-People Records};
-
-        \node (bill1) [process, below of=Billing] {Drop all null values};
-        \node (bill2) [process, below of=bill1] {Enforce Account-Location-Month key};
-        \node (acct1) [process, below of=Accounts] {Drop all except main account holder};
-        \node (acct2) [process, below of=acct1] {Find earliest month of homelessness};
-        \node (acct3) [process, below of=acct2] {Enforce Account-Location key};
-        
-        \node (match3) [process, below of=acct3, xshift=-3cm] {Match on Account-Location};
-        \node (drop1) [process, below of=match3] {Enforce Person-Location-Month key};
-        \node (drop2) [process, below of=drop1] {Drop all data after first enroll date};
-        \node (create) [process, below of=drop2] {Create engineered features};
-        \node (drop3) [process, below of=create] {Drop unused features};
-
-        \node (result) [io, below of=drop3] {Preprocessed Data};
-
-
-        \draw [arrow] (Avista) |- (Matching1);
-        \draw [arrow] (CoSutility) -- (Matching1);
-        \draw [arrow] (Matching1) -- (Matching2);
-        \draw [arrow] (CoScmis) |- (Matching2);
-        \draw [arrow] (Matching2) -- (DeID);
-
-        \draw [arrow] (DeID) |- (Billing);
-        \draw [arrow] (DeID) |- (Accounts);
-        \draw [arrow] (Billing) -- (bill1);
-        \draw [arrow] (bill1) -- (bill2);
-        \draw [arrow] (bill2) |- (match3);
-        \draw [arrow] (Accounts) -- (acct1);
-        \draw [arrow] (acct1) -- (acct2);
-        \draw [arrow] (acct2) -- (acct3);
-        \draw [arrow] (acct3) |- (match3);
-
-        \draw [arrow] (match3) -- (drop1);
-        \draw [arrow] (drop1) -- (drop2);
-        \draw [arrow] (drop2) -- (create);
-        \draw [arrow] (create) -- (drop3);
-        \draw [arrow] (drop3) -- (result);
-    \end{tikzpicture}
+    \includegraphics[width=0.9\textwidth]{Fig2.png} %TODO: REMOVE BEFORE SUBMISSION
     \caption{{\bf Data preprocessing diagram.} Initial data is provided by Avista Utilities, the City of Spokane Utilities department (CoS Utilities), and the City of Spokane CMIS that tracks homelessness (CoS CMIS). The authors received the data as two file groups, Monthly Billing Records and Account-People Records, after de-identification and initial matching was performed by the Avista data team.}
     \label{fig:preprocessing}
 \end{figure}
@@ -489,49 +441,11 @@ The model was evaluated on how well it could predict the outcome for each person
 
 The model is fit and used to predict the outcome of CMIS\_MATCH, but the predictions are likelihoods which are continuous with range from 0 to 1. These must be binned into binary class predictions before they can be compared to the true outcome values; either the model predicts the individual will or will not experience homelessness. The default binning threshold is 0.5, in which case predictions are classified as negative if they are less than 0.5 and positive if they are greater than or equal to 0.5~\cite{bewick2005statistics}. 
 
-The binning threshold can be adjusted to better suit model application. Here the model is intended to be used to inform HPPs which people to assist. Some assistance programs can assist many people and so cast a large net by choosing the model threshold to be relatively low, meaning many predictions are binned as positive. Some assistance programs cast a small net by choosing the threshold to be set relatively high, meaning that only high predicted risks are binned as positive. Examples of these cases are displayed in Fig~\ref{fig:threshold_example}. In practice, setting the binning threshold will likely depend on how many resources a HPP has at its disposal and the relative costs of false positives and false negatives. In general, the models can be evaluated at many thresholds and will produce different values of the performance metrics.
+The binning threshold can be adjusted to better suit model application. Here the model is intended to be used to inform HPPs which people to assist. Some assistance programs can assist many people and so cast a large net by choosing the model threshold to be relatively low, meaning many predictions are binned as positive. Some assistance programs cast a small net by choosing the threshold to be set relatively high, meaning that only high predicted risks are binned as positive. Examples of these cases are displayed in Fig~\ref{fig:threshold_example}. In practice, setting the binning threshold will likely depend on how many resources a HPP has at its disposal and the relative costs of false positives and false negatives. In general, the models can be evaluated at many thresholds and will produce different values of the performance metrics. 
 
 \begin{figure}[!h]
     \centering
-    \subfloat[Threshold = 0.60 (Large Net)]{
-        \begin{NiceTabular}{|c|c|c|} \hline
-            Prediction & Binned & Actual \\ \hline
-            \rowcolor{lightgray}
-            0.98 & 1 & 1 \\ \hline
-            \rowcolor{lightgray}
-            0.92 & 1 & 1 \\ \hline
-            0.91 & 1 & 0 \\ \hline
-            \rowcolor{lightgray}
-            0.84 & 1 & 1 \\ \hline
-            0.73 & 1 & 0 \\ \hline \hline
-            0.54 & 0 & 1 \\ \hline
-            \rowcolor{lightgray}
-            0.53 & 0 & 0 \\ \hline
-            \rowcolor{lightgray}
-            0.48 & 0 & 0 \\ \hline
-            \vdots & \vdots & \vdots \\ \hline
-        \end{NiceTabular}
-    }
-    \qquad
-    \subfloat[Threshold = 0.80 (Small Net)]{
-        \begin{NiceTabular}{|c|c|c|} \hline
-            Prediction & Binned & Actual \\ \hline
-            \rowcolor{lightgray}
-            0.98 & 1 & 1 \\ \hline
-            \rowcolor{lightgray}
-            0.92 & 1 & 1 \\ \hline
-            0.91 & 1 & 0 \\ \hline \hline
-            0.84 & 0 & 1 \\ \hline
-            \rowcolor{lightgray}
-            0.73 & 0 & 0 \\ \hline
-            0.54 & 0 & 1 \\ \hline
-            \rowcolor{lightgray}
-            0.53 & 0 & 0 \\ \hline
-            \rowcolor{lightgray}
-            0.48 & 0 & 0 \\ \hline
-            \vdots & \vdots & \vdots \\ \hline
-        \end{NiceTabular}
-    }
+    \includegraphics[width=0.9\textwidth]{Fig3.png} %TODO: REMOVE BEFORE SUBMISSION
     \caption{{\bf Example of two prediction binning thresholds.} The same predictions (Prediction) are binned as a 1 or 0 in the Binned column based on the threshold (represented by the double-horizontal line), then compared to the actual results (Actual) and determined to be correct (gray) or incorrect (no color).}
     \label{fig:threshold_example}
 \end{figure}
