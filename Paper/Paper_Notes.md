@@ -1,7 +1,7 @@
 # TODO
-## Remove figures before publication
-## Add info about how to access data
-Publish on GitHub with code?
+## Make data available
+Urbanova or City of Spokane system?  
+Determine which release(s) used. Combine billing data files.
 
 ## Conform to PLOS paper standards
 See below
@@ -101,3 +101,20 @@ Fee = [\$2,100](https://plos.org/publish/fees/)
 [Submission Guidelines](https://journals.plos.org/globalpublichealth/s/submission-guidelines)  
 Essentially the same as for PLOS ONE (above)  
 [Figure Guidelines](https://journals.plos.org/globalpublichealth/s/figures)
+
+# Data Sharing
+## Meetings
+03/22/22
+Kim Boynton
+What is Avista's stance on data sharing? Urbanova or City of Spokane?
+Avista yes through Urbanova with data sharing agreement
+  each entity would have to join data sharing agreement
+  Meeting w/Mason on Thursday 
+
+SPA 2
+Urbanova -> Google Cloud
+  Some cloud computing
+
+Quality issues with collections data - need to improve
+
+Can call Kim
