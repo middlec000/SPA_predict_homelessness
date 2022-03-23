@@ -1,21 +1,21 @@
 # Fdb version 3
-["bibtex PLOS_ONE_Middleton_Oster_Draft"] 1648058319 "PLOS_ONE_Middleton_Oster_Draft.aux" "PLOS_ONE_Middleton_Oster_Draft.bbl" "PLOS_ONE_Middleton_Oster_Draft" 1648059124
+["bibtex PLOS_ONE_Middleton_Oster_Draft"] 1648058319 "PLOS_ONE_Middleton_Oster_Draft.aux" "PLOS_ONE_Middleton_Oster_Draft.bbl" "PLOS_ONE_Middleton_Oster_Draft" 1648071915
   "PLOS_ONE_MO_Bibliography.bib" 1645126856 16579 c313c07062e29df771bb6185355a9a69 ""
-  "PLOS_ONE_Middleton_Oster_Draft.aux" 1648058871 9363 ce65ec9a030267eadfe64fbed1da327c "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.aux" 1648071731 9363 ce65ec9a030267eadfe64fbed1da327c "pdflatex"
   "plos2015.bst.bst" 0 -1 0 ""
   (generated)
-  "PLOS_ONE_Middleton_Oster_Draft.bbl"
   "PLOS_ONE_Middleton_Oster_Draft.blg"
-["pdflatex"] 1648058867 "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" "PLOS_ONE_Middleton_Oster_Draft.pdf" "PLOS_ONE_Middleton_Oster_Draft" 1648059124
+  "PLOS_ONE_Middleton_Oster_Draft.bbl"
+["pdflatex"] 1648071727 "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" "PLOS_ONE_Middleton_Oster_Draft.pdf" "PLOS_ONE_Middleton_Oster_Draft" 1648071915
   "Fig1.png" 1646178818 201248 a196cb7cd5b27a609c39bd93995eea42 ""
   "Fig2.png" 1647449393 140894 145c642fbe687e999165d529df98dd33 ""
   "Fig3.png" 1647449520 60109 661a0336534bfb127e393e16c868e362 ""
   "Fig4.png" 1646186679 56697 a1e10de0dd68d2f174f7916e17107b30 ""
-  "PLOS_ONE_Middleton_Oster_Draft.aux" 1648058871 9363 ce65ec9a030267eadfe64fbed1da327c "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.aux" 1648071731 9363 ce65ec9a030267eadfe64fbed1da327c "pdflatex"
   "PLOS_ONE_Middleton_Oster_Draft.bbl" 1648058320 4667 0fbe76e1c9eb3eaa2f999156051e7d37 "bibtex PLOS_ONE_Middleton_Oster_Draft"
-  "PLOS_ONE_Middleton_Oster_Draft.out" 1648058869 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "PLOS_ONE_Middleton_Oster_Draft.tex" 1648059122 81096 4e0ad29ac25ea02bb9447e0003828f3f ""
-  "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" 1648059122 81096 4e0ad29ac25ea02bb9447e0003828f3f ""
+  "PLOS_ONE_Middleton_Oster_Draft.out" 1648071729 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "PLOS_ONE_Middleton_Oster_Draft.tex" 1648071912 81029 f6ca1dbfc472fc79dbcc8f58078f7cb3 ""
+  "c:/Users/colin/Documents/GitHub/SPA_predict_homelessness/Paper/Draft_plos-one_Format/PLOS_ONE_Middleton_Oster_Draft.tex" 1648071912 81029 f6ca1dbfc472fc79dbcc8f58078f7cb3 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1628616188 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1628619655 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm" 1628618571 1536 73da8e8f1d2a4c957d51ca133585586b ""
@@ -230,7 +230,7 @@
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1628632046 2801562 7213db24cbddc94e17b940051d813949 ""
   "c:/texlive/2021/texmf.cnf" 1628631811 713 e69b156964470283e0530f5060668171 ""
   (generated)
+  "PLOS_ONE_Middleton_Oster_Draft.out"
   "PLOS_ONE_Middleton_Oster_Draft.log"
   "PLOS_ONE_Middleton_Oster_Draft.aux"
-  "PLOS_ONE_Middleton_Oster_Draft.out"
   "PLOS_ONE_Middleton_Oster_Draft.pdf"

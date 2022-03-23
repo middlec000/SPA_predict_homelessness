@@ -1,14 +1,12 @@
 # TODO
 ## Make data available
 Urbanova or City of Spokane system?  
-Determine which release(s) used. Combine billing data files.
 
 ## Conform to PLOS paper standards
 See below
 
-## Ask for Feedback From:
-* Kim Boynton
-* David Lewis
+## Wait for Feedback From
+* Daniel Ramos
 
 ## Publish Preprint
 arXiv -> Statistics -> Applications  
@@ -19,22 +17,6 @@ arXiv -> Statistics -> Applications
 
 ---
 # Questions/Notes for Dr. Oster
-Emailed with Dr. Dan Li and she said standard model reporting is not done, just that studies typically report accuracy, precision (PPV), recall (TPR), F1-score, and the ROC Curve.
-
-Only used PIT counts for general homelessness numbers, not for prediction. Used CMIS data for prediction (not homelessness numbers). CMIS data is better for us because they track people (name, last address, etc.), but is likely less complete than the PIT counts (collect counts from shelters and walk around and count unsheltered).  
-
-Did not directly look at variance of predicted risk level before taking maximum for each person, but I did try to use mean predicted risk instead of maximum - much worse performance. Perhaps taking mean of 3 highest predicted risks (or similar) would be a good approach. I'd rather not investigate this now, though.  
-
-Reason for not using Cox Regression. I think you are right about our Logistic Regression + taking maximum over time and Cox Time Varying Covariates being essentially equivalent. I'm hesitant to say they are mathematically equivalent, but they do perform the same functionality. I updated this in the Discussion -> Dependence on Time subsection.  
-
-In response to Discussion -> Data Limitations: "I wonder if a high proportion of those identified had both City and Avista bills (was there bias?)."   
-I did not look at this. Theoretically if the City and Avista bill amounts owed are kept separate, the model can get more information out of them, but I compared model performance and it is essentially the same. The nice thing about the aggregated version is that it is more generic so places where utilities are combined could still use this same model.  
-
-I think we should leave model performance in the Abstract - other papers do this.  
-
-Publish preprint?  
-
-Plos says to remove figures and keep them separate from .tex file - remove non-image figures such as Fig 2. (Preprocessing Diagram) and Fig 3. ((Binning Threshold Examples)?
 
 ---
 # PLOS ONE
@@ -65,7 +47,7 @@ Linked directly from the manuscript file - done
 ## Prepare your data
 Need to do this
 
-## Confirm the author list
+## Confirm the author list - Done
 * Full names, including initials if used
 * Affiliations
 * Email address
@@ -90,8 +72,7 @@ Our study does not fall into any of the specific reporting guidelines listed.
 * Disclosure of funding sources
 * Competing interests (None) - Done
 
-## Consider posting a preprint - Done
-Not doing one
+## Consider posting a preprint
 
 ## Access the submission system
 
@@ -118,3 +99,26 @@ Urbanova -> Google Cloud
 Quality issues with collections data - need to improve
 
 Can call Kim
+
+03/23/22
+Dr. Mason Burley (Urbanova CEO)
+dissertation on health time to event
+
+Urbanova - Google Cloud computing
+SPA project as example
+
+Does Urbanova have the capability to fulfill data requests?
+How extensive would the update to the data sharing agreement be?
+TBD
+
+Any other data science projects I could help with? Trying to build my portfolio.
+
+Jobs at Urbanova?
+
+Send journal requirements.
+Reach out to journal.
+
+Mason will contact Kim
+
+City wants risk identification model
+Getting into 120 day classification
