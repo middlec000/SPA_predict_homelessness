@@ -1,0 +1,13 @@
+https://journals.plos.org/plosone/s/data-availability
+
+The data used for this project, though de-identified, contains information that may make it possible to identify the individuals it represents. To gain access to the data, interested parties must contact Urbanova's data sharing platform (alpha.urbanova.cloud), sign the Data Sharing Agreement for the SPA Collaboration, join the SPA Collaboration, then access the following datasets within the "Deidentified 5 Year Billing History 3.0" data release:
+    * SpaData_2015_Anon.csv
+    * SpaData_2016_Anon.csv
+    * SpaData_2017_Anon.csv
+    * SpaData_2018_Anon.csv
+    * SpaData_2019_Anon.csv
+    * SpaData_2020_Anon.csv
+    * ServiceAgreements_Anon.csv
+
+Descriptions of the data contained in these files can be found in the "SpaData Dictionary" file in the "Deidentified 5 Year Billing History" data release as well as at:
+https://github.com/middlec000/SPA_predict_homelessness/blob/main/supporting_docs/data_dictionary.md

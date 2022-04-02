@@ -1,9 +1,10 @@
 # TODO
 ## Make data available
-Urbanova or City of Spokane system?  
+Urbanova  
+Waiting on legal
 
 ## Conform to PLOS paper standards
-See below
+Remove figures from paper
 
 ## Wait for Feedback From
 * Daniel Ramos
@@ -43,9 +44,6 @@ Benn Sartorius was editor of Byrne et al.'s "A classification model of homelessn
 ### [Data Availability](https://journals.plos.org/plosone/s/data-availability)
 ### [Materials, Software and Code Sharing](https://journals.plos.org/plosone/s/materials-software-and-code-sharing) - Done
 Linked directly from the manuscript file - done
-
-## Prepare your data
-Need to do this
 
 ## Confirm the author list - Done
 * Full names, including initials if used
