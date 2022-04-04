@@ -4,7 +4,7 @@
 * Utility Payment
 * Collections Activity
 ## City of Spokane
-* [Spokane Community Management Information System (CMIS)](https://my.spokanecity.org/chhs/cmis/)
+* Homelessness Data: [Spokane Community Management Information System (CMIS)](https://my.spokanecity.org/chhs/cmis/)
 * Utility Payment
 ## [United States Census (Not Used)](https://data.census.gov/cedsci/)
 * Location Data
