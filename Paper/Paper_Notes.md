@@ -81,42 +81,26 @@ Fee = [\$2,100](https://plos.org/publish/fees/)
 Essentially the same as for PLOS ONE (above)  
 [Figure Guidelines](https://journals.plos.org/globalpublichealth/s/figures)
 
-# Data Sharing
-## Meetings
-03/22/22
-Kim Boynton
-What is Avista's stance on data sharing? Urbanova or City of Spokane?
-Avista yes through Urbanova with data sharing agreement
-  each entity would have to join data sharing agreement
-  Meeting w/Mason on Thursday 
+# Frontiers
+[Fees](https://www.frontiersin.org/about/publishing-fees)  
+[Data Availability Policy](https://www.frontiersin.org/about/publishing-model)
+* "...Inclusion of appropriate reporting guidelines and the adherence of community standards for data availability to support reproducibility are also strict requirements..."  
 
-SPA 2
-Urbanova -> Google Cloud
-  Some cloud computing
+[Formatting Guidelines](https://www.frontiersin.org/about/author-guidelines)  
+* Use LaTeX template
+  * Sections: Introduction, Materials and Methods, Results, Discussion
+* Upload figure images separately
+* Move tables to end of paper
+* Table captions before tables
 
-Quality issues with collections data - need to improve
+## [Frontiers in Applied Mathematics and Statistics](https://www.frontiersin.org/journals/applied-mathematics-and-statistics/sections/numerical-analysis-and-scientific-computation)
+Fee = $1,150  
+Scope: New algorithms and methods.
 
-Can call Kim
+## [Frontiers in Public Health](https://www.frontiersin.org/journals/public-health)
+Fee = $2,950  
+Scope: "...a forum for a debate on the expectations and achievements of precision prevention promoting constructive discussion around inter-sectoral interventions which span from health promotion to climate change, transportation, environmental change and even species diversity..."
 
-03/23/22
-Dr. Mason Burley (Urbanova CEO)
-dissertation on health time to event
-
-Urbanova - Google Cloud computing
-SPA project as example
-
-Does Urbanova have the capability to fulfill data requests?
-How extensive would the update to the data sharing agreement be?
-TBD
-
-Any other data science projects I could help with? Trying to build my portfolio.
-
-Jobs at Urbanova?
-
-Send journal requirements.
-Reach out to journal.
-
-Mason will contact Kim
-
-City wants risk identification model
-Getting into 120 day classification
+## [Frontiers in Health Services](https://www.frontiersin.org/journals/health-services)
+Fee = $1,900  
+Scope: "...a unique and reliable repository of applicable research to inform the design and delivery of health care..."

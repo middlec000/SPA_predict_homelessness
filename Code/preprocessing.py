@@ -5,12 +5,12 @@ from helper_methods import *
 
 def main():
     filename = 'processed00.pickle'
-    datapath = '../Data/'
+    datapath = 'Data/'
 
-    output = preprocess()
-    outfile = open(datapath+filename, 'wb')
-    pickle.dump(output, outfile)
-    outfile.close()
+    output = preprocess(datapath=datapath)
+    #outfile = open(datapath+filename, 'wb')
+    #pickle.dump(output, outfile)
+    #outfile.close()
     return
 
 def preprocess(datapath: str):
@@ -72,6 +72,17 @@ def preprocess(datapath: str):
         'EnrollDate':'ENROLL_DATE'
         }, axis=1)
 
+    # Collect Service Agreements stats prior to joining with billing data
+    original_sa_stats = {
+        'rows': len(sa),
+        'accounts': sa['SPA_ACCT_ID'].nunique(),
+        'premisses': sa['SPA_PREM_ID'].nunique(),
+        'people': sa['SPA_PER_ID'].nunique(),
+        'pos_people': sa[sa['CMIS_MATCH'] == True]['SPA_PER_ID'].nunique(),
+        'neg_people': len(sa) - sa[sa['CMIS_MATCH'] == True]['SPA_PER_ID'].nunique()
+    }
+    print(f'\nOriginal Service Agreement Stats\n{original_sa_stats}')
+
     # Retain only columns we want to add to billing - note: all CMIS_MATCHes have ENROLL_DATEs
     sa_keep = [
         'SPA_PER_ID',
@@ -115,7 +126,7 @@ def preprocess(datapath: str):
     del min_enroll_dates
 
     # Collect Service Agreements stats prior to joining with billing data
-    original_sa_stats = {
+    preprocessed_sa_stats = {
         'rows': len(sa),
         'accounts': sa['SPA_ACCT_ID'].nunique(),
         'premisses': sa['SPA_PREM_ID'].nunique(),
@@ -123,7 +134,7 @@ def preprocess(datapath: str):
         'pos_people': sa[sa['CMIS_MATCH']]['SPA_PER_ID'].nunique(),
         'neg_people': sa[sa['CMIS_MATCH'] == False]['SPA_PER_ID'].nunique()
     }
-    print(f'\nOriginal Service Agreement Stats\n{original_sa_stats}')
+    print(f'\nPreprocessed Service Agreement Stats\n{preprocessed_sa_stats}')
 
     # Inner join Billing and Service Agreements data
     sa = sa.set_index(['SPA_ACCT_ID', 'SPA_PREM_ID'])
@@ -166,13 +177,24 @@ def preprocess(datapath: str):
     # Check Data Types
     print(f'\nData Types: \n{df.dtypes}')
 
+    # Final stats
+    final_stats = {
+        'rows': len(df),
+        'accounts': df['SPA_ACCT_ID'].nunique(),
+        'premisses': df['SPA_PREM_ID'].nunique(),
+        'people': df['SPA_PER_ID'].nunique(),
+        'pos_people': df[df['CMIS_MATCH']]['SPA_PER_ID'].nunique(),
+        'neg_people': df[df['CMIS_MATCH'] == False]['SPA_PER_ID'].nunique()
+    }
+    print(f'\nFinal Stats\n{final_stats}')
+
     # Create Output
     preprocessed = {
         'Data': df,
         'Features': df.columns.to_list(),
         'Data_Retention_Stats': generate_log(
             original_billing = original_billing_stats,
-            original_sa = original_sa_stats,
+            original_sa = preprocessed_sa_stats,
             final_df = df
             )
     }
