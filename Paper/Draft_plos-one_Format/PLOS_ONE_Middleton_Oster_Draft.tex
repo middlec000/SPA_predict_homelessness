@@ -262,7 +262,7 @@ In this work, we consider homelessness in Spokane County, Washington, USA.  Spok
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=\textwidth]{Fig1.png} %TODO: REMOVE BEFORE SUBMISSION
+    % \includegraphics[width=\textwidth]{Fig1.png}
     \caption{{\bf Annual homelessness counts.} The counts for Spokane County (Spokane) are displayed in 100s, the counts for Washington State (WA) are displayed in 1000s, and the counts for the United States of America (USA) are displayed in 100,000s.~\cite{PITcount}}
     \label{fig:homelessness_counts}
 \end{figure}
@@ -356,7 +356,7 @@ A diagram of data preprocessing is displayed in Fig~\ref{fig:preprocessing} that
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{Fig2.png} %TODO: REMOVE BEFORE SUBMISSION
+    % \includegraphics[width=0.9\textwidth]{Fig2.png}
     \caption{{\bf Data preprocessing diagram.} Initial data is provided by Avista Utilities, the City of Spokane Utilities department (CoS Utilities), and the City of Spokane CMIS that tracks homelessness (CoS CMIS). The authors received the data as two file groups, Monthly Billing Records and Account-People Records, after de-identification and initial matching was performed by the Avista data team.}
     \label{fig:preprocessing}
 \end{figure}
@@ -447,7 +447,7 @@ The binning threshold can be adjusted to better suit model application. Here the
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.9\textwidth]{Fig3.png} %TODO: REMOVE BEFORE SUBMISSION
+    % \includegraphics[width=0.9\textwidth]{Fig3.png}
     \caption{{\bf Example of two prediction binning thresholds.} The same predictions (Prediction) are binned as a 1 or 0 in the Binned column based on the threshold (represented by the double-horizontal line), then compared to the actual results (Actual) and determined to be correct (gray) or incorrect (no color).}
     \label{fig:threshold_example}
 \end{figure}
@@ -482,7 +482,7 @@ In order for the model to be applied in practice, a specific binning threshold m
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\textwidth]{Fig4.png} %TODO: REMOVE BEFORE SUBMISSION
+    % \includegraphics[width=\textwidth]{Fig4.png}
     \caption[ROC curve]{{\bf The ROC curve for the Logistic Regression Model.} This plot is created by choosing every possible binning threshold, then at each threshold evaluating FPR and TPR. The plot consists of only the (FPR, TPR) points. FPR (False Positive Rate) is the proportion of false positives to total ground truth negatives. TPR (True Positive Rate) is the proportion of true positives to the total ground truth positives. AUC (Area Under the Curve) is 0.808.}
     \label{fig:ROC}
 \end{figure}

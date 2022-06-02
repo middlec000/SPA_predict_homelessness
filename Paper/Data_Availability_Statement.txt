@@ -1,8 +1,7 @@
-https://journals.plos.org/plosone/s/data-availability
+The data used for this project, though de-identified, contains information that may allow the identification of the individuals represented. To gain access to the data, interested parties must contact Urbanova at urbanova.org and sign the Data Sharing Agreement for the Spokane Predictive Analytics (SPA) Collaboration. Once this agreement is signed, interested parties may join the SPA Collaboration on Urbanova's platform and access the de-identified data used for this project.
 
-The data used for this project, though de-identified, contains information that may allow the identification of the individuals represented. To gain access to the data, interested parties must contact Urbanova at urbanova.org and sign the Data Sharing Agreement for the SPA Collaboration. Once this agreement is signed, interested parties may join the SPA Collaboration on Urbanova's platform and access the de-identified data used for this project.
-
-Data used for this project:
+Data used for the work behind the paper, "Prediction of first-time homelessness risk based on utility
+payment history":
 Within the "Deidentified 5 Year Billing History 3.0" data release:
     * SpaData_2015_Anon.csv
     * SpaData_2016_Anon.csv

@@ -38,7 +38,9 @@ Fee = [\$1,805](https://plos.org/publish/fees/)
 
 ## [Identify potential editors](https://journals.plos.org/plosone/static/editorial-board)
 Public health related  
-Benn Sartorius was editor of Byrne et al.'s "A classification model of homelessness using integrated administrative data: Implications for targeting interventions to improve the housing status, health and well-being of a highly vulnerable population" published by PLOS ONE
+Benn Sartorius was editor of Byrne et al.'s "A classification model of homelessness using integrated administrative data: Implications for targeting interventions to improve the housing status, health and well-being of a highly vulnerable population" published by PLOS ONE  
+Syed Khurram Azmat  
+Madhavi Bhargava  
 
 ## Read journal policies
 ### [Data Availability](https://journals.plos.org/plosone/s/data-availability)
@@ -104,3 +106,5 @@ Scope: "...a forum for a debate on the expectations and achievements of precisio
 ## [Frontiers in Health Services](https://www.frontiersin.org/journals/health-services)
 Fee = $1,900  
 Scope: "...a unique and reliable repository of applicable research to inform the design and delivery of health care..."
+
+# [Health and Place](https://www.elsevier.com/journals/health-and-place/1353-8292/open-access-options)

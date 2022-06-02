@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  23 MAR 2022 14:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.10)  1 JUN 2022 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -909,23 +909,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<Fig1.png, id=30, 672.47235pt x 436.87215pt>
-File: Fig1.png Graphic file (type png)
-<use Fig1.png>
-Package pdftex.def Info: Fig1.png  used on input line 265.
-(pdftex.def)             Requested size: 379.4175pt x 246.48657pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2] [3 <./Fig1.png>] [4] [5] [6] [7]
-<Fig2.png, id=136, 356.2911pt x 416.63655pt>
-File: Fig2.png Graphic file (type png)
-<use Fig2.png>
-Package pdftex.def Info: Fig2.png  used on input line 359.
-(pdftex.def)             Requested size: 341.47342pt x 399.31808pt.
-
+{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7]
 Underfull \hbox (badness 4328) in paragraph at lines 390--391
 []|\OT1/cmr/m/n/10 (+20) Cumulative count of unique in-di-vid-u-als
  []
@@ -933,23 +917,7 @@ Underfull \hbox (badness 4328) in paragraph at lines 390--391
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8] [9 <./Fig2.png>] [10] [11]
-<Fig3.png, id=185, 346.896pt x 175.25475pt>
-File: Fig3.png Graphic file (type png)
-<use Fig3.png>
-Package pdftex.def Info: Fig3.png  used on input line 450.
-(pdftex.def)             Requested size: 341.47342pt x 172.52397pt.
- [12 <./Fig3.png>]
-<Fig4.png, id=200, 676.32675pt x 433.62pt>
-File: Fig4.png Graphic file (type png)
-<use Fig4.png>
-Package pdftex.def Info: Fig4.png  used on input line 485.
-(pdftex.def)             Requested size: 379.4175pt x 243.26224pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13] [14 <./Fig4.png>] [15] [16] [17] [18] [19] [20]
+[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -959,27 +927,27 @@ Overfull \hbox (4.3895pt too wide) in paragraph at lines 4--8
 \OT1/cmtt/m/n/10 criteria-[]and-[]recordkeeping-[]requirements-[]for-[]definition-[]of-[]homeless/$[]\OT1/cmr/m/n/10 (-20) .  
  []
 
-[21] (c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
+[19] (c:/texlive/2021/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )) 
 AED: lastpage setting LastPage
-[22] (./PLOS_ONE_Middleton_Oster_Draft.aux)
+[20] (./PLOS_ONE_Middleton_Oster_Draft.aux)
 Package rerunfilecheck Info: File `PLOS_ONE_Middleton_Oster_Draft.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29266 strings out of 478542
- 554607 string characters out of 5854402
- 926333 words of memory out of 5000000
- 46485 multiletter control sequences out of 15000+600000
+ 29235 strings out of 478542
+ 554241 string characters out of 5854402
+ 927332 words of memory out of 5000000
+ 46461 multiletter control sequences out of 15000+600000
  413030 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,108p,2121b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,12n,108p,2121b,521s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (22 pages, 570084 bytes).
+Output written on PLOS_ONE_Middleton_Oster_Draft.pdf (20 pages, 213302 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 102 named destinations out of 1000 (max. 500000)
- 27169 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 371 PDF objects out of 1000 (max. 8388607)
+ 321 compressed objects within 4 object streams
+ 100 named destinations out of 1000 (max. 500000)
+ 27149 words of extra memory for PDF output out of 29859 (max. 10000000)
 
